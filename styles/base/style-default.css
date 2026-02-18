@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    font-family: 'vazir';
+    font-size: 1.6rem;
+    position: relative;
+}
+
+svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+a {
+    color: var(--text-color);
+}
+
+section {
+    opacity: 0;
+    animation: loadPage 360ms 120ms linear forwards;
+}
+
+@keyframes loadPage {
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.container {
+    max-width: 123.2rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.6rem;
+}

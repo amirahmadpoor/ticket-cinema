@@ -1,0 +1,25 @@
+:root {
+    --rem-base: 16;
+    --text-color: #fff;
+    --text-colorBox: #BCBCC6;
+    --color-yellow: #FCFC65;
+    --color-black: #000;
+    --color-borderBox: #25252C;
+    --color-sky: #B3E5E5;
+    --color-disable: #454555;
+    --fontW6: 600;
+    --fontW7: 700;
+    --fontWB: bold;
+    --bg-btn-filter: #353541;
+    --bg-faq: #1A1A1F;
+    --bg-review-box: #141418;
+    --bg-body: #010108;
+    --bg-disable: #7C7C8D;
+    --bg-input: #565669;
+    --bg-overlay: #000;
+    --opacity-overlay: 0.8;
+    --border-section-header: #565669;
+    --positive: #3DB1B1;
+    --average: #FCFC65;
+    --negative: #E57171;
+}
