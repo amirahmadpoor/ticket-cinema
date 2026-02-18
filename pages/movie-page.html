@@ -178,6 +178,15 @@
                 d="M10.75 9.5C10.75 8.80964 11.3097 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3097 10.75 10.75 10.1904 10.75 9.5Z"
                 fill="currentcolor" />
         </symbol>
+
+        <symbol id="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M14.8281 14.8284L16.2423 16.2426" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M7.75781 7.75732L11.76 11.7595" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M7.75691 16.2426L16.2422 7.75732" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
     </svg>
 
     <div id="scroll"></div>
@@ -228,9 +237,10 @@
             </div>
         </div>
     </header>
+
     <div class="menu-mobile">
         <!--home-->
-        <a href="/index.html" class="menu-mobile__link active">
+        <a href="index.html" class="menu-mobile__link active">
             <svg class="icons-menu-mobile">
                 <use href="#icon-home"></use>
             </svg>
@@ -257,8 +267,8 @@
             </span>
         </a>
         <!--search-->
-        <a href="#" class="menu-mobile__link">
-            <svg class="icons-menu-mobile">
+        <a href="#" class="menu-mobile__link icon-search-mobile">
+            <svg class="icons-menu-mobile icon-search">
                 <use href="#icon-search"></use>
             </svg>
             <span class="menu-mobile__text">
@@ -274,6 +284,21 @@
                 حساب
             </span>
         </a>
+    </div>
+    <div class="search-mobile">
+        <div class="search-mobile__header">
+            <svg class="icon-close-search">
+                <use href="#icon-close"></use>
+            </svg>
+        </div>
+        <div class="search-mobile__input">
+            <svg>
+                <use href="#icon-search"></use>
+            </svg>
+            <input type="text" class="search-mobile__text-input" autofocus placeholder="جستجو">
+        </div>
+        <div class="search-mobile__result">
+        </div>
     </div>
 
     <section class="hero__movie">
@@ -393,115 +418,6 @@
         </div>
         <div class="tabs">
             <div class="review__wrapper">
-                <!-- <div class="review-box">
-                    <div class="review-box__header">
-                        <div class="review-box__score">
-                            <span class="review-box__score-number">9</span>
-                            <span class="review-box__username">امیر</span>
-                        </div>
-                        <div class="review-box__date">
-                            <span class="review-box__date-day">4/</span>
-                            <span class="review-box__date-month">2/</span>
-                            <span class="review-box__date-year">1404</span>
-                        </div>
-                    </div>
-                    <div class="review-box__main">
-                        <p class="review-box__text">بالاخره فیلمی که جنبه فنی فرمول یک را به درستی نشان می‌دهد.
-                            سکانس‌های توقف در پیت استاپ نفسم را در سینه حبس کرد و فیلمبرداری خیره‌کننده بود. می‌شد سرعت،
-                            ریسک و وسواس پشت هر دور را حس کرد. به راحتی می‌توان گفت یکی از بهترین فیلم‌های مسابقه‌ای است
-                            که دیده‌ام - فقط کاش کمی طولانی‌تر بود.</p>
-                    </div>
-                    <div class="review__footer">
-                        <a href="" class="review__full-text">
-                            <svg class="icon-all-comment">
-                                <use href="#icon-all-comment"></use>
-                            </svg>
-                            <span>نظرات</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="review-box">
-                    <div class="review-box__header">
-                        <div class="review-box__score">
-                            <span class="review-box__score-number">9</span>
-                            <span class="review-box__username">امیر</span>
-                        </div>
-                        <div class="review-box__date">
-                            <span class="review-box__date-day">4/</span>
-                            <span class="review-box__date-month">2/</span>
-                            <span class="review-box__date-year">1404</span>
-                        </div>
-                    </div>
-                    <div class="review-box__main">
-                        <p class="review-box__text">بالاخره فیلمی که جنبه فنی فرمول یک را به درستی نشان می‌دهد.
-                            سکانس‌های توقف در پیت استاپ نفسم را در سینه حبس کرد و فیلمبرداری خیره‌کننده بود. می‌شد سرعت،
-                            ریسک و وسواس پشت هر دور را حس کرد. به راحتی می‌توان گفت یکی از بهترین فیلم‌های مسابقه‌ای است
-                            که دیده‌ام - فقط کاش کمی طولانی‌تر بود.</p>
-                    </div>
-                    <div class="review__footer">
-                        <a href="" class="review__full-text">
-                            <svg>
-                                <use href="#icon-all-comment"></use>
-                            </svg>
-                            <span>نظرات</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="review-box">
-                    <div class="review-box__header">
-                        <div class="review-box__score">
-                            <span class="review-box__score-number">9</span>
-                            <span class="review-box__username">امیر</span>
-                        </div>
-                        <div class="review-box__date">
-                            <span class="review-box__date-day">4/</span>
-                            <span class="review-box__date-month">2/</span>
-                            <span class="review-box__date-year">1404</span>
-                        </div>
-                    </div>
-                    <div class="review-box__main">
-                        <p class="review-box__text">بالاخره فیلمی که جنبه فنی فرمول یک را به درستی نشان می‌دهد.
-                            سکانس‌های توقف در پیت استاپ نفسم را در سینه حبس کرد و فیلمبرداری خیره‌کننده بود. می‌شد سرعت،
-                            ریسک و وسواس پشت هر دور را حس کرد. به راحتی می‌توان گفت یکی از بهترین فیلم‌های مسابقه‌ای است
-                            که دیده‌ام - فقط کاش کمی طولانی‌تر بود.</p>
-                    </div>
-                    <div class="review__footer">
-                        <a href="" class="review__full-text">
-                            <svg>
-                                <use href="#icon-all-comment"></use>
-                            </svg>
-                            <span>نظرات</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="review-box">
-                    <div class="review-box__header">
-                        <div class="review-box__score">
-                            <span class="review-box__score-number">9</span>
-                            <span class="review-box__username">امیر</span>
-                        </div>
-                        <div class="review-box__date">
-                            <span class="review-box__date-day">4/</span>
-                            <span class="review-box__date-month">2/</span>
-                            <span class="review-box__date-year">1404</span>
-                        </div>
-                    </div>
-                    <div class="review-box__main">
-                        <p class="review-box__text">بالاخره فیلمی که جنبه فنی فرمول یک را به درستی نشان می‌دهد.
-                            سکانس‌های توقف در پیت استاپ نفسم را در سینه حبس کرد و فیلمبرداری خیره‌کننده بود. می‌شد سرعت،
-                            ریسک و وسواس پشت هر دور را حس کرد. به راحتی می‌توان گفت یکی از بهترین فیلم‌های مسابقه‌ای است
-                            که دیده‌ام - فقط کاش کمی طولانی‌تر بود.</p>
-                    </div>
-                    <div class="review__footer">
-                        <a href="" class="review__full-text">
-                            <svg>
-                                <use href="#icon-all-comment"></use>
-                            </svg>
-                            <span>نظرات</span>
-                        </a>
-                    </div>
-                </div> -->
-
 
                 <div class="reviews__show-more">
                     <div class="btn-show-more">
@@ -580,6 +496,7 @@
     </footer>
 
     <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/components/search-mobile.js"></script>
     <script type="module" src="../src/components/movieHero.js"></script>
     <script type="module" src="../src/components/movieDescription.js"></script>
     <script type="module" src="../src/components/ticketBtn.js"></script>
