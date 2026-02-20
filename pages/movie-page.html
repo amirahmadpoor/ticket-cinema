@@ -190,14 +190,16 @@
     </svg>
 
     <div id="scroll"></div>
+    <div class="overlay"></div>
+
 
     <header id="header">
         <div class="header-top container">
             <div class="header-top__right">
-                <a href="../index.html" class="header-top__logo">
-                    <img src="/assets/images/logo/Vector.svg" alt="" class="vector-logo">
-                    <img src="/assets/images/logo/Group.svg" alt="" class="text-logo">
-                </a>
+                <div class="header-top__logo">
+                    <img src="../assets/images/logo/Vector.svg" alt="" class="vector-logo">
+                    <img src="../assets/images/logo/Group.svg" alt="" class="text-logo">
+                </div>
 
                 <div class="header-top__links">
                     <a href="#" class="header-top__link">فیلم</a>
@@ -207,10 +209,19 @@
 
             <div class="header-top__left">
                 <div class="search">
-                    <svg>
+                    <svg class="icon-search">
                         <use href="#icon-search"></use>
                     </svg>
-                    <span></span>
+                    <div class="search__box">
+                        <div class="search__input">
+                            <svg>
+                                <use href="#icon-search"></use>
+                            </svg>
+                            <input type="text" class="search__text-input" autofocus placeholder="جستجو">
+                        </div>
+                        <div class="search__result">
+                        </div>
+                    </div>
                 </div>
 
                 <a href="#" class="login">
@@ -230,10 +241,10 @@
 
         <div class="header-mobile container">
             <div class="header-mobile__wrapper">
-                <a href="../index.html" class="logo-mobile">
-                    <img src="/assets/images/logo/Vector.svg" alt="" class="vector-logo">
-                    <img src="/assets/images/logo/Group.svg" alt="" class="text-logo">
-                </a>
+                <div class="logo-mobile">
+                    <img src="../assets/images/logo/Vector.svg" alt="" class="vector-logo">
+                    <img src="../assets/images/logo/Group.svg" alt="" class="text-logo">
+                </div>
             </div>
         </div>
     </header>
@@ -495,14 +506,7 @@
         </div>
     </footer>
 
-    <script type="module" src="../src/main.js"></script>
-    <script type="module" src="../src/components/search-mobile.js"></script>
-    <script type="module" src="../src/components/movieHero.js"></script>
-    <script type="module" src="../src/components/movieDescription.js"></script>
-    <script type="module" src="../src/components/ticketBtn.js"></script>
-    <script type="module" src="../src/components/actorCard.js"></script>
-    <script type="module" src="../src/components/movieScore.js"></script>
-    <script type="module" src="../src/components/review.js"></script>
+    <script type="module" src="../src/pageMovie.js"></script>
 </body>
 
 </html>

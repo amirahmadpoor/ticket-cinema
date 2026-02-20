@@ -1,4 +1,4 @@
-function setSelectTab() {
+export function setSelectTab() {
     const tabs = document.querySelector('.reviews-tabs__header');
     const tabsName = document.querySelectorAll('.name-tab');
 
@@ -20,5 +20,3 @@ function setSelectTab() {
     }
     handelActiveTab()
 }
-
-export { setSelectTab };

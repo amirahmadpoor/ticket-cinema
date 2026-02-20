@@ -1,4 +1,4 @@
-function setScrollScreen() {
+export function setScrollScreen() {
     const navScroll = document.querySelector('#scroll');
 
     function scroller() {
@@ -13,5 +13,3 @@ function setScrollScreen() {
     }
     window.addEventListener('scroll', scroller);
 }
-
-export {setScrollScreen};
