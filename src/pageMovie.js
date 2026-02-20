@@ -1,0 +1,27 @@
+import { getMovieIdFromUrl } from "./utils/getIDMovie.js";
+import { setMenuMobile } from "./components/menu-mobile.js";
+import { setFavorites } from "./components/add-favorites.js";
+import { initActorsSection } from "./components/actorCard.js";
+import { initMovieHero } from "./components/movieHero.js";
+import { initMovieDescription } from "./components/movieDescription.js";
+import { initMovieScore } from "./components/movieScore.js";
+import { initReview } from "./components/review.js";
+import { initSearch } from "./components/search.js";
+import { initSearchMobile } from "./components/search-mobile.js";
+import { setSelectTab } from "./components/tabs-page-movie.js";
+import { initBtnTicket } from "./components/ticketBtn.js";
+import { setScrollScreen } from "./components/scrollScreen.js";
+
+getMovieIdFromUrl();
+setMenuMobile();
+setFavorites();
+initActorsSection();
+initMovieHero();
+initMovieDescription();
+initMovieScore();
+initReview();
+initSearch();
+initSearchMobile();
+setSelectTab();
+initBtnTicket();
+setScrollScreen();

@@ -1,33 +1,5 @@
 import { cinemas } from "../../data/cinemaData.js";
 
-const cinemaWrapperTicket = document.querySelector('.cinemas')
-
-function resetAllCinemas() {
-    document.querySelectorAll('.cinema').forEach(cinema => {
-        cinema.querySelectorAll('.time').forEach(t => t.classList.remove('selected'));
-        cinema.querySelector('.submit-time')?.classList.remove('enable');
-    });
-}
-
-//checked selected one time ticket cinema
-function checkSelected(targetTimeEl) {
-    const cinemaEl = targetTimeEl.closest('.cinema');
-    if (!cinemaEl) return;
-
-    const times = cinemaEl.querySelectorAll('.time');
-    const continueBtn = cinemaEl.querySelector('.submit-time');
-
-    const isSelected = targetTimeEl.classList.contains('selected');
-
-    resetAllCinemas();
-
-    if (!isSelected) {
-        times.forEach(btn => btn.classList.remove('selected'));
-        targetTimeEl.classList.add('selected');
-        continueBtn.classList.add('enable');
-    }
-}
-
 //create cards ticket cinema
 function createTicketCard(cinema) {
     return `<div class="cinema" data-id-cinema="${cinema.id}">
@@ -56,13 +28,45 @@ function createTicketCard(cinema) {
         </form>
         </div>`
 }
-cinemas.forEach(cinema => {
-    cinemaWrapperTicket.insertAdjacentHTML('beforeend', createTicketCard(cinema))
-})
 
-cinemaWrapperTicket.addEventListener('click', (e) => {
-    const targetTimeEl = e.target.closest('.time');
-    if (!targetTimeEl) return;
+export function initTicketCinema() {
+    const cinemaWrapperTicket = document.querySelector('.cinemas')
 
-    checkSelected(targetTimeEl);
-})
+    function resetAllCinemas() {
+        document.querySelectorAll('.cinema').forEach(cinema => {
+            cinema.querySelectorAll('.time').forEach(t => t.classList.remove('selected'));
+            cinema.querySelector('.submit-time')?.classList.remove('enable');
+        });
+    }
+
+    //checked selected one time ticket cinema
+    function checkSelected(targetTimeEl) {
+        const cinemaEl = targetTimeEl.closest('.cinema');
+        if (!cinemaEl) return;
+
+        const times = cinemaEl.querySelectorAll('.time');
+        const continueBtn = cinemaEl.querySelector('.submit-time');
+
+        const isSelected = targetTimeEl.classList.contains('selected');
+
+        resetAllCinemas();
+
+        if (!isSelected) {
+            times.forEach(btn => btn.classList.remove('selected'));
+            targetTimeEl.classList.add('selected');
+            continueBtn.classList.add('enable');
+        }
+    }
+
+
+    cinemas.forEach(cinema => {
+        cinemaWrapperTicket.insertAdjacentHTML('beforeend', createTicketCard(cinema))
+    })
+
+    cinemaWrapperTicket.addEventListener('click', (e) => {
+        const targetTimeEl = e.target.closest('.time');
+        if (!targetTimeEl) return;
+
+        checkSelected(targetTimeEl);
+    })
+}

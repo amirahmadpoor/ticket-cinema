@@ -1,4 +1,4 @@
-function setMenuMobile() {
+export function setMenuMobile() {
     const btnsMenu = document.querySelectorAll('.menu-mobile__link');
     btnsMenu.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -11,4 +11,3 @@ function setMenuMobile() {
         })
     })
 }
-export { setMenuMobile };

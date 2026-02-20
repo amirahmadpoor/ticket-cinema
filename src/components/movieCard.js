@@ -1,5 +1,5 @@
 import { data } from '../../data/moviesData.js';
-function handelMovieCard() {
+export function handelMovieCard() {
     const boxMovies = document.querySelector('.now-in-cinema__boxes');
     const topMovies = document.querySelector('.top-movie-week__boxes');
     let hours = 0;
@@ -50,5 +50,3 @@ function handelMovieCard() {
     }
     createMovieCardTop();
 }
-
-export { handelMovieCard };

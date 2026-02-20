@@ -1,26 +1,7 @@
 import { data } from "../../data/moviesData.js";
+import { getMovieIdFromUrl } from "../utils/getIDMovie.js";
 
-const btnSendComment = document.querySelector('.comment__btn--send');
-const inputComment = document.querySelector('#input-comment');
-const reviewWrapper = document.querySelector('.review__wrapper');
-// const showMoreBtn = document.querySelector('.reviews__show-more');
-
-const getUrlId = new URLSearchParams(location.search);
-const movieId = getUrlId.get('id-movie');
-
-// window.addEventListener('load', () => {
-//     handelGenerateReview();
-// })
-
-function resetReview() {
-    reviewWrapper.innerHTML = '';
-}
-
-function getComment(data) {
-    return data.find(movie => movie.id === Number(movieId));
-}
-
-function generateReview(movie) {
+function generateReview(reviewWrapper,movie) {
     movie.comments.forEach(comment => {
         reviewWrapper.insertAdjacentHTML('beforeend',
             `<div class="review-box">
@@ -50,34 +31,58 @@ function generateReview(movie) {
     })
 }
 
-function handelGenerateReview() {
-    resetReview();
-    const movie = getComment(data);
-    generateReview(movie);
-}
+export function initReview() {
+    const btnSendComment = document.querySelector('.comment__btn--send');
+    const inputComment = document.querySelector('#input-comment');
+    const reviewWrapper = document.querySelector('.review__wrapper');
+    // const showMoreBtn = document.querySelector('.reviews__show-more');
 
-function checkLength(comment) {
-    if (comment.length > 0) {
-        handelReviews(comment);
+    const movieId = getMovieIdFromUrl();
+
+    // window.addEventListener('load', () => {
+    //     handelGenerateReview();
+    // })
+
+    function resetReview() {
+        reviewWrapper.innerHTML = '';
     }
+
+    function getComment(data) {
+        return data.find(movie => movie.id === Number(movieId));
+    }
+
+
+    function handelGenerateReview() {
+        resetReview();
+        const movie = getComment(data);
+        generateReview(reviewWrapper,movie);
+    }
+
+    function checkLength(comment) {
+        if (comment.length > 0) {
+            handelReviews(comment);
+        }
+    }
+
+    function addComments(comment) {
+        const movie = getComment(data);
+        console.log( movie);
+        
+        movie.comments.push(comment);
+    }
+
+    function handelReviews(comment) {
+        addComments(comment);
+        handelGenerateReview();
+    }
+
+    // function toggleShowMore() {
+    //     showMoreBtn.classList.toggle('active');
+    // }
+
+    btnSendComment.addEventListener('click', () => {
+        const comment = inputComment.value.trim();
+        checkLength(comment);
+        inputComment.value = '';
+    })
 }
-
-function addComments(comment) {
-    const movie = data.find(movie => movie.id === Number(movieId));
-    movie.comments.push(comment);
-}
-
-function handelReviews(comment) {
-    addComments(comment);
-    handelGenerateReview();
-}
-
-// function toggleShowMore() {
-//     showMoreBtn.classList.toggle('active');
-// }
-
-btnSendComment.addEventListener('click', () => {
-    const comment = inputComment.value.trim();
-    checkLength(comment);
-    inputComment.value = '';
-})

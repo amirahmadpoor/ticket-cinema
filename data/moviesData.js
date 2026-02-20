@@ -145,6 +145,8 @@ export const data = [
             "averageScore": 7.9,
             "total": 365
         },
+
+        "comments": [],
         "top": true,
         "calendar": ["شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنجشنبه", "جمعه"]
     }

@@ -1,40 +1,42 @@
-function setOpenAnswerFAQ() {
-    const questionBox = document.querySelectorAll('.question__box');
-    const questionAnswer = document.querySelectorAll('.question__answer');
-    const iconPlus = document.querySelectorAll('.icon-plus');
-    const questionAll = document.querySelectorAll('.faq__questions');
+export function setOpenAnswerFAQ() {
+    const faq = document.querySelector('.faq__questions');
 
-    function resetQuestions() {
-        questionAnswer.forEach((answerAll) => {
-            answerAll.classList.remove('show');
-        })
-        iconPlus.forEach((iconAll) => {
-            iconAll.style.transform = 'rotate(0deg)';
-        })
-    }
-
-    function closeOtherQuestions(answer, plus) {
+    function closeAnswer(answer, icon) {
         answer.classList.remove('show');
-        plus.style.transform = 'rotate(0deg)';
+        icon.style.transform = 'rotate(0deg)';
     }
 
-    function openAnswer(answer, plus) {
+    function openAnswer(answer, icon) {
         answer.classList.add('show');
-        plus.style.transform = 'rotate(140deg)';
+        icon.style.transform = 'rotate(140deg)';
     }
 
-    questionBox.forEach((question, index) => {
-        question.addEventListener('click', () => {
-            let answer = questionAnswer[index]
-            let plus = iconPlus[index];
-            if (!answer.classList.contains('show')) {
-                resetQuestions();
-                openAnswer(answer, plus);
-            } else {
-                closeOtherQuestions(answer, plus);
-            }
-        });
-    })
-}
+    function closeAllAnswer() {
+        const allQuestions = faq.querySelectorAll('.question');
+        allQuestions.forEach((item) => {
+            const answer = item.querySelector('.question__answer');
+            const icon = item.querySelector('.icon-plus');
 
-export { setOpenAnswerFAQ };
+            closeAnswer(answer, icon);
+        });
+    }
+
+    function toggleAccordion() {
+        const currentAnswer = question.querySelector('.question__answer');
+        const currentIcon = question.querySelector('.icon-plus');
+        const isOpen = currentAnswer.classList.contains('show');
+
+        if (isOpen) {
+            closeAnswer(currentAnswer, currentIcon);
+        } else {
+            closeAllAnswer();
+            openAnswer(currentAnswer, currentIcon);
+        }
+    }
+
+    faq.addEventListener('click', (e) => {
+        const question = e.target.closest('.question');
+        if (!question) return;
+        toggleAccordion();
+    });
+}
