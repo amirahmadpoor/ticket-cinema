@@ -22,7 +22,7 @@ function createTicketCard(cinema) {
         </div>
         <button type="button" class="submit-time" data-id-cinema="${cinema.id}">
         <span>ادامه</span>
-        <svg><use href="#arrow-left"></use></svg>
+        <svg><use href="#arrow-left1"></use></svg>
         </button>
         </div>
         </form>

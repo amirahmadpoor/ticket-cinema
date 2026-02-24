@@ -21,7 +21,7 @@ export function setOpenAnswerFAQ() {
         });
     }
 
-    function toggleAccordion() {
+    function toggleAccordion(question) {
         const currentAnswer = question.querySelector('.question__answer');
         const currentIcon = question.querySelector('.icon-plus');
         const isOpen = currentAnswer.classList.contains('show');
@@ -37,6 +37,6 @@ export function setOpenAnswerFAQ() {
     faq.addEventListener('click', (e) => {
         const question = e.target.closest('.question');
         if (!question) return;
-        toggleAccordion();
+        toggleAccordion(question);
     });
 }

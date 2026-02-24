@@ -9,7 +9,7 @@ import { initStatistics } from "./components/statistics.js";
 setMenuMobile();
 setScrollScreen();
 setOpenAnswerFAQ();
-handelMovieCard();
 initSearch();
 initSearchMobile();
+handelMovieCard();
 initStatistics();
