@@ -1,6 +1,6 @@
 import { data } from '../../data/moviesData.js';
 
-function showResult(searchResult,result) {
+function showResult(searchResult, result) {
     result.forEach(res => {
         searchResult.insertAdjacentHTML('beforeend',
             `<a href="../../pages/movie-page.html?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
@@ -14,6 +14,10 @@ export function initSearch() {
     const overlay = document.querySelector('.overlay');
     const inputSearch = document.querySelector('.search__text-input');
     const searchResult = document.querySelector('.search__result');
+    if (!inputSearch) {
+        console.warn('search input not found');
+        return;
+    }
 
     function resetResult() {
         searchResult.innerHTML = '';
@@ -45,7 +49,7 @@ export function initSearch() {
         return title.includes(token);
     }
 
-    function searching(titles, input, strategy = includesStrategy) {
+    function searching(titles, input, strategy) {
         const tokens = input.split(' ').filter(Boolean);
         return titles.filter(t =>
             tokens.some(token => strategy(t.title, token))
@@ -54,9 +58,9 @@ export function initSearch() {
 
     function handelSearch(input) {
         const titles = getMovieTitle(data);
-        const result = searching(titles, input);
+        const result = searching(titles, input, includesStrategy);
         if (result.length) {
-            showResult(searchResult,result);
+            showResult(searchResult, result);
         }
     }
 

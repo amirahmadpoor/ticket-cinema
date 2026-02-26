@@ -10,18 +10,21 @@
     <link rel="stylesheet" href="/styles/base/style-default.css">
     <link rel="stylesheet" href="/styles/components/header.css">
     <link rel="stylesheet" href="/styles/components/navScroll.css">
-    <link rel="stylesheet" href="/styles/pages/movie-page.css">
+    <link rel="stylesheet" href="/styles/pages/set-selection.css">
     <link rel="stylesheet" href="/styles/components/footer.css">
     <link rel="shortcut icon" href="/assets/images/logo/Vector.svg" type="svg">
     <script src="../src/icons.js"></script>
-    <title>Ticketor | صفحه فیلم</title>
+    <title>Document</title>
 </head>
 
 <body>
     <div id="scroll"></div>
     <div class="overlay"></div>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
 
-
+    <!-- <div id="header-placeholder"></div> -->
     <header id="header">
         <div class="header-top container">
             <div class="header-top__right">
@@ -71,8 +74,8 @@
         <div class="header-mobile container">
             <div class="header-mobile__wrapper">
                 <div class="logo-mobile">
-                    <img src="../assets/images/logo/Vector.svg" alt="" class="vector-logo">
-                    <img src="../assets/images/logo/Group.svg" alt="" class="text-logo">
+                    <img src="assets/images/logo/Vector.svg" alt="" class="vector-logo">
+                    <img src="assets/images/logo/Group.svg" alt="" class="text-logo">
                 </div>
             </div>
         </div>
@@ -141,168 +144,101 @@
         </div>
     </div>
 
-    <section class="hero__movie">
-        <div class="hero__movie-wrapper container">
-            <h2 class="hero__movie-title">F1 The Movie</h2>
-            <div class="hero__movie-media">
-                <div class="image-wrapper">
-                    <img src="" alt="" class="hero__movie-image">
-                </div>
-                <div class="teaser-wrapper">
-                    <video poster="" controls class="hero__movie-video"></video>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="movie-info container">
-
-        <div class="movie-info__wrapper">
-
-            <div class="summery">
-                <h3 class="summery__title">خلاصه</h3>
-                <p class="summery__text"></p>
-            </div>
-            <div class="director-writers">
-                <div class="director">
-                    <h3 class="director__title">کارگردان</h3>
-                    <span class="director__name"></span>
-                </div>
-                <div class="writers">
-                    <h3 class="writers__title">نویسنده</h3>
-                    <span class="writers__name"></span>
+    <div class="back-image"></div>
+    <div class="booking container">
+        <section class="info-ticket">
+            <div class="info-movie">
+                <h2 class="info-movie__title">فرمول یک</h2>
+                <div class="info-movie__time-score">5</div>
+                <div class="info-movie__image">
+                    <img src="/assets/images/movies/f1.webp" alt="">
                 </div>
             </div>
 
-        </div>
-        <div class="getTicketBtn-addFavBtn">
-            <a href="#" class="get-ticket">
-                <svg>
-                    <use href="#icon-ticket"></use>
-                </svg>
-                <span>رزرو بلیط</span>
-            </a>
-            <div class="add-favorites">
-                <div class="circle"></div>
-                <svg>
-                    <use href="#icon-heart-active"></use>
-                </svg>
-                <span>علاقه‌مندی</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="cast container">
-        <div class="section-header">
-            <h2 class="cast__title">بازیگران</h2>
-            <a href="" class="cast__all">
-                <span>همه</span>
-                <svg>
-                    <use href="#arrow-left"></use>
-                </svg>
-            </a>
-        </div>
-        <div class="actors">
-        </div>
-    </section>
-
-    <section class="reviews container">
-        <div class="section-header reviews__header">
-            <h2 class="reviews__title">نظرات کاربران</h2>
-            <a href="" class="reviews__all">
-                <span>همه</span>
-                <svg>
-                    <use href="#arrow-left"></use>
-                </svg>
-            </a>
-        </div>
-
-        <div class="reviews__main">
-            <div class="reviews__scores">
-                <div class="reviews__scores-value"></div>
-                <div class="reviews__scores-label">
-                    <span class="reviews__scores-title">امتیاز</span>
-                    <span class="reviews__scores-favorable">خوب</span>
+            <div class="info-cinema">
+                <div class="info-ticket__cinema">
+                    <span class="cinema-name">آزادی</span>
+                    <a href="#" class="cinema-address">www.google.com</a>
                 </div>
-            </div>
-            <div class="reviews__breakdown">
-                <div class="reviews__breakdown-item">
-                    <span class="reviews__breakdown-label">مثبت</span>
-                    <div class="reviews__progress">
-                        <div class="reviews__progress-positive"></div>
+                <div class="info-ticket__days">
+                    <div class="btn-after"></div>
+                    <div class="days">
+                        <span class="day active">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
+                        <span class="day">09</span>
                     </div>
+                    <div class="btn-befor"></div>
                 </div>
-                <div class="reviews__breakdown-item">
-                    <span class="reviews__breakdown-label">میانگین</span>
-                    <div class="reviews__progress">
-                        <div class="reviews__progress-average"></div>
-                    </div>
-                </div>
-                <div class="reviews__breakdown-item">
-                    <span class="reviews__breakdown-label">منفی</span>
-                    <div class="reviews__progress">
-                        <div class="reviews__progress-negative"></div>
-                    </div>
+                <div class="info-ticket__times">
+                    <span class="time active">10:30</span>
+                    <span class="time">10:30</span>
+                    <span class="time disable">10:30</span>
+                    <span class="time">10:30</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="reviews-tabs container">
-        <div class="reviews-tabs__header">
-            <span class="name-tab active">همه نظرات</span>
-            <span class="name-tab">نظرات مثبت</span>
-            <span class="name-tab">میانگین نظرات</span>
-            <span class="name-tab">نظرات منفی</span>
-        </div>
-        <div class="tabs">
-            <div class="review__wrapper">
+        <section class="info-selection">
 
-                <div class="reviews__show-more">
-                    <div class="btn-show-more">
-                        <svg class="icon-more-comment">
-                            <use href="#icon-more-comment"></use>
-                        </svg>
-                        <div class="btn-show-more__text">
-                            <span class="number-more">10</span>
-                            <span>نظر دیگر</span>
+            <div class="info-selection__booking-step">
+                <div class="steps">
+                    <div class="step seat">
+                        <div class="step__wrapper">
+                            <label>صندلی</label>
+                            <span class="circle active"></span>
+                        </div>
+                        <span class="line active"></span>
+                    </div>
+                    <div class="step payment">
+                        <div class="step__wrapper">
+                            <label>پرداخت</label>
+                            <span class="circle"></span>
+                        </div>
+                        <span class="line"></span>
+                    </div>
+                    <div class="step ticket">
+                        <div class="step__wrapper">
+                            <label>بلیط</label>
+                            <span class="circle"></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="comment container">
-        <h3 class="comment__title">ارسال نظر</h3>
-        <div class="comment__input">
-            <div class="user">
-                <div class="user__profile">
-
+            <div class="info-selection__stage">
+                <div class="stage">
+                    <div class="stage__screen">
+                        <span>صفحه نمایش</span>
+                    </div>
+                    <div class="stage__seats"></div>
+                    <div class="stage__seats-guide"></div>
                 </div>
-                <span class="username">amir</span>
+                <div class="selected-seats"></div>
             </div>
-            <textarea name="comment" id="input-comment" placeholder="نظر خود را بنویسید..."></textarea>
-            <button type="button" class="comment__btn--send">ارسال نظر</button>
-        </div>
-    </section>
+
+        </section>
+    </div>
 
     <footer class="footer">
         <div class="footer__wrapper">
             <div class="footer__description">
                 <div class="footer__logo">
-                    <img src="/assets/images/logo/Vector.svg" alt="" class="vector-logo">
-                    <img src="/assets/images/logo/Group.svg" alt="" class="text-logo">
+                    <img src="assets/images/logo/Vector.svg" alt="" class="vector-logo">
+                    <img src="assets/images/logo/Group.svg" alt="" class="text-logo">
                 </div>
                 <p class="footer__text">
                     لورم ایپسوم به سادگی متنی ساختگی در صنعت چاپ و حروفچینی است. لورم ایپسوم از دهه ۱۵۰۰ میلادی، متن
                     ساختگی استاندارد این صنعت بوده است، زمانی که یک
                 </p>
                 <div class="footer__social">
-                    <img src="/assets/images/social/instagram.svg" alt="" class="social__image">
-                    <img src="/assets/images/social/linkedin.svg" alt="" class="social__image">
-                    <img src="/assets/images/social/x-twitter.svg" alt="" class="social__image">
+                    <img src="assets/images/social/instagram.svg" alt="" class="social__image">
+                    <img src="assets/images/social/linkedin.svg" alt="" class="social__image">
+                    <img src="assets/images/social/x-twitter.svg" alt="" class="social__image">
                 </div>
             </div>
             <div class="footer__links">
@@ -334,8 +270,6 @@
             </div>
         </div>
     </footer>
-
-    <script type="module" src="../src/pageMovie.js"></script>
 </body>
 
 </html>
