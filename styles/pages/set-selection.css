@@ -125,13 +125,13 @@
 
 .info-ticket__times {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(4.9rem,6.9rem));
+    grid-template-columns: repeat(auto-fit, minmax(4.9rem, 6.9rem));
     gap: 8px;
     max-width: 29.6rem;
     width: 100%;
 }
 
-.time{
+.time {
     display: flex;
     font-size: 1.2rem;
     border: 1px solid var(--color-borderBox);
@@ -141,13 +141,98 @@
     justify-content: center;
 }
 
-.time.active{
+.time.active {
     border: 1px solid #fff;
 }
 
-.time.disable{
+.time.disable {
     border: 1px solid var(--color-disable);
     background-color: var(--color-disable);
     color: var(--text-colorBox);
     cursor: not-allowed;
+}
+
+.info-selection__stage {
+    margin-top: 10.5rem;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stage__seats {
+    max-width: 43.2rem;
+    width: 100%;
+    margin-top: 6rem;
+}
+
+.stage__screen svg {
+    width: 50rem;
+    height: 6.9rem;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    column-gap: 8px;
+    row-gap: 1.6rem;
+}
+
+.seats span {
+    height: 1.6rem;
+    background-color: #fff;
+}
+
+.seats-count {
+    margin-top: 3.2rem;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-chair {
+    width: 2.0rem;
+    height: 1.6rem;
+}
+
+.seats-count {
+    color: var(--positive);
+}
+
+.stage__seats-guide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-top: 5.1rem;
+}
+
+.guide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.guide svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.available {
+    color: #fff;
+}
+
+.reserved {
+    color: var(--color-reserved);
+}
+
+.selected {
+    color: var(--color-yellow);
 }
