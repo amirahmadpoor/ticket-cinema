@@ -2,7 +2,18 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
+    <script>
+        (() => {
+            const segments = window.location.pathname.split('/').filter(Boolean);
+            const isGitHubPages = window.location.hostname.endsWith('github.io');
+            const repoBase = isGitHubPages && segments.length ? `/${segments[0]}/` : '/';
+            const inPagesDir = segments.includes('pages');
+            const baseHref = inPagesDir ? `${repoBase}pages/` : repoBase;
+            const base = document.createElement('base');
+            base.href = baseHref;
+            document.head.prepend(base);
+        })();
+    </script>`r`n    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/base/reset.css">
     <link rel="stylesheet" href="../styles/base/font.css">
@@ -42,3 +53,5 @@
 </body>
 
 </html>
+
+
