@@ -4,7 +4,7 @@ import { getMovieIdFromUrl } from "../utils/getIDMovie.js";
 
 function createActorCard(actor) {
     return `<a href="#" class="actor">
-    <img src="/assets/images/cast/${actor.imageProfile}" alt="" class="actor__image">
+    <img src="../assets/images/cast/${actor.imageProfile}" alt="" class="actor__image">
     <span class="actor__name">${actor.name}</span>
     <span class="actor__role">${actor.role}</span>
     </a>`

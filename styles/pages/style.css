@@ -10,7 +10,7 @@
 
 .wrapper-content {
     height: 100%;
-    background-image: url(/assets/images/back.webp);
+    background-image: url(../../assets/images/back.webp);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;

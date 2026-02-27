@@ -3,7 +3,7 @@ import { data } from '../../data/moviesData.js';
 function showResult(result) {
     result.forEach(res => {
         searchResultMobile.insertAdjacentHTML('beforeend',
-            `<a href="../../pages/movie-page.html?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
+            `<a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
         )
     })
 }

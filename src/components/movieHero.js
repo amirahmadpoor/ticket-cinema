@@ -12,8 +12,9 @@ export function initMovieHero() {
     const heroMovieTitle = document.querySelector('.hero__movie-title');
     const heroMovieImage = document.querySelector('.hero__movie-image');
     const heroMovieVideo = document.querySelector('.hero__movie-video');
-    heroMovie.style.backgroundImage = `url(/assets/images/cover/${result.imageCover})`;
+    heroMovie.style.backgroundImage = `url(../assets/images/cover/${result.imageCover})`;
     heroMovieTitle.innerText = result.title;
-    heroMovieImage.setAttribute('src', `/assets/images/movies/${result.name}.webp`);
-    heroMovieVideo.setAttribute('poster', `/assets/images/poster/${result.imagePoster}`);
+    heroMovieImage.setAttribute('src', `../assets/images/movies/${result.name}.webp`);
+    heroMovieVideo.setAttribute('poster', `../assets/images/poster/${result.imagePoster}`);
 }
+
