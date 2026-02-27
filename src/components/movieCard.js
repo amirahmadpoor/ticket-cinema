@@ -13,7 +13,7 @@ export function handelMovieCard() {
     function createMovieCard(movie) {
         return `<div class="box">
         <div class="box__image">
-        <img src="../../assets/images/movies/${movie.name}.webp" alt="" class="image__movie">
+        <img src="assets/images/movies/${movie.name}.webp" alt="" class="image__movie">
         </div>
         <div class="box__description">
         <div class="box__title-score">
