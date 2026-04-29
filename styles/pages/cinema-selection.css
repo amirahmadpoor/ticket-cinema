@@ -137,7 +137,6 @@ a {
 }
 
 .filter__option,
-.filter__days,
 .filter__calendar,
 .filter__day {
     display: flex;
@@ -148,47 +147,12 @@ a {
 }
 
 .filter__option,
-.filter__calendar,
-.filter__day {
+.filter__calendar{
     flex-direction: column;
     max-width: 11.1rem;
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    background-color: var(--bg-btn-filter);
-}
-
-.filter__days {
-    justify-content: start;
-    overflow: auto;
-    scroll-behavior: smooth;
-    padding: 0 0.8rem;
-}
-
-.filter__days::-webkit-scrollbar {
-    display: none;
-}
-
-.filter__day {
-    color: var(--text-colorBox);
-    min-width: 9.9rem;
-    width: 100%;
-}
-
-.filter__day.select {
-    color: #fff;
-    border: 1px solid #fff;
-}
-
-.after-day,
-.before-day {
-    max-width: 3.7rem;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--bg-btn-filter);
 }
 

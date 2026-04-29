@@ -1,29 +1,47 @@
-export const cinemas = [
-    {
-        id: 1,
-        name: "سینما آزادی",
-        price: 120000,
-        location: "تهران، خیابان آزادی",
-        type: "سه‌بعدی",
-        playTimes: ["16:00", "19:00", "22:00"],
-        options:['زیر نویس','رزرو صندلی']
-    },
-    {
-        id: 2,
-        name: "پردیس کوروش",
-        price: 150000,
-        location: "تهران، بلوار کوروش",
-        type: "معمولی",
-        playTimes: ["15:30", "18:30", "21:30"],
-        options:['زیر نویس','رزرو صندلی']
-    },
-    {
-        id: 3,
-        name: "سینما گلریز",
-        price: 100000,
-        location: "تهران، میدان ولیعصر",
-        type: "دوبعدی",
-        playTimes: ["14:00", "17:00", "20:00"],
-        options:['زیر نویس','رزرو صندلی']
+const generateSeats = (rows = 10, cols = 12) => {
+  const seats = [];
+  for (let row = 1; row <= rows; row++) {
+    for (let column = 1; column <= cols; column++) {
+      seats.push({
+        id: { row, column },
+        row: row,
+        number: column,
+        booked: false
+      });
     }
+  }
+  return seats;
+};
+
+export const cinemas = [
+  {
+    id: 1,
+    name: "سینما آزادی",
+    price: 120000,
+    location: "تهران، خیابان آزادی",
+    type: "سه‌بعدی",
+    playTimes: ["16:00", "19:00", "22:00"],
+    options: ["زیر نویس", "رزرو صندلی"],
+    seats: generateSeats()
+  },
+  {
+    id: 2,
+    name: "پردیس کوروش",
+    price: 150000,
+    location: "تهران، بلوار کوروش",
+    type: "معمولی",
+    playTimes: ["15:30", "18:30", "21:30"],
+    options: ["زیر نویس", "رزرو صندلی"],
+    seats: generateSeats()
+  },
+  {
+    id: 3,
+    name: "سینما گلریز",
+    price: 100000,
+    location: "تهران، میدان ولیعصر",
+    type: "دوبعدی",
+    playTimes: ["14:00", "17:00", "20:00"],
+    options: ["زیر نویس", "رزرو صندلی"],
+    seats: generateSeats()
+  }
 ];

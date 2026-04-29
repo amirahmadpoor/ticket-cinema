@@ -6,8 +6,12 @@
 }
 
 .booking {
+    margin-top: -10rem;
+}
+
+.info-ticket_selection {
     width: 100%;
-    margin-top: -16.3rem;
+    margin-top: 10.4rem;
     display: flex;
     gap: 12.7rem;
 }
@@ -49,15 +53,27 @@
     gap: 1.4rem;
 }
 
+.info-selection__booking-step {
+    display: flex;
+    justify-content: center;
+}
+
 .steps {
+    width: 90%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
 }
 
 .step {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.step:not(:last-child) {
+    width: 100%;
 }
 
 .step__wrapper {
@@ -86,7 +102,8 @@
 
 
 .line {
-    width: 25.3rem;
+    /* width: 25.3rem; */
+    width: 100%;
     height: 2px;
     background-color: var(--bg-disable);
 }
@@ -152,38 +169,58 @@
     cursor: not-allowed;
 }
 
+.info-selection {
+    width: 100%;
+}
+
 .info-selection__stage {
+    display: flex;
+    gap: 3.2rem;
     margin-top: 10.5rem;
 }
 
 .stage {
+    max-width: 53.2rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .stage__seats {
-    max-width: 43.2rem;
-    width: 100%;
     margin-top: 6rem;
 }
 
+.stage__screen {
+    width: 100%;
+}
+
 .stage__screen svg {
-    width: 50rem;
+    width: 100%;
     height: 6.9rem;
 }
 
 .seats {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    column-gap: 8px;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 6px;
     row-gap: 1.6rem;
 }
 
-.seats span {
-    height: 1.6rem;
-    background-color: #fff;
+.chair {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    transition: 260ms;
+    cursor: pointer;
 }
+
+.chair.active {
+    color: var(--color-yellow);
+}
+
 
 .seats-count {
     margin-top: 3.2rem;
@@ -235,4 +272,95 @@
 
 .selected {
     color: var(--color-yellow);
+}
+
+.state-seats {
+    max-width: 24.5rem;
+    width: 100%;
+    margin-top: 10.5rem;
+}
+
+.state-seats__title {
+    font-size: 2.4rem;
+}
+
+.state-seats__counter-ticket {
+    height: 4.8rem;
+    margin-top: 2.4rem;
+    border: 1px solid var(--color-disable);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    padding: 1.2rem;
+}
+
+.count-seats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.state-seats__total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.state-seats__buttons {
+    width: 100%;
+    margin-top: 4.8rem;
+}
+
+.state-seats__buttons>* {
+    width: 100%;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.state-seats__add-cart {
+    background-color: var(--color-yellow);
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.state-seats__btn-cancel {
+    border: 1px solid var(--color-yellow);
+    color: var(--color-yellow);
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px) {
+    .info-selection__stage{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:978px) {
+    .info-ticket {
+        max-width: 25.6rem;
+    }
+
+    .stage {
+        max-width: 36rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .info-ticket_selection {
+        gap: 3.4rem;
+    }
+}
+
+@media screen and (max-width:574px) {
+    .info-ticket_selection {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
 }

@@ -153,102 +153,6 @@
     margin-top: 3.6rem;
 }
 
-.box {
-    max-width: 22.5rem;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    background-color: var(--color-black);
-    border-radius: 0.4rem;
-    border: 1px solid var(--color-borderBox);
-    overflow: hidden;
-}
-
-.now-in-cinema__boxes::-webkit-scrollbar {
-    display: none;
-}
-
-.box__image {
-    width: 100%;
-    height: 31.636rem;
-    background-color: var(--color-black);
-}
-
-.image__movie {
-    width: 100%;
-    height: 100%;
-}
-
-.box__description {
-    padding: 10px 12px;
-    width: 100%;
-    height: 8.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.box__title-score {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.box__title {
-    font-size: 1.6rem;
-    font-weight: var(--fontW6);
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 70%;
-
-}
-
-.box__score,
-.box__genre,
-.box__movie-time {
-    font-size: 1.2rem;
-}
-
-.box__genre,
-.box__movie-time {
-    color: var(--text-colorBox);
-}
-
-.box__score {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-}
-
-.icon-star {
-    width: 1.4rem;
-    height: 1.3rem;
-}
-
-.score__number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.box__category {}
-
-.box__movie-time {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.icon-clock {
-    width: 1.4rem;
-    height: 1.4rem;
-    color: #fff;
-}
-
 .hero__wrapper {
     width: 100%;
     /* height: 50.3rem; */
@@ -406,6 +310,10 @@
     padding: 2.0rem 2.4rem;
 }
 
+.icon-plus.open {
+    transform: rotate(140deg);
+}
+
 .cta {
     width: 100%;
     display: flex;
@@ -517,7 +425,7 @@
     opacity: 0;
 }
 
-.loading.hide{
+.loading.hide {
     visibility: hidden;
     opacity: 0;
 }
@@ -530,6 +438,172 @@
     animation:
         l20-1 0.8s infinite linear alternate,
         l20-2 1.6s infinite linear;
+}
+
+.btn-modal {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    background-color: var(--color-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 5rem;
+    bottom: 5rem;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.btn-modal svg {
+    width: 3rem;
+    height: 3rem;
+    color: var(--color-black);
+}
+
+
+.modal {
+    max-width: 48rem;
+    width: 100%;
+    padding: 2.4rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borderBox);
+    background-color: var(--bg-body);
+    z-index: 9999;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    transition: 260ms;
+    margin: 0 auto;
+}
+
+.modal.open {
+    top: 30%;
+}
+
+.modal__title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.0rem;
+    font-weight: var(--fontW6);
+}
+
+.form-consultation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 2.4rem;
+}
+
+.form-consultation input,
+.form-consultation button {
+    font-family: inherit;
+    border-radius: 4px;
+    border: 1px solid var(--color-borderBox);
+    height: 4.8rem;
+    font-size: 1.6rem;
+}
+
+.wrapper-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.input {
+    background-color: transparent;
+    color: #fff;
+}
+
+.input::placeholder {
+    color: var(--text-colorBox);
+}
+
+.input-massage {
+    font-size: 1.4rem;
+    height: 1.6rem;
+    color: red;
+}
+
+.input,
+.input::placeholder {
+    direction: rtl;
+    padding: 0 0.8rem;
+}
+
+.form-consultation__submit {
+    background-color: var(--color-yellow);
+    cursor: pointer;
+}
+
+.form-consultation__submit.disable {
+    background-color: var(--text-colorBox);
+    cursor: not-allowed;
+}
+
+.form-consultation__again{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--positive);
+    text-decoration: underline;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.form-consultation__again.active{
+    visibility: visible;
+}
+
+.overlay-modal {
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-overlay);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9998;
+}
+
+.overlay-modal.active {
+    opacity: var(--opacity-overlay);
+    visibility: visible;
+}
+
+.toast-notification {
+    max-width: 30rem;
+    width: 100%;
+    height: 10rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-borderBox);
+    background-color: var(--bg-body);
+    color: #fff;
+    position: fixed;
+    top: 5rem;
+    right: -30rem;
+    z-index: 9999;
+    transition: 260ms;
+}
+
+.toast-notification.show {
+    right: 5rem;
+}
+
+.toast-notification__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    font-size: 1.4rem;
+}
+
+.toast-notification__timer {
+    width: 100%;
+    height: 5px;
+    background-color: var(--color-yellow);
+    position: absolute;
+    bottom: 0;
 }
 
 @keyframes l20-1 {
@@ -600,22 +674,6 @@
 @media screen and (max-width:768px) {
     html {
         font-size: 8px;
-    }
-
-    .footer__wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer__description,
-    .footer__links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer__links {
-        margin-top: 3.2rem;
     }
 
     .hero__wrapper {

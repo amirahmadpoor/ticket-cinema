@@ -20,7 +20,7 @@ function createTicketCard(cinema) {
         <div class="cinema__time">
         ${cinema.playTimes.map(time => `<span class="time">${time}</span>`).join('')}
         </div>
-        <a href="../pages/set-selection.html" class="submit-time" data-id-cinema="${cinema.id}">
+        <a href="../pages/set-selection.html?id-cinema=${cinema.id}" class="submit-time" data-id-cinema="${cinema.id}">
         <span>ادامه</span>
         <svg><use href="#arrow-left1"></use></svg>
         </a>

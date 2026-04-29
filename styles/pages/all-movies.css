@@ -1,0 +1,14 @@
+body{
+    background-color: rgba(0,0,0,0.9);
+}
+
+.all-movies{
+    margin-top: 15rem;
+}
+
+.now-in-cinema__boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 22.5rem)) !important;
+    justify-content: center;
+    gap: 0.8rem;
+}

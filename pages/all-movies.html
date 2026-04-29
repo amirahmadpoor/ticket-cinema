@@ -2,20 +2,20 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/base/reset.css">
-    <link rel="stylesheet" href="../styles/base/palet-color.css">
-    <link rel="stylesheet" href="../styles/base/font.css">
-    <link rel="stylesheet" href="../styles/base/style-default.css">
-    <link rel="stylesheet" href="../styles/components/header.css">
-    <link rel="stylesheet" href="../styles/components/navScroll.css">
-    <link rel="stylesheet" href="../styles/pages/cinema-selection.css">
-    <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="shortcut icon" href="../assets/images/logo/Vector.svg" type="svg">
-    <script src="../src/icons.js"></script>
-    <title>رزرو بلیط | تیکتور</title>
+    <link rel="stylesheet" href="/styles/base/reset.css">
+    <link rel="stylesheet" href="/styles/base/palet-color.css">
+    <link rel="stylesheet" href="/styles/base/font.css">
+    <link rel="stylesheet" href="/styles/base/style-default.css">
+    <link rel="stylesheet" href="/styles/components/header.css">
+    <link rel="stylesheet" href="/styles/components/navScroll.css">
+    <link rel="stylesheet" href="/styles/pages/all-movies.css">
+    <link rel="stylesheet" href="/styles/components/movieCard.css">
+    <link rel="stylesheet" href="/styles/components/footer.css">
+    <link rel="shortcut icon" href="/assets/images/logo/Vector.svg" type="svg">
+    <script src="/src/icons.js"></script>
+    <title>همه فیلم ها</title>
 </head>
 
 <body>
@@ -131,74 +131,8 @@
         </div>
     </div>
 
-    <section class="info-movie">
-        <div class="info-movie__wrapper container">
-            <div class="info-movie__poster">
-                <img src="" alt="" class="image-poster">
-            </div>
-            <div class="info-movie__texts">
-                <h2 class="movie-title"></h2>
-                <div class="movie-time_score">
-                    <span class="movie-time"></span>
-                    <div class="movie-score">
-                        <span class="movie-score__number"></span>
-                        <svg>
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="movie-desc">
-                    <p class="movie-desc__text"></p>
-                    <span class="movie-desc__btn-more">مشاهده بیشتر</span>
-                </div>
-                <a href="" class="btn-add-list">
-                    <span>اضافه کردن به لیست </span>
-                    <svg>
-                        <use href="#icon-plus"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="filter container">
-        <div class="filter__option">
-            <svg>
-                <use href="#icon-filter"></use>
-            </svg>
-            <span class="filter__text">فیتلر</span>
-        </div>
-
-        <div class="filter__calendar">
-            <svg>
-                <use href="#icon-calendar"></use>
-            </svg>
-            <span class="filter__text">تاریخ</span>
-        </div>
-    </section>
-
-    <section class="select-location_cinema container">
-        <div class="select-location">
-            <span class="select-location__label">شهر</span>
-            <select name="select-box-location" id="select-box-location" class="select-box">
-                <option value="تهران">تهران</option>
-                <option value="مشهد">مشهد</option>
-                <option value="تبریز">تبریز</option>
-                <option value="اصفحان">اصفهان</option>
-            </select>
-        </div>
-        <div class="select-cinema">
-            <span class="select-cinema__label">سینما</span>
-            <select name="select-box-cinema" id="select-box-cinema" class="select-box">
-                <option value="سینما آزادی">سینما آزادی</option>
-                <option value="پردیس کوروش">پردیس کوروش</option>
-                <option value="سینما گلریز">سینما گلریز</option>
-                <option value="سینما">سینما</option>
-            </select>
-        </div>
-    </section>
-
-    <section class="cinemas container">
+    <section class="all-movies container">
+        <div class="now-in-cinema__boxes"></div>
     </section>
 
     <footer class="footer">
@@ -248,10 +182,7 @@
         </div>
     </footer>
 
-    <script type="module" src="../src/selecteCinema.js"></script>
+    <script type="module" src="/src/allMovies.js"></script>
 </body>
 
 </html>
-
-
-

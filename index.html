@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="src/components/loading.js" defer></script>
     <link rel="stylesheet" href="styles/base/reset.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/components/header.css">
     <link rel="stylesheet" href="styles/components/navScroll.css">
     <link rel="stylesheet" href="styles/pages/style.css">
+    <link rel="stylesheet" href="/styles/components/movieCard.css">
     <link rel="stylesheet" href="styles/components/footer.css">
     <link rel="shortcut icon" href="assets/images/logo/Vector.svg" type="svg">
     <script src="src/icons.js"></script>
@@ -21,11 +22,42 @@
 <body>
     <div id="scroll"></div>
     <div class="overlay"></div>
+    <div class="overlay-modal"></div>
     <div class="loading">
         <div class="loader"></div>
     </div>
 
-    <!-- <div id="header-placeholder"></div> -->
+    <div class="btn-modal">
+        <svg>
+            <use href="#icon-massage"></use>
+        </svg>
+    </div>
+
+    <div class="toast-notification">
+        <div class="toast-notification__text"></div>
+        <div class="toast-notification__timer"></div>
+    </div>
+
+    <div class="modal">
+        <h2 class="modal__title">فرم درخواست مشاوره</h2>
+        <form action="" class="form-consultation">
+            <div class="wrapper-input">
+                <input type="text" class="input" name="name" placeholder="نام">
+                <label for="name" class="input-massage"></label>
+            </div>
+            <div class="wrapper-input">
+                <input type="text" class="input" name="topic" placeholder="موضوع مشاوره">
+                <label for="topic" class="input-massage"></label>
+            </div>
+            <div class="wrapper-input">
+                <input type="tel" class="input" name="phone" placeholder="تلفن همراه">
+                <label for="phone" class="input-massage"></label>
+            </div>
+            <button type="button" class="form-consultation__submit">درخواست مشاوره</button>
+            <span href="" class="form-consultation__again">درخواست مجدد</span>
+        </form>
+    </div>
+
     <header id="header">
         <div class="header-top container">
             <div class="header-top__right">
@@ -93,7 +125,7 @@
             </span>
         </a>
         <!--movie-->
-        <a href="#" target="_blank" class="menu-mobile__link">
+        <a href="#" class="menu-mobile__link">
             <svg class="icons-menu-mobile">
                 <use href="#icon-movie"></use>
             </svg>
@@ -185,7 +217,7 @@
         <div class="now-in-cinema__description">
             <span class="now-in-cinema__description-text">جدیدترین فیلم‌هایی که اکنون در سینماها در حال پخش هستند را کشف
                 کنید - بلیط‌های خود را همین امروز رزرو کنید!</span>
-            <a href="" class="now-in-cinema__description-more"><span>همه</span>
+            <a href="pages/all-movies.html" class="now-in-cinema__description-more"><span>همه</span>
                 <svg style="transform: rotate(180deg);">
                     <use href="#arrow-left2"></use>
                 </svg>
@@ -347,8 +379,7 @@
     </footer>
 
     <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/components/modal.js"></script>
 </body>
 
 </html>
-
-

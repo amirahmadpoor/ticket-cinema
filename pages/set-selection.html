@@ -147,123 +147,132 @@
 
     <div class="back-image"></div>
     <div class="booking container">
-        <section class="info-ticket">
-            <div class="info-movie">
-                <h2 class="info-movie__title">فرمول یک</h2>
-                <div class="info-movie__time-score">5</div>
-                <div class="info-movie__image">
-                    <img src="../assets/images/movies/f1.webp" alt="">
-                </div>
-            </div>
-
-            <div class="info-cinema">
-                <div class="info-ticket__cinema">
-                    <span class="cinema-name">آزادی</span>
-                    <a href="#" class="cinema-address">www.google.com</a>
-                </div>
-                <div class="info-ticket__days">
-                    <div class="btn-after"></div>
-                    <div class="days">
-                        <span class="day active">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
-                        <span class="day">09</span>
+        <div class="info-selection__booking-step">
+            <div class="steps">
+                <div class="step seat">
+                    <div class="step__wrapper">
+                        <label>صندلی</label>
+                        <span class="circle active"></span>
                     </div>
-                    <div class="btn-befor"></div>
+                    <span class="line active"></span>
                 </div>
-                <div class="info-ticket__times">
-                    <span class="time active">10:30</span>
-                    <span class="time">10:30</span>
-                    <span class="time disable">10:30</span>
-                    <span class="time">10:30</span>
+                <div class="step payment">
+                    <div class="step__wrapper">
+                        <label>پرداخت</label>
+                        <span class="circle"></span>
+                    </div>
+                    <span class="line"></span>
                 </div>
-            </div>
-        </section>
-
-        <section class="info-selection">
-
-            <div class="info-selection__booking-step">
-                <div class="steps">
-                    <div class="step seat">
-                        <div class="step__wrapper">
-                            <label>صندلی</label>
-                            <span class="circle active"></span>
-                        </div>
-                        <span class="line active"></span>
+                <div class="step ticket">
+                    <div class="step__wrapper">
+                        <label>بلیط</label>
+                        <span class="circle"></span>
                     </div>
-                    <div class="step payment">
-                        <div class="step__wrapper">
-                            <label>پرداخت</label>
-                            <span class="circle"></span>
-                        </div>
-                        <span class="line"></span>
-                    </div>
-                    <div class="step ticket">
-                        <div class="step__wrapper">
-                            <label>بلیط</label>
-                            <span class="circle"></span>
-                        </div>
+                    <span class="line"></span>
+                </div>
+                <div class="step finish">
+                    <div class="step__wrapper">
+                        <label>پایان</label>
+                        <span class="circle"></span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="info-selection__stage">
-                <div class="stage">
-                    <div class="stage__screen">
-                        <svg>
-                            <use href="#shape-screen"></use>
-                        </svg>
+        <div class="info-ticket_selection">
+            <section class="info-ticket">
+                <div class="info-movie">
+                    <h2 class="info-movie__title">فرمول یک</h2>
+                    <div class="info-movie__time-score">5</div>
+                    <div class="info-movie__image">
+                        <img src="../assets/images/movies/f1.webp" alt="">
                     </div>
-                    <div class="stage__seats">
-                        <div class="seats">
-                            <span></span>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                        </div>
+                </div>
 
-                        <div class="seats-count">
-                            <div class="counter">
+                <div class="info-cinema">
+                    <div class="info-ticket__cinema">
+                        <span class="cinema-name">آزادی</span>
+                        <a href="#" class="cinema-address">www.google.com</a>
+                    </div>
+                    <div class="info-ticket__times">
+                        <span class="time active">10:30</span>
+                        <span class="time">10:30</span>
+                        <span class="time disable">10:30</span>
+                        <span class="time">10:30</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="info-selection">
+                <div class="info-selection__stage">
+                    <div class="stage">
+                        <div class="stage__screen">
+                            <svg>
+                                <use href="#shape-screen"></use>
+                            </svg>
+                        </div>
+                        <div class="stage__seats">
+                            <div class="seats">
+                            </div>
+
+                            <div class="seats-count">
+                                <div class="counter">
+                                    <svg class="selected">
+                                        <use href="#icon-chair"></use>
+                                    </svg>
+                                    <div class="seats-counter">
+                                        <span class="amount">0</span>
+                                        <label for="">صندلی انتخاب شده</label>
+                                    </div>
+                                </div>
+                                <div class="seats-position">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stage__seats-guide">
+                            <div class="guide">
+                                <svg class="available">
+                                    <use href="#icon-chair"></use>
+                                </svg>
+                                <span>موجود</span>
+                            </div>
+                            <div class="guide">
+                                <svg class="reserved">
+                                    <use href="#icon-chair"></use>
+                                </svg>
+                                <span>رزرو شده</span>
+                            </div>
+                            <div class="guide">
                                 <svg class="selected">
                                     <use href="#icon-chair"></use>
                                 </svg>
-                                <div class="seats-counter">
-                                    <span class="amount">2</span>
-                                    <label for="">صندلی انتخاب شده</label>
-                                </div>
-                            </div>
-                            <div class="seats-position">
-                                
+                                <span>انتخاب شده</span>
                             </div>
                         </div>
                     </div>
-                    <div class="stage__seats-guide">
-                        <div class="guide">
-                            <svg class="available">
-                                <use href="#icon-chair"></use>
-                            </svg>
-                            <span>موجود</span>
+                    <div class="state-seats">
+                        <div class="state-seats__title">وضعیت</div>
+                        <div class="state-seats__counter-ticket">
+                            <div class="count-seats">
+                                <span class="count-seats__title">تعداد صندلی</span>
+                                <span class="count-seats__counter">0</span>
+                            </div>
                         </div>
-                        <div class="guide">
-                            <svg class="reserved">
-                                <use href="#icon-chair"></use>
-                            </svg>
-                            <span>رزرو شده</span>
+                        <div class="state-seats__total">
+                            <span class="total-title">جمع کل:</span>
+                            <span class="total-price">0 تومان</span>
                         </div>
-                        <div class="guide">
-                            <svg class="selected">
-                                <use href="#icon-chair"></use>
-                            </svg>
-                            <span>انتخاب شده</span>
+                        <div class="state-seats__buttons">
+                            <a href="" class="state-seats__add-cart">ثبت بلیط</a>
+                            <div class="state-seats__btn-cancel">لغو</div>
                         </div>
                     </div>
                 </div>
-                <div class="selected-seats"></div>
-            </div>
 
-        </section>
+            </section>
+        </div>
     </div>
 
     <footer class="footer">
@@ -312,9 +321,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="/src/components/dynamicSeats.js"></script>
 </body>
 
 </html>
-
-
-

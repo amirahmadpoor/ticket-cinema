@@ -1,7 +1,7 @@
 import { data } from "../../data/moviesData.js";
 import { getMovieIdFromUrl } from "../utils/getIDMovie.js";
 
-function generateReview(reviewWrapper,movie) {
+function generateReview(reviewWrapper, movie) {
     movie.comments.forEach(comment => {
         reviewWrapper.insertAdjacentHTML('beforeend',
             `<div class="review-box">
@@ -55,7 +55,7 @@ export function initReview() {
     function handelGenerateReview() {
         resetReview();
         const movie = getComment(data);
-        generateReview(reviewWrapper,movie);
+        generateReview(reviewWrapper, movie);
     }
 
     function checkLength(comment) {
@@ -64,16 +64,15 @@ export function initReview() {
         }
     }
 
-    function addComments(comment) {
+    function addComments(comment, handelGenerateReview) {
         const movie = getComment(data);
-        console.log( movie);
-        
+        console.log(movie);
         movie.comments.push(comment);
+        handelGenerateReview();
     }
 
     function handelReviews(comment) {
-        addComments(comment);
-        handelGenerateReview();
+        addComments(comment, handelGenerateReview);
     }
 
     // function toggleShowMore() {

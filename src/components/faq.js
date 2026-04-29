@@ -3,12 +3,12 @@ export function setOpenAnswerFAQ() {
 
     function closeAnswer(answer, icon) {
         answer.classList.remove('show');
-        icon.style.transform = 'rotate(0deg)';
+        icon.classList.remove('open');
     }
 
     function openAnswer(answer, icon) {
         answer.classList.add('show');
-        icon.style.transform = 'rotate(140deg)';
+        icon.classList.add('open');
     }
 
     function closeAllAnswer() {
