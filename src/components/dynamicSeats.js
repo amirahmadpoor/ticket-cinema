@@ -19,7 +19,7 @@ function getCinema() {
 
 function createSeats(id) {
     return `<span class="seat">
-    <svg class="chair" data-id=${id.row}/${id.column}>
+    <svg class="chair" data-id=${id}>
     <use href="#icon-chair"></use>
     </svg>
     </span>`
@@ -29,21 +29,36 @@ function setCinemaName() {
     cinemaName.innerHTML = cinema.name;
 }
 
-function selectedSeat(seat) {
-    seat.classList.toggle('active');
-    // if (seat.classList.contains('active')) {
-    //     seatsSelected.push(seat.dataset.id);
-    // }
-    
-    console.log(seatsSelected);
+function selectedSeat(chair, cinema) {
+    const reservation = cinema.seats.find(seat => seat.id === chair.dataset.id)
+    const checkReservation = seatsSelected.some(seat => seat.id === chair.dataset.id);
+
+    if (!checkReservation) {
+        reservation.booked = true;
+        seatsSelected.push(reservation);
+        chair.classList.toggle('active');
+    } else {
+        reservation.booked = false;
+        const reRender = seatsSelected.filter(seat => seat.id !== chair.dataset.id);
+        seatsSelected = reRender;
+        chair.classList.toggle('active');
+    }
 
     countSeats(seatsSelected);
+    console.log(seatsSelected);
+
 }
 
 function countSeats(seatSelected) {
     let count = seatSelected.length
-    console.log(count);
+    countSeatsCounter.innerHTML = count;
+    amount.innerHTML = count;
+    total(count)
+}
 
+function total(count) {
+    let sumPrice = cinema.price * count;
+    totalPrice.innerHTML = `${sumPrice.toLocaleString()} تومان`;
 }
 
 getCinema();
@@ -54,5 +69,5 @@ seatsCinema.innerHTML = cinema.seats.map(seat => createSeats(seat.id)).join('');
 
 seatsCinema.addEventListener('click', (e) => {
     let chair = e.target.closest('.chair');
-    selectedSeat(chair);
+    selectedSeat(chair, cinema);
 })
