@@ -3,7 +3,7 @@ const generateSeats = (rows = 10, cols = 12) => {
   for (let row = 1; row <= rows; row++) {
     for (let column = 1; column <= cols; column++) {
       seats.push({
-        id: { row, column },
+        id: `${row}/${column}`,
         row: row,
         number: column,
         booked: false
