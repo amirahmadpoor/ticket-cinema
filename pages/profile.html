@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/base/reset.css">
+    <link rel="stylesheet" href="/styles/base/style-default.css">
+    <link rel="stylesheet" href="/styles/base/font.css">
+    <link rel="stylesheet" href="/styles/base/palet-color.css">
+    <link rel="stylesheet" href="/styles/pages/profile.css">
+    <script src="../src/icons.js"></script>
+    <title>Cinema Dashboard</title>
+</head>
+
+<body class="dashboard container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar__profile">
+            <img src="profile.jpg" alt="User avatar" class="sidebar__avatar">
+            <div class="sidebar__userinfo">
+                <span class="sidebar__name">امیر احمدپور</span>
+                <span class="sidebar__email">amirahmadpour@gmail.com</span>
+            </div>
+        </div>
+
+        <nav class="sidebar__nav">
+            <ul class="sidebar__menu">
+                <li class="sidebar__item sidebar__item--active">
+                    <svg>
+                        <use href="#icon-user-circle""></use>
+                    </svg>
+                    <a href=" #" class="sidebar__link">حساب من</a>
+                </li>
+                <li class="sidebar__item">
+                    <svg>
+                        <use href="#icon-ticket"></use>
+                    </svg>
+                    <a href="#" class="sidebar__link">بلیط‌های من</a>
+                </li>
+                <li class="sidebar__item">
+                    <svg>
+                        <use href="#icon-wallet"></use>
+                    </svg>
+                    <a href="#" class="sidebar__link">کیف پول</a>
+                </li>
+                <li class="sidebar__item">
+                    <svg>
+                        <use href="#icon-card-payment"></use>
+                    </svg>
+                    <a href="#" class="sidebar__link">پرداخت‌ها</a>
+                </li>
+                <li class="sidebar__item">
+                    <svg>
+                        <use href="#icon-movie-play"></use>
+                    </svg>
+                    <a href="#" class="sidebar__link">لیست پخش</a>
+                </li>
+                <li class="sidebar__item">
+                    <svg>
+                        <use href="#icon-setting"></use>
+                    </svg>
+                    <a href="#" class="sidebar__link">تنظیمات</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Welcome section -->
+        <section class="welcome">
+            <h1 class="welcome__title">خوش اومدی امیر</h1>
+            <p class="welcome__subtitle">این خلاصه‌ای از فعالیت‌های سینمایی شماست</p>
+
+            <div class="progress">
+                <span class="progress__label">
+                    <span>۵۵۰ امتیاز برای بلیط رایگان بعدی شما</span>
+                    <svg><use href="#icon-cup"></use></svg>
+                </span>
+                <div class="progress__bar">
+                    <div class="progress__value" style="width: 65%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stats__card">
+                <span class="stats__number">550</span>
+                <span class="stats__label">پاداش بعدی شما</span>
+            </div>
+
+            <div class="stats__card">
+                <span class="stats__number">14</span>
+                <span class="stats__label">فیلم‌هایی که رزرو کرده‌اید</span>
+            </div>
+
+            <div class="stats__card">
+                <span class="stats__number">$127.50</span>
+                <span class="stats__label">موجودی کیف پول شما</span>
+            </div>
+        </section>
+
+        <!-- Sections list -->
+        <section class="cards">
+
+            <div class="cards__item">
+                <div class="cards__info">
+                    <div class="cards__title">
+                        <svg>
+                            <use href="#icon-movie-play"></use>
+                        </svg>
+                        <h3 class="cards__title-text">پیشنهاد برای شما</h3>
+                    </div>
+                    <p class="cards__desc">شما ۱ فیلم در حال اکران دارید</p>
+                </div>
+                <a href="#" class="cards__action">مشاهده رزروهای شما</a>
+            </div>
+
+            <div class="cards__item">
+                <div class="cards__info">
+                    <div class="cards__title">
+                        <svg>
+                            <use href="#icon-movie-play"></use>
+                        </svg>
+                        <h3 class="cards__title-text">در لیست پیگیری شما منتظر است</h3>
+                    </div>
+                    <p class="cards__desc">شما ۲ فیلم ذخیره کرده‌اید که می‌توانید بعداً تماشا کنید</p>
+                </div>
+                <a href="#" class="cards__action">مشاهده عناوین ذخیره شده</a>
+            </div>
+
+            <div class="cards__item">
+                <div class="cards__info">
+                    <div class="cards__title">
+                        <svg>
+                            <use href="#icon-movie-play"></use>
+                        </svg>
+                        <h3 class="cards__title-text">موجودی کیف پول شما</h3>
+                    </div>
+                    <p class="cards__desc">۱۲۷.۵۰ دلار، آماده استفاده برای فیلم بعدی شما</p>
+                </div>
+                <a href="#" class="cards__action">کیف پول خود را شارژ کنید</a>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
