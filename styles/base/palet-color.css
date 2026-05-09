@@ -7,7 +7,7 @@
     --color-borderBox: #25252C;
     --color-sky: #B3E5E5;
     --color-disable: #454555;
-    --color-reserved:#3A3A04;
+    --color-reserved: #3A3A04;
     --fontW6: 600;
     --fontW7: 700;
     --fontWB: bold;
@@ -18,6 +18,7 @@
     --bg-disable: #7C7C8D;
     --bg-input: #565669;
     --bg-overlay: #000;
+    --bg-bar: #FFFFC4;
     --opacity-overlay: 0.8;
     --border-section-header: #565669;
     --positive: #3DB1B1;

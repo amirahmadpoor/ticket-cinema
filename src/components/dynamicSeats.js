@@ -1,5 +1,8 @@
 import { cinemas } from "../../data/cinemaData.js";
 import { getCinemaIdFromUrl } from "../utils/getIdCinema.js";
+import renderHeaderFooter from "../utils/renderHeader-Footer.js";
+
+renderHeaderFooter();
 
 const seatsCinema = document.querySelector('.seats');
 const cinemaName = document.querySelector('.cinema-name');

@@ -1,4 +1,5 @@
 import { getMovieIdFromUrl } from "./utils/getIDMovie.js";
+import renderHeaderFooter from "./utils/renderHeader-Footer.js";
 import { setMenuMobile } from "./components/menu-mobile.js";
 import { setFavorites } from "./components/add-favorites.js";
 import { initActorsSection } from "./components/actorCard.js";
@@ -13,6 +14,7 @@ import { initBtnTicket } from "./components/ticketBtn.js";
 import { setScrollScreen } from "./components/scrollScreen.js";
 
 getMovieIdFromUrl();
+renderHeaderFooter();
 setMenuMobile();
 setFavorites();
 initActorsSection();
