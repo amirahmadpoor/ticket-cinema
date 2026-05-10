@@ -1,5 +1,5 @@
-import { handleModal } from "./modal.js";
-import { setCookie } from "../utils/setCookieConsilat.js";
+import { handleModal } from "../common/modal.js";
+import { setCookie } from "../../utils/cookie/setCookieConsilat.js";
 
 export function handleValidation() {
     const btnSubmit = document.querySelector('.form-consultation__submit');

@@ -1,5 +1,5 @@
-import { data } from '../../data/moviesData.js';
-import { getMovieIdFromUrl } from '../utils/getIDMovie.js';
+import { data } from '../../../data/moviesData.js';
+import { getMovieIdFromUrl } from '../../utils/helpers/getIDMovie.js';
 
 export function initReadInfo() {
     const bgInfo = document.querySelector('.info-movie');

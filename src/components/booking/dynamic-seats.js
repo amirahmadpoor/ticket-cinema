@@ -1,6 +1,6 @@
-import { cinemas } from "../../data/cinemaData.js";
-import { getCinemaIdFromUrl } from "../utils/getIdCinema.js";
-import renderHeaderFooter from "../utils/renderHeader-Footer.js";
+import { cinemas } from "../../../data/cinemaData.js";
+import { getCinemaIdFromUrl } from "../../utils/helpers/getIDCinema.js";
+import renderHeaderFooter from "../../utils/helpers/renderHeader-Footer.js";
 
 renderHeaderFooter();
 

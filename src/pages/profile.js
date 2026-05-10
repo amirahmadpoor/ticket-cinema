@@ -1,5 +1,9 @@
-import renderHeader from './components/header.js';
-import renderFooter from './components/footer.js';
+import renderHeaderFooter from "../utils/helpers/renderHeader-Footer.js";
+import renderMenuMobile from "../utils/helpers/renderMenuMobile.js";
+
+renderHeaderFooter();
+renderMenuMobile();
+
 const sidebarMenu = document.querySelector('.sidebar__menu');
 
 function setSelected(item) {

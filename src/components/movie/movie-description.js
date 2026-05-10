@@ -1,5 +1,5 @@
-import { data } from "../../data/moviesData.js";
-import { getMovieIdFromUrl } from "../utils/getIDMovie.js";
+import { data } from "../../../data/moviesData.js";
+import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
 
 export function initMovieDescription() {
     const movieId = getMovieIdFromUrl();

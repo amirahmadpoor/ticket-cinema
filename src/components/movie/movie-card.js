@@ -1,4 +1,4 @@
-import { data } from "../../data/moviesData.js";
+import { data } from "../../../data/moviesData.js";
 
 export function handleMovieCard() {
     let path = location.pathname;

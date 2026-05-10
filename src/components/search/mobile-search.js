@@ -1,4 +1,4 @@
-import { data } from '../../data/moviesData.js';
+import { data } from '../../../data/moviesData.js';
 
 function showResult(result) {
     result.forEach(res => {

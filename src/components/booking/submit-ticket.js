@@ -1,6 +1,6 @@
-import { showTimes } from "../../data/showTimes.js";
-import { cinemas } from "../../data/cinemaData.js";
-import { getMovieIdFromUrl } from "../utils/getIDMovie.js";
+import { showTimes } from "../../../data/showTimes.js";
+import { cinemas } from "../../../data/cinemaData.js";
+import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
 
 export function initSubmitTicket() {
     const btnSubmitTicket = document.querySelectorAll('.submit-time');

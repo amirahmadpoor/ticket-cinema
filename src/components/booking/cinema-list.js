@@ -1,4 +1,4 @@
-import { cinemas } from "../../data/cinemaData.js";
+import { cinemas } from "../../../data/cinemaData.js";
 
 //create cards ticket cinema
 function createTicketCard(cinema) {

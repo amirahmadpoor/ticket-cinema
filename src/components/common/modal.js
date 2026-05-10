@@ -1,6 +1,6 @@
-import { handleValidation } from "./validationConsulat.js";
-import { checkCookie } from "../utils/checkCookie.js";
-import { deleteCookie } from "../utils/deleteCookie.js";
+import { handleValidation } from "../booking/validation-consulat.js";
+import { checkCookie } from "../../utils/cookie/checkCookie.js";
+import { deleteCookie } from "../../utils/cookie/deleteCookie.js";
 
 const btnModal = document.querySelector('.btn-modal');
 const modalBox = document.querySelector('.modal');
@@ -17,7 +17,7 @@ function activeOverlay() {
 }
 
 export function handleModal() {
-    isSetCookie();  
+    isSetCookie();
     openModal();
     activeOverlay();
 }
@@ -42,6 +42,6 @@ function isSetCookie() {
 }
 
 btnModal.addEventListener('click', handleModal);
-btnSubmit.addEventListener('click',submitForm);
+btnSubmit.addEventListener('click', submitForm);
 btnAgain.addEventListener('click', requestAgain);
 overlay.addEventListener('click', handleModal);

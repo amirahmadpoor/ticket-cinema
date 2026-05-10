@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../styles/pages/cinema-selection.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="shortcut icon" href="../assets/images/logo/Vector.svg" type="svg">
-    <script src="../src/icons.js"></script>
+    <script src="../src/utils/helpers/icons.js"></script>
     <title>رزرو بلیط | تیکتور</title>
 </head>
 
@@ -23,68 +23,8 @@
 
     <header id="header"></header>
 
-    <div class="menu-mobile">
-        <!--home-->
-        <a href="../index.html" class="menu-mobile__link active">
-            <svg class="icons-menu-mobile">
-                <use href="#icon-home"></use>
-            </svg>
-            <span class="menu-mobile__text">
-                خانه
-            </span>
-        </a>
-        <!--movie-->
-        <a href="#" target="_blank" class="menu-mobile__link">
-            <svg class="icons-menu-mobile">
-                <use href="#icon-movie"></use>
-            </svg>
-            <span class="menu-mobile__text">
-                فیلم
-            </span>
-        </a>
-        <!--cinema-->
-        <a href="#" class="menu-mobile__link">
-            <svg class="icons-menu-mobile">
-                <use href="#icon-cinema"></use>
-            </svg>
-            <span class="menu-mobile__text">
-                سینما
-            </span>
-        </a>
-        <!--search-->
-        <a href="#" class="menu-mobile__link icon-search-mobile">
-            <svg class="icons-menu-mobile icon-search">
-                <use href="#icon-search"></use>
-            </svg>
-            <span class="menu-mobile__text">
-                جستجو
-            </span>
-        </a>
-        <!--user-->
-        <a href="#" class="menu-mobile__link">
-            <svg class="icons-menu-mobile">
-                <use href="#icon-user"></use>
-            </svg>
-            <span class="menu-mobile__text">
-                حساب
-            </span>
-        </a>
-    </div>
-    <div class="search-mobile">
-        <div class="search-mobile__header">
-            <svg class="icon-close-search">
-                <use href="#icon-close"></use>
-            </svg>
-        </div>
-        <div class="search-mobile__input">
-            <svg>
-                <use href="#icon-search"></use>
-            </svg>
-            <input type="text" class="search-mobile__text-input" autofocus placeholder="جستجو">
-        </div>
-        <div class="search-mobile__result">
-        </div>
-    </div>
+    <div id="menu"></div>
+    <div id="search"></div>
 
     <section class="info-movie">
         <div class="info-movie__wrapper container">
@@ -158,10 +98,7 @@
 
     <footer id="footer"></footer>
 
-    <script type="module" src="../src/selecteCinema.js"></script>
+    <script type="module" src="../src/pages/select-cinema.js"></script>
 </body>
 
 </html>
-
-
-

@@ -1,5 +1,5 @@
-import { data } from "../../data/moviesData.js"
-import { cinemas } from "../../data/cinemaData.js";
+import { data } from "../../../data/moviesData.js"
+import { cinemas } from "../../../data/cinemaData.js";
 
 export function initStatistics() {
     function countMovies() {
