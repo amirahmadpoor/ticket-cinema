@@ -1,16 +1,13 @@
-import { data } from "../../../data/moviesData.js"
-import { cinemas } from "../../../data/cinemaData.js";
-
-export function initStatistics() {
-    function countMovies() {
+export function initStatistics(movies) {
+    function countMovies(movies) {
         const countMovies = document.querySelector('.statistics__movie');
-        countMovies.innerHTML = data.length;
+        countMovies.innerHTML = movies.length;
     }
 
     function countCinemas() {
         const countCinemas = document.querySelector('.statistics__cinema');
         countCinemas.innerHTML = cinemas.length;
     }
-    countMovies();
+    countMovies(movies);
     countCinemas();
 }

@@ -6,7 +6,7 @@ import { setScrollScreen } from "../components/layout/nav-scroll.js";
 import { setOpenAnswerFAQ } from "../components/common/faq.js";
 import { getTitleMoviesController } from "../controllers/components/movie.controller.js";
 import { getTitleMoviesMobileController } from "../controllers/components/movie.controller.js";
-// import { initStatistics } from "../components/movie/statistics.js";
+import { initStatistics } from "../components/movie/statistics.js";
 
 renderHeaderFooter();
 renderMenuMobile();
@@ -16,4 +16,4 @@ setScrollScreen();
 setOpenAnswerFAQ();
 getTitleMoviesController();
 getTitleMoviesMobileController();
-// initStatistics();
+initStatistics();

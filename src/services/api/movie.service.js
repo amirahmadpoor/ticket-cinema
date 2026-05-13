@@ -9,8 +9,7 @@ export const getAllMoviesService = async () => {
 }
 
 export const getMovieIdService = async (id) => {
-    const response = await fetch(`${BASE_URL}/movies/:${id}`);
-    const data = response.json();
-    data
-        .then(res => createMovieModel(res.data));
+    const response = await fetch(`${BASE_URL}/movies/${id}`);
+    const data = await response.json();
+    return data.data;
 }

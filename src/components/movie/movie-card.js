@@ -1,3 +1,5 @@
+import { getMovieIdController } from "../../controllers/components/movie.controller.js";
+
 export function handleMovieCard(movies) {
     let path = location.pathname;
     const boxMovies = document.querySelector('.now-in-cinema__boxes');
@@ -14,27 +16,27 @@ export function handleMovieCard(movies) {
     }
 
 
-    function generateMovieCard(movie) {
+    function generateMovieCard({ id, trailer_url, title, score, genre, duration }) {
         return `<div class="box">
         <div class="box__image">
-        <img src="${movie.trailer_url}" alt="" class="image__movie">
+        <img src="${trailer_url}" alt="" class="image__movie">
         </div>
         <div class="box__description">
         <div class="box__title-score">
-        <a href="/pages/movie-page.html?id-movie=${movie.id}" class="box__title">${movie.title}</a>
+        <a href="/pages/movie-page.html?id-movie=${id}" class="box__title">${title}</a>
         <span class="box__score">
         <svg class="icon-star">
         <use href="#icon-star"></use>
         </svg>
-        <span class="score__number">${movie.score}</span>
+        <span class="score__number">${score}</span>
         </span>
         </div>
-        <div class="box__genre">${movie.genre}</div>
+        <div class="box__genre">${genre}</div>
         <div class="box__movie-time">
         <svg class="icon-clock">
         <use href="#icon-clock"></use>
         </svg>
-        <span class="movie-time__number">${convertMinutesToHoursMinutes(movie.duration)}</span>
+        <span class="movie-time__number">${convertMinutesToHoursMinutes(duration)}</span>
         </div>
         </div>
         </div>`

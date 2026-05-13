@@ -1,6 +1,6 @@
 function renderSearchMobile(){
     return `
-            <div class="search-mobile">
+        <div class="search-mobile">
         <div class="search-mobile__header">
             <svg class="icon-close-search">
                 <use href="#icon-close"></use>

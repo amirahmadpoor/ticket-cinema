@@ -8,7 +8,7 @@ function renderHeader() {
         </div>
 
         <div class="header-top__links">
-            <a href="#" class="header-top__link">فیلم</a>
+            <a href="pages/all-movies.html" class="header-top__link">فیلم</a>
             <a href="#" class="header-top__link">سینما</a>
         </div>
     </div>

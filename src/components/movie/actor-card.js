@@ -1,26 +1,17 @@
-import { data } from "../../../data/moviesData.js";
-import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
-
-
-function createActorCard(actor) {
+function createActorCard({ photo_url, name }) {
     return `<a href="#" class="actor">
-    <img src="../assets/images/cast/${actor.imageProfile}" alt="" class="actor__image">
-    <span class="actor__name">${actor.name}</span>
-    <span class="actor__role">${actor.role}</span>
+    <img src="${photo_url}" alt="" class="actor__image">
+    <span class="actor__name">${name}</span>
     </a>`
 }
+// <span class="actor__role">${role}</span>
 
-export function initActorsSection() {
-    const movieId = getMovieIdFromUrl();
+export function initActorsSection({ actors }) {
 
-    const actors = document.querySelector('.actors');
-    if (!actors) return;
+    const actorsWrapper = document.querySelector('.actors');
+    if (!actorsWrapper) return;
 
-    const result = data.find(movie => {
-        return movie.id === Number(movieId);
-    })
-    if (!result) return;
-    result.cast.forEach(actor => {
-        actors.insertAdjacentHTML('beforeend', createActorCard(actor))
+    actors.forEach(actor => {
+        actorsWrapper.insertAdjacentHTML('beforeend', createActorCard(actor))
     })
 }

@@ -1,6 +1,3 @@
-import { cinemas } from "../../../data/cinemaData.js";
-
-//create cards ticket cinema
 function createTicketCard(cinema) {
     return `<div class="cinema" data-id-cinema="${cinema.id}">
         <div class="cinema__name-location">
@@ -29,7 +26,7 @@ function createTicketCard(cinema) {
         </div>`
 }
 
-export function initTicketCinema() {
+export function initTicketCinema(cinemas) {
     const cinemaWrapperTicket = document.querySelector('.cinemas')
 
     function resetAllCinemas() {
