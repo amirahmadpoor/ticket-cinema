@@ -1,3 +1,3 @@
-import {handleMovieCard} from "../components/movie/movie-card.js"
+import { getMoviesController } from "../controllers/components/movie.controller.js";
 
-handleMovieCard();
+document.addEventListener('DOMContentLoaded', getMoviesController);

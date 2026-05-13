@@ -1,6 +1,4 @@
-import { data } from '../../../data/moviesData.js';
-
-function showResult(result) {
+function showResult(searchResultMobile,result) {
     result.forEach(res => {
         searchResultMobile.insertAdjacentHTML('beforeend',
             `<a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
@@ -9,7 +7,7 @@ function showResult(result) {
 }
 
 
-export function initSearchMobile() {
+export function initSearchMobile(movies) {
     const iconSearch = document.querySelector('.icon-search-mobile');
     const inputSearchMobile = document.querySelector('.search-mobile__text-input');
     const searchResultMobile = document.querySelector('.search-mobile__result');
@@ -35,8 +33,8 @@ export function initSearchMobile() {
     }
 
 
-    function getMovieTitle() {
-        return data.map(item => ({ id: item.id, title: item.title }))
+    function getMovieTitle(movies) {
+        return movies.map(item => ({ id: item.id, title: item.title }))
     }
 
     function includesStrategy(title, token) {
@@ -51,10 +49,10 @@ export function initSearchMobile() {
     }
 
     function handelSearch(input) {
-        const titles = getMovieTitle(data);
+        const titles = getMovieTitle(movies);
         const result = searching(titles, input);
         if (result.length) {
-            showResult(result);
+            showResult(searchResultMobile,result);
         }
     }
 

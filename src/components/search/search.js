@@ -1,5 +1,3 @@
-import { data } from '../../../data/moviesData.js';
-
 function showResult(searchResult, result) {
     result.forEach(res => {
         searchResult.insertAdjacentHTML('beforeend',
@@ -8,7 +6,7 @@ function showResult(searchResult, result) {
     })
 }
 
-export function initSearch() {
+export function initSearch(movies) {
     const iconSearch = document.querySelector('.icon-search');
     const searchBox = document.querySelector('.search__box');
     const overlay = document.querySelector('.overlay');
@@ -41,8 +39,8 @@ export function initSearch() {
         }
     }
 
-    function getMovieTitle() {
-        return data.map(item => ({ id: item.id, title: item.title }))
+    function getMovieTitle(movies) {
+        return movies.map(item => ({ id: item.id, title: item.title }))
     }
 
     function includesStrategy(title, token) {
@@ -57,7 +55,7 @@ export function initSearch() {
     }
 
     function handelSearch(input) {
-        const titles = getMovieTitle(data);
+        const titles = getMovieTitle(movies);
         const result = searching(titles, input, includesStrategy);
         if (result.length) {
             showResult(searchResult, result);

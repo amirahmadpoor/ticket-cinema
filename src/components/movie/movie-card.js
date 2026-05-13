@@ -1,25 +1,23 @@
-import { data } from "../../../data/moviesData.js";
-
-export function handleMovieCard() {
+export function handleMovieCard(movies) {
     let path = location.pathname;
     const boxMovies = document.querySelector('.now-in-cinema__boxes');
     const topMovies = document.querySelector('.top-movie-week__boxes');
-    let hours = 0;
-    let minute = 0;
 
     function checkPath() {
         return path.includes('all-movies.html');
     }
 
-    function showDurationMovie(movie) {
-        hours = Math.floor(movie.duration / 60);
-        minute = movie.duration % 60;
+    function convertMinutesToHoursMinutes(totalMinutes) {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        return `${hours}h ${minutes.toString().padStart(2, '0')}m`;
     }
 
-    function createMovieCard(movie) {
+
+    function generateMovieCard(movie) {
         return `<div class="box">
         <div class="box__image">
-        <img src="/assets/images/movies/${movie.name}.webp" alt="" class="image__movie">
+        <img src="${movie.trailer_url}" alt="" class="image__movie">
         </div>
         <div class="box__description">
         <div class="box__title-score">
@@ -28,7 +26,7 @@ export function handleMovieCard() {
         <svg class="icon-star">
         <use href="#icon-star"></use>
         </svg>
-        <span class="score__number">${movie.reviews.averageScore}</span>
+        <span class="score__number">${movie.score}</span>
         </span>
         </div>
         <div class="box__genre">${movie.genre}</div>
@@ -36,38 +34,33 @@ export function handleMovieCard() {
         <svg class="icon-clock">
         <use href="#icon-clock"></use>
         </svg>
-        <span class="movie-time__number">${hours}h ${minute}m</span>
+        <span class="movie-time__number">${convertMinutesToHoursMinutes(movie.duration)}</span>
         </div>
         </div>
         </div>`
     }
 
     function insertBoxMovie(movie) {
-        showDurationMovie(movie);
-        boxMovies.insertAdjacentHTML('beforeend', createMovieCard(movie));
+        boxMovies.insertAdjacentHTML('beforeend', generateMovieCard(movie));
     }
 
-    function insertBoxTopMovie(movie) {
-        showDurationMovie(movie);
-        topMovies.insertAdjacentHTML('beforeend', createMovieCard(movie));
-
+    function insertBoxMovieTop(movie) {
+        topMovies.insertAdjacentHTML('beforeend', generateMovieCard(movie));
     }
 
-    function createMovieCardTop() {
-        data.forEach(movie => {
+    function handlerMovieCards(moviesData) {
+        moviesData.forEach(movie => {
             if (checkPath()) {
-                if (!movie.top) {
-                    insertBoxMovie(movie);
-                }
+                insertBoxMovie(movie);
             } else {
-                if (!movie.top) {
+                if (Number(movie.score) < 8) {
                     insertBoxMovie(movie);
                 }
-                else if (movie.top) {
-                    insertBoxTopMovie(movie);
+                else if (Number(movie.score) >= 8) {
+                    insertBoxMovieTop(movie);
                 }
             }
         })
     }
-    createMovieCardTop();
+    handlerMovieCards(movies);
 }
