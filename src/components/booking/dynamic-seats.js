@@ -1,26 +1,25 @@
-import { cinemas } from "../../../data/cinemaData.js";
 import { getCinemaIdFromUrl } from "../../utils/helpers/getIDCinema.js";
 import renderHeaderFooter from "../../utils/helpers/renderHeader-Footer.js";
-
+import { showSeatsController } from "../../controllers/components/seats.controller.js";
 renderHeaderFooter();
-
+showSeatsController();
 const seatsCinema = document.querySelector('.seats');
 const cinemaName = document.querySelector('.cinema-name');
 const amount = document.querySelector('.amount');
 const countSeatsCounter = document.querySelector('.count-seats__counter');
 const totalPrice = document.querySelector('.total-price');
 
-const cinemaId = getCinemaIdFromUrl();
+// const cinemaId = getCinemaIdFromUrl();
 
-let cinema = getCinema();
+// let cinema = getCinema();
 
 let seatsSelected = [];
 
-function getCinema() {
-    return cinemas.find(cinema => cinema.id === Number(cinemaId));
-}
+// function getCinema() {
+//     return cinemas.find(cinema => cinema.id === Number(cinemaId));
+// }
 
-function createSeats(id) {
+export function createSeats(id) {
     return `<span class="seat">
     <svg class="chair" data-id=${id}>
     <use href="#icon-chair"></use>
@@ -28,9 +27,9 @@ function createSeats(id) {
     </span>`
 }
 
-function setCinemaName() {
-    cinemaName.innerHTML = cinema.name;
-}
+// function setCinemaName() {
+//     cinemaName.innerHTML = cinema.name;
+// }
 
 function selectedSeat(chair, cinema) {
     const reservation = cinema.seats.find(seat => seat.id === chair.dataset.id)
@@ -64,11 +63,11 @@ function total(count) {
     totalPrice.innerHTML = `${sumPrice.toLocaleString()} تومان`;
 }
 
-getCinema();
-setCinemaName();
+// getCinema();
+// setCinemaName();
 
 
-seatsCinema.innerHTML = cinema.seats.map(seat => createSeats(seat.id)).join('');
+// seatsCinema.innerHTML = cinema.seats.map(seat => createSeats(seat.id)).join('');
 
 seatsCinema.addEventListener('click', (e) => {
     let chair = e.target.closest('.chair');

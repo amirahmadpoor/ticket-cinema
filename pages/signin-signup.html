@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/base/reset.css">
+    <link rel="stylesheet" href="../styles/base/font.css">
+    <link rel="stylesheet" href="../styles/base/palet-color.css">
+    <link rel="stylesheet" href="../styles/base/style-default.css">
+    <link rel="stylesheet" href="../styles/pages/signin-signup.css">
+    <link rel="shortcut icon" href="../assets/images/logo/Vector.svg" type="svg">
+
+    <title>ورود | ثبت‌نام</title>
+</head>
+
+<body>
+    <div class="signin-signup">
+        <div class="signin-signup__wrapper container">
+            <div class="signin-signup__header">
+                <div class="login__logo">
+                    <img src="../assets/images/logo/Group.svg" alt="">
+                    <img src="../assets/images/logo/Vector.svg" alt="">
+                </div>
+                <h2 class="signin-signup__title"></h2>
+            </div>
+            <form action="" class="login-form show">
+                <div class="login-form__inputs">
+                    <div class="input-wrapper">
+                        <input type="text" name="email" id="email-login" class="login-form__input" placeholder="ایمیل">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" name="password" id="password-login" class="login-form__input"
+                            placeholder="رمز عبور">
+                    </div>
+                </div>
+                <div class="login-form__links">
+                    <span class="login-form__register">حساب ندارید؟</span>
+                    <a href="#" class="login-form__forgetfulness-password">رمز خود را فراموش کردید؟</a>
+                </div>
+                <button type="submit" class="login-form__submit submit">ورود</button>
+            </form>
+            <form action="" class="register-form">
+                <div class="register-form__inputs">
+                    <div class="input-wrapper">
+                        <input type="text" name="name" id="name-register" class="register-form__input"
+                            placeholder="نام">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="email" name="email" id="email-register" class="register-form__input"
+                            placeholder="ایمیل">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" name="password" id="password-register" class="register-form__input"
+                            placeholder="رمز عبور">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="tel" name="phone" id="phone-register" class="register-form__input"
+                            placeholder="تلفن">
+                    </div>
+                </div>
+                <button type="submit" class="register-form__submit submit">ثبت نام</button>
+                <div class="login-form__links" style="margin: 0 auto;">
+                    <span class="register-form__login">ورود به حساب</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../src/pages/auth.js" type="module"></script>
+</body>
+
+</html>

@@ -1,46 +1,73 @@
-.login__wrapper {
+body {
     display: flex;
     align-items: center;
-    gap: 5.3rem;
+    justify-content: center;
+    height: 100vh;
 }
 
-.login__image img {
-    max-width: 81.6rem;
-    width: 100%;
-    height: 100%;
-}
-
-.login__form {
-    max-width: 36.2rem;
+.signin-signup{
     width: 100%;
 }
 
-.login__header {
+.signin-signup__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login__logo {
+.login-form,
+.register-form {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+}
+
+.login-form.show,
+.register-form.show {
+    visibility: visible;
+    height: auto;
+}
+
+.login-form,
+.register-form {
+    max-width: 36.2rem;
+    width: 100%;
+}
+
+.signin-signup__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.signin-signup__logo {
     gap: 4px;
 }
 
-.login__title {
+.signin-signup__title {
     font-size: 2.4rem;
     font-weight: var(--fontWB);
     margin-top: 1.6rem;
 }
 
-#login-form {
+.login-form,
+.register-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 3.6rem;
+    gap: 2.4rem;
     width: 100%;
-    margin-top: 4.8rem;
+    margin-top: 3.8rem;
 }
 
-.login-form__inputs {
+.login-form__inputs,
+.register-form__inputs {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -60,7 +87,8 @@
     padding: 0.5rem;
 }
 
-.login-form__input {
+.login-form__input,
+.register-form__input {
     background-color: inherit;
     border: none;
     outline: none;
@@ -72,28 +100,37 @@
     font-family: inherit;
 }
 
-.login-form__input::placeholder{
+.login-form__input::placeholder,
+.register-form__input::placeholder {
     color: inherit;
 }
 
-.input-wrapper:has(.login-form__input:focus) {
+.input-wrapper:has(.signin-signup-form__input:focus) {
     border: 1px solid #e5e5e5;
     transition: 260ms;
 }
 
-/* .login-form__label {
-    position: absolute;
-    left: 2.4rem;
-    color: var(--text-colorBox);
-    transition: 220ms 60ms;
-    z-index: 99;
+.login-form__links,
+.register-form__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--positive);
+    font-size: 1.4rem;
+    margin: 1rem 0;
 }
 
-.login-form__label.focus {
-    transform: translateY(-3rem);
-} */
+.login-form__register,
+.register-form__login {
+    cursor: pointer;
+}
 
-.login-form__submit {
+.login-form__forgetfulness-password {
+    color: inherit;
+}
+
+.login-form__submit,
+.register-form__submit {
     width: 100%;
     height: 5.6rem;
     border-radius: 4px;
@@ -104,4 +141,5 @@
     color: var(--color-black);
     font-size: 1.6rem;
     font-weight: var(--fontW6);
+    cursor: pointer;
 }
