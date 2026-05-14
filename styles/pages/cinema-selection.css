@@ -147,7 +147,7 @@ a {
 }
 
 .filter__option,
-.filter__calendar{
+.filter__calendar {
     flex-direction: column;
     max-width: 11.1rem;
     width: 100%;
@@ -241,7 +241,7 @@ select option::picker(option) {
     padding: 2.4rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: var(--bg-review-box);
 }
 
@@ -249,43 +249,22 @@ select option::picker(option) {
     font-size: 1.8rem;
 }
 
-.cinema__options {
-    color: var(--text-colorBox);
-}
-
-.cinema__play-times {
+.cinema__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.cinema__time {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.time {
-    width: 10.2rem;
-    height: 4.2rem;
-    border-radius: 4px;
-    border: 1px solid var(--border-section-header);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.time.selected {
-    border: 1px solid #fff;
+.cinema__options {
+    color: var(--text-colorBox);
 }
 
 .submit-time {
     width: 13.7rem;
     height: 4.0rem;
     border-radius: 4px;
-    background-color: var(--bg-disable);
-    color: var(--color-disable);
+    background-color: var(--color-yellow);
+    color: var(--color-black);
     border: none;
     outline: none;
     font-family: inherit;
@@ -299,25 +278,19 @@ select option::picker(option) {
 
 .submit-time span,
 .submit-time svg {
-    color: var(--bg-black);
     transition: 160ms;
 }
 
-.submit-time.enable {
-    background-color: var(--color-yellow);
-}
-
-.submit-time.enable span,
-.submit-time.enable svg {
-    color: var(--bg-black);
-}
 
 @media screen and (max-width:768px) {
-    .filter__days,.before-day,.after-day{
+
+    .filter__days,
+    .before-day,
+    .after-day {
         display: none;
     }
 
-    .select-location_cinema{
+    .select-location_cinema {
         margin-top: 8.4rem;
     }
 }

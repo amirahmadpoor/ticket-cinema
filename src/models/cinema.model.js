@@ -3,6 +3,6 @@ export const createCinemaModel = raw => ({
     name: raw.name,
     address: raw.address,
     city: raw.city,
-    phone: raw.phone,
+    price: raw.price,
     facilities: raw.facilities,
 })

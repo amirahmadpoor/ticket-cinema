@@ -1,12 +1,4 @@
-import { data } from "../../../data/moviesData.js";
-import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
-
-export function initBtnTicket() {
-    const movieId = getMovieIdFromUrl();
-
-    const result = data.find(movie => {
-        return movie.id === Number(movieId);
-    })
+export function initBtnTicket(id) {
     const getTicketBtn = document.querySelector('.get-ticket');
-    getTicketBtn.setAttribute('href', `cinema-selection.html?id-movie=${result.id}`);
+    getTicketBtn.setAttribute('href', `cinema-selection.html?id-movie=${id}`);
 }

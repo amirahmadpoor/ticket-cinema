@@ -1,4 +1,4 @@
-export function initReadInfo() {
+export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, imdb_rating: score, duration, description }) {
     const bgInfo = document.querySelector('.info-movie');
     const imagePoster = document.querySelector('.image-poster');
     const movieTitle = document.querySelector('.movie-title');
@@ -6,16 +6,16 @@ export function initReadInfo() {
     const movieTime = document.querySelector('.movie-time');
     const movieScore = document.querySelector('.movie-score__number');
 
-    const movieId = getMovieIdFromUrl();
+    function convertMinutesToHoursMinutes(totalMinutes) {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        return `${hours}h ${minutes.toString().padStart(2, '0')}m`;
+    }
 
-    let result = data.find(poster => {
-        return poster.id === Number(movieId);
-    })
-
-    bgInfo.style.backgroundImage = `url(../assets/images/cover/${result.imageCover})`;
-    imagePoster.setAttribute('src', `../assets/images/movies/${result.imageMovie}`);
-    movieTitle.innerHTML = result.title;
-    movieTime.innerHTML = result.duration;
-    movieScore.innerHTML = result.reviews.averageScore;
-    movieDesc.textContent = result.summery;
+    bgInfo.style.backgroundImage = `url(${poster})`;
+    imagePoster.setAttribute('src', `${trailer} `);
+    movieTitle.innerHTML = title;
+    movieTime.innerHTML = convertMinutesToHoursMinutes(duration);
+    movieScore.innerHTML = score;
+    movieDesc.textContent = description;
 }

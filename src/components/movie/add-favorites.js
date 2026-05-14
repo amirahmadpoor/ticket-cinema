@@ -1,6 +1,3 @@
-import { data } from "../../../data/moviesData.js";
-import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
-
 export function setFavorites() {
     const btnAdd = document.querySelector('.add-favorites');
     if (!btnAdd) return;

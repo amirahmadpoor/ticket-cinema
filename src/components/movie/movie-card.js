@@ -1,5 +1,3 @@
-import { getMovieIdController } from "../../controllers/components/movie.controller.js";
-
 export function handleMovieCard(movies) {
     let path = location.pathname;
     const boxMovies = document.querySelector('.now-in-cinema__boxes');
