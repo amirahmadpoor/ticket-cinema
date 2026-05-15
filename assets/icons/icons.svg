@@ -27,7 +27,7 @@
         <symbol id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M11.879 6.46967C12.1719 6.17678 12.6468 6.17678 12.9397 6.46967L18.9397 12.4697C19.2326 12.7626 19.2326 13.2374 18.9397 13.5303L12.9397 19.5303C12.6468 19.8232 12.1719 19.8232 11.879 19.5303C11.5862 19.2374 11.5862 18.7626 11.879 18.4697L16.5987 13.75H5.59082C5.17661 13.75 4.84082 13.4142 4.84082 13C4.84082 12.5858 5.17661 12.25 5.59082 12.25H16.5987L11.879 7.53033C11.5862 7.23744 11.5862 6.76256 11.879 6.46967Z"
-                fill="#010108" />
+                fill="currentColor" />
         </symbol>
         <symbol id="arrow-left1" viewBox="0 0 24 24" fill="none">
                 <path d="M15 5L9 12L15 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -41,6 +41,9 @@
         <symbol id="arrow-left2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                 <path d="M9 5L15 12L9 19" stroke="white" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
+        </symbol>
+        <symbol id="arrow-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 8" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.180571 0.26192C0.450138 -0.0525743 0.923613 -0.0889955 1.23811 0.180571L7.75001 5.76221L14.2619 0.180572C14.5764 -0.0889949 15.0499 -0.0525737 15.3195 0.261921C15.589 0.576415 15.5526 1.04989 15.2381 1.31946L8.23811 7.31946C7.95724 7.5602 7.54279 7.5602 7.26192 7.31946L0.26192 1.31946C-0.0525743 1.04989 -0.0889955 0.576414 0.180571 0.26192Z" fill="white"/>
         </symbol>
         <symbol id="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13" fill="none">
                 <path

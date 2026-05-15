@@ -14,6 +14,7 @@ const btnLoginFormRegister = document.querySelector('.login-form__register');
 const btnRegisterFormLogin = document.querySelector('.register-form__login');
 const formTitle = document.querySelector('.signin-signup__title');
 
+
 function showForms() {
     registerForm.classList.toggle('show');
     loginForm.classList.toggle('show');
@@ -70,6 +71,10 @@ function getInputUserNew() {
     return userData;
 }
 
+async function setAccessToken(token) {
+    localStorage.setItem('accessToken', token);
+}
+
 async function handleRegister(e) {
     e.preventDefault();
     if (validationInputUserNew()) {
@@ -81,6 +86,13 @@ async function handleRegister(e) {
         if (response.success) {
             setEmptyInputs();
         }
+        if (response.data.token) {
+            setAccessToken(await response.data.token);
+            window.location.href = '/index.html';
+        } else {
+            console.log('auth field');
+
+        }
     }
 }
 
@@ -90,11 +102,14 @@ async function handleLogin(e) {
 
         const response = await getDataUserController(getInputUser());
 
-        console.log(response);
-
         if (response.success) {
             setEmptyInputs();
         }
+        if (!response.ok) {
+            console.log('auth field');
+        }
+        window.location.href = '/index.html';
+        setAccessToken(await response.data.token);
     }
 }
 
