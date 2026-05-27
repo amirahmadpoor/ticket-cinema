@@ -1,14 +1,13 @@
-export function initMovieScore({ imdb_rating: score }) {
+export function initMovieScore({ rating }) {
     const scoreValue = document.querySelector('.reviews__scores-value');
     const scoreFav = document.querySelector('.reviews__scores-favorable');
 
-    score = Number(score);
     function checkScore() {
-        scoreValue.innerHTML = score;
-        if (score >= 8) {
+        scoreValue.innerHTML = rating;
+        if (rating >= 4.5) {
             scoreValue.style.backgroundColor = 'var(--positive)';
             scoreFav.innerHTML = 'عالی';
-        } else if (score >= 5) {
+        } else if (rating >= 3) {
             scoreValue.style.backgroundColor = 'var(--average)';
             scoreFav.innerHTML = 'خوب';
         } else {

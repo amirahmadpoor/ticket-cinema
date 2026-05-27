@@ -6,7 +6,6 @@ import { initTicketCinema } from "../../components/booking/cinema-list.js";
 export const getInfoMovieIdBookingController = async (id) => {
     const movie = await getMovieIdService(id);
     const cinemas = await getAllCinemaService();
-    console.log(cinemas);
     
     initReadInfo(movie);
     initTicketCinema(cinemas);

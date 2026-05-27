@@ -1,4 +1,4 @@
-function renderHeader() {
+export function renderHeader() {
     return `
     <div class="header-top container">
         <div class="header-top__right">
@@ -48,11 +48,26 @@ function renderHeader() {
                     <img src="/assets/images/profile/user1.png" class="profile__image">
                 </div>
                 <span class="profile__name"></span>
-                <svg>
-                    <use href="#arrow-bottom"></use>
-                </svg>
+
+                <div class="profile__wrapper">
+                    <div class="profile__options">
+                        <ul class="list-options">
+                            <li class="list-options__option">
+                            <svg><use href="#icon-user"></use></svg>
+                            <a href="../../pages/profile.html">پروفایل</a>
+                            </li>
+                            <li class="list-options__option">
+                                <svg><use href="#icon-wallet"></use></svg>
+                                <span>کیف پول</span>
+                            </li>
+                            <li class="list-options__option logout">
+                                <svg><use href="#icon-logout"></use></svg>
+                                <span>خروج از حساب</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </div>
 
@@ -65,5 +80,3 @@ function renderHeader() {
         </div>
     </div>`
 }
-
-export default renderHeader;

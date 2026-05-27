@@ -20,6 +20,7 @@
 
 <body>
     <div id="scroll"></div>
+    <div class="overlay"></div>
 
     <header id="header"></header>
 
@@ -63,35 +64,91 @@
             </svg>
             <span class="filter__text">فیتلر</span>
         </div>
+    </section>
 
-        <div class="filter__calendar">
-            <svg>
-                <use href="#icon-calendar"></use>
+    <div class="filter-box">
+        <div class="filter-box__header">
+            <span class="filter-box__title">فیلتر</span>
+            <svg class="btn-close">
+                <use href="#icon-close"></use>
             </svg>
-            <span class="filter__text">تاریخ</span>
         </div>
-    </section>
-
-    <section class="select-location_cinema container">
-        <div class="select-location">
-            <span class="select-location__label">شهر</span>
-            <select name="select-box-location" id="select-box-location" class="select-box">
-                <option value="تهران">تهران</option>
-                <option value="مشهد">مشهد</option>
-                <option value="تبریز">تبریز</option>
-                <option value="اصفحان">اصفهان</option>
-            </select>
+        <div class="filter-box__body">
+            <div class="filter-box__filtering filter-box__price">
+                <span>قیمت</span>
+                <div class="filter-price">
+                    <span class="price-start">0</span>
+                    <span class="price-end">0 ریال</span>
+                </div>
+                <input type="range" value="0" id="range-price" class="filter-box__filter-range">
+            </div>
+            <div class="filter-box__filtering">
+                <div class="filter-title">
+                    <span>شهر</span>
+                    <svg>
+                        <use href="#arrow-left2"></use>
+                    </svg>
+                </div>
+                <div class="filter-box__filter">
+                    <label class="filter-wrapper">
+                        <span class="city">تهران</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                    <label class="filter-wrapper">
+                        <span class="city">مشهد</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                    <label class="filter-wrapper">
+                        <span class="city">تبریز</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                    <label class="filter-wrapper">
+                        <span class="city">اصفهان</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                    <label class="filter-wrapper">
+                        <span class="city">قم</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                    <label class="filter-wrapper">
+                        <span class="city">کرج</span>
+                        <div class="checkbox">
+                            <input type="checkbox">
+                            <span class="check-style"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="filter-box__filtering">
+                <div class="filter-title">
+                    <span>امکانات</span>
+                    <svg>
+                        <use href="#arrow-left2"></use>
+                    </svg>
+                </div>
+                <!-- <input type="text" class="filter-box__filter"> -->
+            </div>
         </div>
-        <div class="select-cinema">
-            <span class="select-cinema__label">سینما</span>
-            <select name="select-box-cinema" id="select-box-cinema" class="select-box">
-                <option value="سینما آزادی">سینما آزادی</option>
-                <option value="پردیس کوروش">پردیس کوروش</option>
-                <option value="سینما گلریز">سینما گلریز</option>
-                <option value="سینما">سینما</option>
-            </select>
+        <div class="filter-box__footer">
+            <div class="btn-apply filter-box__btns">فیلتر</div>
+            <div class="btn-cancel filter-box__btns">حذف فیلترها</div>
         </div>
-    </section>
+    </div>
 
     <section class="cinemas container">
     </section>
@@ -99,6 +156,8 @@
     <footer id="footer"></footer>
 
     <script type="module" src="../src/pages/select-cinema.js"></script>
+    <script type="module" src="../src/app.js"></script>
+
 </body>
 
 </html>

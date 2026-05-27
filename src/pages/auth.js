@@ -73,16 +73,17 @@ function getInputUserNew() {
 
 async function setAccessToken(token) {
     localStorage.setItem('accessToken', token);
+    
 }
 
 async function handleRegister(e) {
     e.preventDefault();
     if (validationInputUserNew()) {
-
+        
         const response = await postDataUserNewController(getInputUserNew());
-
+        
         console.log(response);
-
+        
         if (response.success) {
             setEmptyInputs();
         }

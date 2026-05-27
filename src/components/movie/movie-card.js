@@ -14,8 +14,8 @@ export function handleMovieCard(movies) {
     }
 
 
-    function generateMovieCard({ id, trailer_url, title, score, genre, duration }) {
-        return `<div class="box">
+    function generateMovieCard({ id, trailer_url, title, rating, genre, duration }) {
+        return `<div class="box" data-id=${id}>
         <div class="box__image">
         <img src="${trailer_url}" alt="" class="image__movie">
         </div>
@@ -26,7 +26,7 @@ export function handleMovieCard(movies) {
         <svg class="icon-star">
         <use href="#icon-star"></use>
         </svg>
-        <span class="score__number">${score}</span>
+        <span class="score__number">${rating}</span>
         </span>
         </div>
         <div class="box__genre">${genre}</div>
@@ -53,10 +53,10 @@ export function handleMovieCard(movies) {
             if (checkPath()) {
                 insertBoxMovie(movie);
             } else {
-                if (Number(movie.score) < 8) {
+                if (Number(movie.rating) < 4) {
                     insertBoxMovie(movie);
                 }
-                else if (Number(movie.score) >= 8) {
+                else if (Number(movie.rating) >= 4) {
                     insertBoxMovieTop(movie);
                 }
             }

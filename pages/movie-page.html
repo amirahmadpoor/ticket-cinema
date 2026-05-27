@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/navScroll.css">
     <link rel="stylesheet" href="../styles/pages/movie-page.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="shortcut icon" href="../assets/images/logo/Vector.svg" type="svg">
     <script src="../src/utils/helpers/icons.js"></script>
@@ -27,6 +28,11 @@
 
     <div id="menu"></div>
     <div id="search"></div>
+
+    <div class="toast-notification">
+        <div class="toast-notification__text"></div>
+        <div class="toast-notification__timer"></div>
+    </div>
 
     <section class="hero__movie">
         <div class="hero__movie-wrapper container">
@@ -145,7 +151,8 @@
         </div>
         <div class="tabs">
             <div class="review__wrapper">
-
+                <span class="not-review">نظری ثبت نشده</span>
+                
                 <div class="reviews__show-more">
                     <div class="btn-show-more">
                         <svg class="icon-more-comment">
@@ -178,6 +185,7 @@
     <footer id="footer"></footer>
 
     <script type="module" src="../src/pages/page-movie.js"></script>
+    <script type="module" src="../src/app.js"></script>
 </body>
 
 </html>

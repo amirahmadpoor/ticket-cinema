@@ -1,11 +1,11 @@
 import { getReviewService } from "../../services/api/reviews.service.js";
 import { setReviewService } from "../../services/api/reviews.service.js";
-import { initReview } from "../../components/movie/review.js";
+import { handelGetComment } from "../../components/movie/review.js";
 
 export const getReviewsController = async () => {
     try {
         const reviews = await getReviewService();
-        initReview(reviews);
+        handelGetComment(reviews);
     }
     catch (err) {
         console.warn(err);
@@ -14,8 +14,7 @@ export const getReviewsController = async () => {
 
 export const setReviewController = async (review) => {
     try {
-        setReviewService(review);
-        // const review = await ;
+        return await setReviewService(review);
     }
     catch (err) {
         console.warn(err);

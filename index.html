@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/components/navScroll.css">
     <link rel="stylesheet" href="styles/pages/style.css">
     <link rel="stylesheet" href="/styles/components/movieCard.css">
+    <link rel="stylesheet" href="styles/components/toast.css">
     <link rel="stylesheet" href="styles/components/footer.css">
     <link rel="shortcut icon" href="assets/images/logo/Vector.svg" type="svg">
     <script src="../src/utils/helpers/icons.js"></script>
@@ -69,15 +70,15 @@
         <!--تبلیغات-->
         <div class="wrapper-content">
             <div class="advert">
-                <h2 class="advert__title">همین حالا بلیط فیلم خود را رزرو کنید!</h2>
-                <p class="advert__text">جدیدترین فیلم‌ها را در سینماهای مورد علاقه‌تان تماشا کنید</p>
+                <h2 class="advert__title"></h2>
+                <p class="advert__text"></p>
                 <div class="advert__btn">
-                    <div class="advert__btn-explore">
+                    <a href="pages/all-movies.html" class="advert__btn-explore">
                         <span>جستجو فیلم</span>
                         <svg style="transform: rotate(180deg)" ;>
                             <use href="#arrow-left"></use>
                         </svg>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -205,18 +206,21 @@
     <section class="cta mt-section container">
         <span class="cta__title">آماده‌ی تماشا و رزرو فیلم هستید؟</span>
         <span class="cta__text">در خبرنامه ما مشترک شوید. برای ایجاد یا شروع مجدد عضویت، ایمیل خود را وارد کنید.</span>
-        <div class="cta__input-email">
-            <input type="submit" class="cta__input-send" value="ثبت نام"></input>
+        <form class="cta__input-email">
+            <input type="submit" class="cta__input-send" value="ثبت نام">
             <div class="wrapper-email-box">
-                <input type="email" class="cta__email">
-                <span class="email__placeholder">
-                    <svg class="icon-massage">
-                        <use href="#icon-massage"></use>
-                    </svg>
-                    <span class="placeholder__text">ایمیل</span>
-                </span>
+                <div class="wrapper-input-email">
+                    <input type="text" class="cta__email">
+                    <span class="email__placeholder">
+                        <svg class="icon-massage">
+                            <use href="#icon-massage"></use>
+                        </svg>
+                        <span class="placeholder__text">ایمیل</span>
+                    </span>
+                </div>
+                <p class="cta__message"></p>
             </div>
-        </div>
+        </form>
     </section>
 
     <footer id="footer"></footer>

@@ -1,5 +1,5 @@
-import renderHeaderFooter from "../utils/helpers/renderHeader-Footer.js";
-import renderMenuMobile from "../utils/helpers/renderMenuMobile.js";
+import {renderHeaderFooter} from "../utils/helpers/renderHeader-Footer.js";
+import {renderMenuMobile} from "../utils/helpers/renderMenuMobile.js";
 
 renderHeaderFooter();
 renderMenuMobile();

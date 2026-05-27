@@ -1,4 +1,4 @@
-function renderFooter() {
+export function renderFooter() {
     return `
             <div class="footer__wrapper container">
             <div class="footer__description">
@@ -45,5 +45,3 @@ function renderFooter() {
             </div>
         </div>`
 }
-
-export default renderFooter;

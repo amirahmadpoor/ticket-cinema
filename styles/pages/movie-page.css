@@ -10,8 +10,7 @@ section:not(.hero__movie) {
 }
 
 .hero__movie {
-    max-height: 78.3rem;
-    height: 100%;
+    height: 78.3rem;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -26,27 +25,29 @@ section:not(.hero__movie) {
 .hero__movie-title {
     font-size: 3.2rem;
     font-weight: var(--fontW6);
-    margin-top: 21.2rem;
+    margin: 19.2rem 0 2rem;
     position: relative;
     padding-right: 1.4rem;
+    display: flex;
+    align-items: center;
 }
 
-.hero__movie-title:after{
+.hero__movie-title:after {
     content: '';
     position: absolute;
     right: 0;
     width: 4px;
-    height: 100%;
+    height: 70%;
     border-radius: 999px;
-    background-color:var(--positive);
+    background-color: var(--color-yellow);
 }
+
 .hero__movie-media {
     display: flex;
     align-items: center;
     gap: 1.6rem;
     margin-top: 1.7rem;
-    max-height: 49.6rem;
-    height: 100%;
+    height: 49.6rem;
 }
 
 .image-wrapper,
@@ -512,6 +513,22 @@ section:not(.hero__movie) {
     color: var(--color-sky);
 }
 
+.review__wrapper.no-review{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-review{
+    font-size: 2.4rem;
+    color: var(--text-colorBox);
+    display: none;
+}
+
+.not-review.show{
+    display: block;
+}
+
 .reviews__show-more {
     position: absolute;
     bottom: 0;
@@ -550,44 +567,44 @@ section:not(.hero__movie) {
     gap: 4px;
 }
 
-.comment{
+.comment {
     border-top: 1px solid var(--border-section-header);
     padding-top: 2.4em;
 }
 
-.comment__title{
+.comment__title {
     font-size: 2.4rem;
     font-weight: var(--fontW6);
 }
 
-.comment__input{
+.comment__input {
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-.user{
+.user {
     display: flex;
     align-items: center;
     gap: 1.6rem;
     margin-top: 2.4rem;
 }
 
-.user__profile{
+.user__profile {
     width: 5.8rem;
     height: 5.8rem;
     border: 1px solid var(--border-section-header);
     border-radius: 100%;
 }
 
-.comment__btn--send{
+.comment__btn--send {
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 19rem;
     width: 100%;
     height: 5.6rem;
-    background-color: var(--positive);
+    background-color: var(--color-yellow);
     border-radius: 4px;
     margin-top: 2.4rem;
     color: var(--color-black);
@@ -595,9 +612,10 @@ section:not(.hero__movie) {
     font-size: 1.6rem;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
-#input-comment{
+#input-comment {
     width: 60%;
     height: 29rem;
     margin-top: 1.2rem;
@@ -612,12 +630,12 @@ section:not(.hero__movie) {
 }
 
 @media screen and (max-width:1024px) {
-    .hero__movie-title{
+    .hero__movie-title {
         margin-top: 14rem;
         font-size: 2.6rem;
     }
 
-    .image-wrapper{
+    .image-wrapper {
         max-width: 30.7rem;
         max-height: 42.1rem;
     }
@@ -678,6 +696,10 @@ section:not(.hero__movie) {
 
     .review-box {
         padding: 1.6rem;
+    }
+
+    #input-comment{
+        width: 100%;
     }
 }
 

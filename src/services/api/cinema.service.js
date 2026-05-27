@@ -9,7 +9,7 @@ export const getAllCinemaService = async () => {
 }
 
 export const getCinemaIdService = async (id) => {
-    const response = await fetch(`${BASE_URL}/cinemas/:${id}`);
+    const response = await fetch(`${BASE_URL}/cinemas/${id}`);
     const data = await response.json();
-    return data.data.cinemas;
+    return data.data;
 }

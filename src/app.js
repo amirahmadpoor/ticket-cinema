@@ -1,3 +1,7 @@
 import { loadProfileHeader } from "./components/common/load-profile-header.js";
+import { handleLogout } from "./utils/logout.js";
 
-loadProfileHeader();
+document.addEventListener('DOMContentLoaded', () => {
+    loadProfileHeader();
+    handleLogout();
+});

@@ -1,9 +1,10 @@
+import { getTokenUser } from "../../utils/get-token.js";
+
 export function initBtnTicket(id) {
 
     const getTicketBtn = document.querySelector('.get-ticket');
-    const token = localStorage.getItem('accessToken');
     getTicketBtn.addEventListener('click', () => {
-        if (!token) {
+        if (!getTokenUser()) {
             window.location.href = '/pages/signin-signup.html';
             return;
         } else {

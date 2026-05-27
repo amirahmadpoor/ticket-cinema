@@ -16,12 +16,6 @@ function activeOverlay() {
     overlay.classList.toggle('active');
 }
 
-export function handleModal() {
-    isSetCookie();
-    openModal();
-    activeOverlay();
-}
-
 function submitForm() {
     handleValidation();
 }
@@ -39,6 +33,12 @@ function isSetCookie() {
         btnSubmit.classList.add('disable');
         btnSubmit.disabled = true;
     }
+}
+
+export function handleModal() {
+    isSetCookie();
+    openModal();
+    activeOverlay();
 }
 
 btnModal.addEventListener('click', handleModal);
