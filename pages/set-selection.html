@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/components/navScroll.css">
     <link rel="stylesheet" href="../styles/pages/set-selection.css">
+    <link rel="stylesheet" href="/styles/components/info-reserve.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="shortcut icon" href="../assets/images/logo/Vector.svg" type="svg">
     <script src="../src/utils/helpers/icons.js"></script>
-    <title>Document</title>
+    <title>انتخاب صندلی | تیکتور</title>
 </head>
 
 <body>
@@ -64,13 +65,21 @@
             </div>
         </div>
 
-        <div class="info-ticket_selection">
+        <div class="info-ticket-selection">
             <section class="info-ticket">
                 <div class="info-movie">
-                    <h2 class="info-movie__title">فرمول یک</h2>
-                    <div class="info-movie__time-score">5</div>
+                    <h2 class="info-movie__title"></h2>
+                    <div class="info-movie__time-score">
+                        <span class="info-movie__time"></span>
+                        <div class="info-movie__score">
+                            <span class="info-movie__score-number"></span>
+                            <svg>
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="info-movie__image">
-                        <img src="../assets/images/movies/f1.webp" alt="">
+                        <img src="" alt="" class="image-poster">
                     </div>
                 </div>
 
@@ -78,6 +87,44 @@
                     <div class="info-ticket__cinema">
                         <span class="cinema-name"></span>
                         <a href="#" class="cinema-address"></a>
+                    </div>
+                </div>
+
+                <div class="info-reserve">
+                    <div class="info-reserve__wrapper">
+                        <div class="info-date">
+                            <div class="date">
+                                <span class="date__title">
+                                    <svg class="icon-calendar">
+                                        <use href="#icon-calendar"></use>
+                                    </svg>
+                                    <span>تاریخ</span>
+                                </span>
+                                <span class="date__info">2 اردیبهشت 1405</span>
+                            </div>
+                            <div class="time">
+                                <span class="time__title">
+                                    <svg class="icon-clock">
+                                        <use href="#icon-clock2"></use>
+                                    </svg>
+                                    <span>ساعت</span>
+                                </span>
+                                <span class="time__info">12:30</span>
+                            </div>
+                        </div>
+                        <div class="info-seats">
+                            <span class="info-seats__title">
+                                <svg class="icon-seat">
+                                    <use href="#icon-chair"></use>
+                                </svg>
+                                <span>صندلی‌های انتخاب شده</span>
+                            </span>
+                            <div class="info-seats__selected">
+                                <span>B2</span>
+                                <span>B3</span>
+                                <span>B4</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

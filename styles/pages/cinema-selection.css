@@ -33,29 +33,29 @@
     height: 100%;
 }
 
-.movie-title {
+.info-movie__title {
     font-size: 3.2rem;
 }
 
-.movie-time_score {
+.info-movie__time-score {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-top: 1.6rem;
 }
 
-.movie-time::after {
+.info-movie__time::after {
     content: '|';
     margin-right: 8px;
 }
 
-.movie-score {
+.info-movie__score {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.movie-score svg {
+.info-movie__score svg {
     width: 1.4rem;
     height: 1.4rem;
 }
@@ -65,11 +65,11 @@
     color: var(--text-colorBox);
 }
 
-.movie-desc {
+.info-movie__desc{
     font-size: 1.4rem;
 }
 
-.movie-desc__text {
+.info-movie__desc-text {
     flex-wrap: wrap;
     line-height: 1.7;
     margin-top: 2.4rem;
@@ -80,7 +80,7 @@
     text-overflow: ellipsis;
 }
 
-.movie-desc__btn-more {
+.info-movie__desc-btn-more {
     display: inline-block;
     margin-top: 1.6rem;
     color: var(--positive);
