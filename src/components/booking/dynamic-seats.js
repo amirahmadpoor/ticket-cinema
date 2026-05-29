@@ -1,5 +1,6 @@
 import { getCinemaIdFromUrl } from "../../utils/helpers/getIDCinema.js";
 import { getCinemaIdController } from "../../controllers/components/cinema.controller.js";
+import { reserveSeatController } from "../../controllers/booking/reserve-seats.controller.js";
 
 const seatsCinema = document.querySelector('.seats');
 const cinemaName = document.querySelector('.cinema-name');
@@ -14,16 +15,18 @@ const cinema = await getCinemaIdController(Number(cinemaId));
 
 let seatsSelected = [];
 
-// function checkReservation(seatsReserved) {
-//     document.querySelectorAll('.chair')
-//         .forEach(chair => {
-//             seatsReserved.forEach(seat => {
-//                 if (seat.id === chair.dataset.id) {
-//                     chair.classList.add('reserved');
-//                 }
-//             })
-//         })
-// }
+function checkReservation(seatsReserved) {
+    const reserved = seatsReserved.filter(seat => seat.status === 'reserved');
+
+    document.querySelectorAll('.chair')
+        .forEach(chair => {
+            reserved.forEach(seat => {
+                if (seat.id === Number(chair.dataset.id)) {
+                    chair.classList.add('reserved');
+                }
+            })
+        })
+}
 
 function generateSeat({ id }) {
     return `<span class="seat">
@@ -34,7 +37,6 @@ function generateSeat({ id }) {
 }
 
 function createSeats(seats) {
-    console.log(seats);
     let seatsList = seats.map(generateSeat).join('');
     seatsCinema.innerHTML = seatsList;
 }
@@ -71,14 +73,23 @@ function countSeats(seatsSelected) {
 }
 
 function total(count) {
-    let sumPrice = 120000 * count;
-    totalPrice.innerHTML = `${sumPrice.toLocaleString()} تومان`;
+    let sumPrice = cinema.price * count;
+    totalPrice.innerHTML = `${sumPrice.toLocaleString()} ریال`;
 }
+
+// function getSeatsSelected(){
+//     let infoReserve={
+//         user_id:localStorage.getItem('accessToken'),
+
+//     }
+// }
 
 export function handlerSeats(seat) {
     cinemaName.innerHTML = cinema.name;
     cinemaAddress.innerHTML = cinema.address;
-    // checkReservation(seat);
+    console.log(seat);
+
     createSeats(seat);
+    checkReservation(seat);
     selectedSeat(seat);
 }
