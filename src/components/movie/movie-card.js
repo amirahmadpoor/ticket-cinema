@@ -15,7 +15,7 @@ export function handleMovieCard(movies) {
 
 
     function generateMovieCard({ id, trailer_url, title, rating, genre, duration }) {
-        return `<div class="box" data-id=${id}>
+        return `<div class="box hidden-elems-right" data-id=${id}>
         <div class="box__image">
         <img src="${trailer_url}" alt="" class="image__movie">
         </div>

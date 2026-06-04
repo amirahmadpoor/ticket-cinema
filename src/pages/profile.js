@@ -1,10 +1,13 @@
-import {renderHeaderFooter} from "../utils/helpers/renderHeader-Footer.js";
-import {renderMenuMobile} from "../utils/helpers/renderMenuMobile.js";
+import { getProfileDataUserController } from "../controllers/pages/auth.controller.js";
+import { getTokenUser } from "../utils/get-token.js";
 
-renderHeaderFooter();
-renderMenuMobile();
+
+const userData = await getProfileDataUserController(getTokenUser());
 
 const sidebarMenu = document.querySelector('.sidebar__menu');
+const userName = document.querySelector('.sidebar__name');
+const userEmail = document.querySelector('.sidebar__email');
+const welcome = document.querySelector('.welcome__title');
 
 function setSelected(item) {
     item.classList.add('sidebar__item--active');
@@ -24,5 +27,6 @@ sidebarMenu.addEventListener('click', e => {
     handlerSelected(item);
 })
 
-document.getElementById('header').innerHTML = renderHeader();
-document.getElementById('footer').innerHTML = renderFooter();
+userName.innerHTML = userData.data.name;
+userEmail.innerHTML = userData.data.email;
+welcome.innerHTML = `خوش اومدی ${userData.data.name}`;

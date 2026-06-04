@@ -1,6 +1,4 @@
 import { getMovieIdFromUrl } from "../utils/helpers/getIDMovie.js";
-import {renderHeaderFooter} from "../utils/helpers/renderHeader-Footer.js";
-import {renderMenuMobile} from "../utils/helpers/renderMenuMobile.js";
 import { setMenuMobile } from "../components/layout/mobile-menu.js";
 import { setFavorites } from "../components/movie/add-favorites.js";
 import { getMovieIdController } from "../controllers/pages/movie.page.controller.js";
@@ -12,8 +10,6 @@ import { initBtnTicket } from "../components/booking/ticket-button.js";
 import { setScrollScreen } from "../components/layout/nav-scroll.js";
 
 const idPage = getMovieIdFromUrl();
-renderHeaderFooter();
-renderMenuMobile();
 setMenuMobile();
 setFavorites();
 getMovieIdController(idPage);

@@ -71,24 +71,25 @@ function getInputUserNew() {
     return userData;
 }
 
-async function setAccessToken(token) {
+async function setAccessToken(token, userId) {
     localStorage.setItem('accessToken', token);
-    
+    localStorage.setItem('userId', userId);
 }
 
 async function handleRegister(e) {
     e.preventDefault();
     if (validationInputUserNew()) {
-        
+
         const response = await postDataUserNewController(getInputUserNew());
-        
+
         console.log(response);
-        
+
         if (response.success) {
             setEmptyInputs();
         }
         if (response.data.token) {
-            setAccessToken(await response.data.token);
+            setAccessToken(await response.data.token, await response.data.user.id);
+
             window.location.href = '/index.html';
         } else {
             console.log('auth field');
@@ -109,8 +110,8 @@ async function handleLogin(e) {
         if (!response.ok) {
             console.log('auth field');
         }
-        window.location.href = '/index.html';
-        setAccessToken(await response.data.token);
+        window.history.back();
+        setAccessToken(await response.data.token, await response.data.user.id);
     }
 }
 

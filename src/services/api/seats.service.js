@@ -12,7 +12,5 @@ export const getSeatsService = async () => {
     }
     );
     const data = await response.json();
-    console.log(data);
-
     return data.data.seats.map(createSeatModel);
 }

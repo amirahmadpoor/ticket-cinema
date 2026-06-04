@@ -12,7 +12,7 @@ const movieId = getMovieIdFromUrl();
 
 function generateReview({ rating, user_name, comment }) {
     reviewWrapper.insertAdjacentHTML('beforeend',
-        `<div class="review-box">
+        `<div class="review-box hidden-elems-top">
             <div class="review-box__header">
                 <div class="review-box__score">
                     <span class="review-box__score-number">${rating}</span>

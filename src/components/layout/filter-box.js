@@ -1,4 +1,5 @@
 import { filterCinemasController } from "../../controllers/components/cinema.controller.js";
+
 const btnFilter = document.querySelector('.filter__option');
 const btnClose = document.querySelector('.btn-close');
 const btnApply = document.querySelector('.btn-apply');
@@ -33,7 +34,7 @@ export const handelFilterBox = () => {
     overlay.addEventListener('click', closeFilterBox)
     filterTitle.addEventListener('click', openFilter);
     let price = 0;
-
+    
     rangeInput.addEventListener('input', (e) => {
         const rawValue = parseFloat(e.target.value);
 
@@ -46,4 +47,5 @@ export const handelFilterBox = () => {
         closeFilterBox();
         await filterCinemasController(price);
     })
+
 }

@@ -1,6 +1,8 @@
 import { getCinemaIdFromUrl } from "../../utils/helpers/getIDCinema.js";
 import { getCinemaIdController } from "../../controllers/components/cinema.controller.js";
-import { reserveSeatController } from "../../controllers/booking/reserve-seats.controller.js";
+import { reservationController } from "../../controllers/booking/reservation.controller.js";
+import { getShowTimeId } from "../../utils/helpers/get-showtimeId.js";
+import { getShowTimeIdController } from "../../controllers/booking/showtime.controller.js";
 
 const seatsCinema = document.querySelector('.seats');
 const cinemaName = document.querySelector('.cinema-name');
@@ -8,12 +10,15 @@ const cinemaAddress = document.querySelector('.cinema-address');
 const amount = document.querySelector('.amount');
 const countSeatsCounter = document.querySelector('.count-seats__counter');
 const totalPrice = document.querySelector('.total-price');
+const btnReserve = document.querySelector('.state-seats__add-cart');
+
+let seatsSelected = [];
 
 const cinemaId = getCinemaIdFromUrl();
 const cinema = await getCinemaIdController(Number(cinemaId));
+const showtimeId = getShowTimeId();
+const showtime = await getShowTimeIdController(Number(showtimeId));
 
-
-let seatsSelected = [];
 
 function checkReservation(seatsReserved) {
     const reserved = seatsReserved.filter(seat => seat.status === 'reserved');
@@ -45,22 +50,18 @@ function selectedSeat(seats) {
     seatsCinema.addEventListener('click', (e) => {
 
         let chair = e.target.closest('.chair');
-        let isSelect = seatsSelected.some(seat => seat.id === Number(chair.dataset.id));
-        let reservation = seats.find(seat => seat.id === Number(chair.dataset.id));
-        let seatIndex = seats.findIndex(seat => seat.id === Number(chair.dataset.id));
+        let chairId = Number(chair.dataset.id);
+        let isSelect = seatsSelected.some(id => id === chairId);
+        let reservation = seats.find(seat => seat.id === chairId);
+        let seatIndex = seatsSelected.findIndex(seat => seat.id === chairId);
 
         if (!isSelect) {
-            reservation.status = 'reserved';
-            seatsSelected.push(reservation);
-            console.log(reservation);
-            console.log(seatsSelected);
+            seatsSelected.push(reservation.id);
+            chair.classList.add('selected');
         } else {
-            reservation.status = 'available';
             seatsSelected.splice(seatIndex, 1);
-            console.log(reservation);
-            console.log(seatsSelected);
+            chair.classList.remove('selected');
         }
-        chair.classList.toggle('selected');
         countSeats(seatsSelected);
     })
 }
@@ -73,23 +74,29 @@ function countSeats(seatsSelected) {
 }
 
 function total(count) {
-    let sumPrice = cinema.price * count;
-    totalPrice.innerHTML = `${sumPrice.toLocaleString()} ریال`;
+    let sumPrice = showtime.price * count;
+    totalPrice.innerHTML = `${sumPrice.toLocaleString('fa-IR')} تومان`;
 }
 
-// function getSeatsSelected(){
-//     let infoReserve={
-//         user_id:localStorage.getItem('accessToken'),
-
-//     }
-// }
+function getSeatsSelected() {
+    let infoReserve = {
+        user_id: localStorage.getItem('userId'),
+        showtime_id: Number(showtimeId),
+        seat_ids: seatsSelected,
+    }
+    return infoReserve;
+}
 
 export function handlerSeats(seat) {
     cinemaName.innerHTML = cinema.name;
     cinemaAddress.innerHTML = cinema.address;
-    console.log(seat);
 
     createSeats(seat);
     checkReservation(seat);
     selectedSeat(seat);
+
+    btnReserve.addEventListener('click', async (e) => {
+        e.preventDefault();
+        await reservationController(getSeatsSelected());
+    })
 }

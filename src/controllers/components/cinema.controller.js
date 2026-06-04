@@ -20,6 +20,5 @@ export const filterCinemasController = async (inputPrice) => {
 }
 
 export const getCinemaIdController = async (id) => {
-    const cinema = await getCinemaIdService(id);
-    return cinema;
+    return await getCinemaIdService(id);
 }

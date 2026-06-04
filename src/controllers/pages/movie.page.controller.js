@@ -6,6 +6,7 @@ import { initMovieScore } from "../../components/movie/movie-score.js";
 import { getProfileDataUserController } from "../../controllers/pages/auth.controller.js";
 import { getTokenUser } from "../../utils/get-token.js";
 
+
 const userName = document.querySelector('.username');
 
 async function setUserName() {

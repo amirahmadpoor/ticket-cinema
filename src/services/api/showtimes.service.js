@@ -15,7 +15,7 @@ export const getShowTimesIdService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/showtimes/${id}`);
         const data = await response.json();
-        return data;
+        return data.data;
     } catch (error) {
         console.error('Error fetching showtime by ID:', error);
         throw error;

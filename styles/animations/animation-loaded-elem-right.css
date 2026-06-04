@@ -1,0 +1,19 @@
+.hidden-elems-right{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(20%);
+    transition: all 1s ease;
+}
+
+.animation-loaded-right{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+
+}
+
+@media(prefers-reduced-motion){
+    .hidden-elems-right{
+        transition: none;
+    }
+}
