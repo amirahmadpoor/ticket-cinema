@@ -1,7 +1,5 @@
-import { getMovieIdService } from "../../services/api/movie.service.js";
-import { initReadInfo } from "../../components/movie/movie-info.js";
+import { getInfoIdMovie } from "../../utils/helpers/get-info-movie.js";
 
-export async function getInfoMovieIdController(id) {
-    const infoMovie = await getMovieIdService(id);
-    initReadInfo(infoMovie);
-}
+window.addEventListener('DOMContentLoaded', () => {
+    getInfoIdMovie(id);
+})

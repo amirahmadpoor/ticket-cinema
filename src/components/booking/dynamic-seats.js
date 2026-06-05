@@ -1,12 +1,11 @@
 import { getCinemaIdFromUrl } from "../../utils/helpers/getIDCinema.js";
-import { getCinemaIdController } from "../../controllers/components/cinema.controller.js";
+import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
 import { reservationController } from "../../controllers/booking/reservation.controller.js";
 import { getShowTimeId } from "../../utils/helpers/get-showtimeId.js";
 import { getShowTimeIdController } from "../../controllers/booking/showtime.controller.js";
 
 const seatsCinema = document.querySelector('.seats');
-const cinemaName = document.querySelector('.cinema-name');
-const cinemaAddress = document.querySelector('.cinema-address');
+
 const amount = document.querySelector('.amount');
 const countSeatsCounter = document.querySelector('.count-seats__counter');
 const totalPrice = document.querySelector('.total-price');
@@ -15,7 +14,7 @@ const btnReserve = document.querySelector('.state-seats__add-cart');
 let seatsSelected = [];
 
 const cinemaId = getCinemaIdFromUrl();
-const cinema = await getCinemaIdController(Number(cinemaId));
+const movieId = getMovieIdFromUrl();
 const showtimeId = getShowTimeId();
 const showtime = await getShowTimeIdController(Number(showtimeId));
 
@@ -88,15 +87,14 @@ function getSeatsSelected() {
 }
 
 export function handlerSeats(seat) {
-    cinemaName.innerHTML = cinema.name;
-    cinemaAddress.innerHTML = cinema.address;
-
     createSeats(seat);
     checkReservation(seat);
     selectedSeat(seat);
 
-    btnReserve.addEventListener('click', async (e) => {
-        e.preventDefault();
-        await reservationController(getSeatsSelected());
+    btnReserve.addEventListener('click', async () => {
+        const response = await reservationController(getSeatsSelected());
+        if (response.success) {
+            location.href = `payment.html?id-movie=${movieId}&id-cinema=${cinemaId}&id-reservation=${response.data.id}`;
+        }
     })
 }

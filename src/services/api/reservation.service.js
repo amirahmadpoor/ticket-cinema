@@ -13,16 +13,3 @@ export const reservationService = async (infoReserve) => {
 
     return await response.json();
 }
-
-// export const editReserveStatusService = async (newInfoReserve) => {
-//     const response = await fetch(`${BASE_URL}/reservations`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(newInfoReserve)
-//     })
-
-//     const data = await response.json();
-//     return data;
-// }

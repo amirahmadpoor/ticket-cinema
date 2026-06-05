@@ -1,11 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/base/reset.css">
+    <link rel="stylesheet" href="/styles/base/palet-color.css">
+    <link rel="stylesheet" href="/styles/base/font.css">
+    <link rel="stylesheet" href="/styles/base/style-default.css">
+    <link rel="stylesheet" href="/styles/components/header.css">
+    <link rel="stylesheet" href="/styles/components/navScroll.css">
+    <link rel="stylesheet" href="/styles/pages/payments.css">
+    <link rel="stylesheet" href="/styles/components/info-movie-reservation.css">
+    <link rel="stylesheet" href="/styles/components/step-reservation.css">
+    <link rel="stylesheet" href="/styles/components/info-reserve.css">
+    <link rel="stylesheet" href="/styles/components/footer.css">
+    <link rel="shortcut icon" href="/assets/images/logo/Vector.svg" type="svg">
+    <script src="/src/utils/helpers/icons.js"></script>
     <title>پرداخت</title>
 </head>
+
 <body>
-    
+    <div id="scroll"></div>
+    <div class="overlay"></div>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header id="header"></header>
+
+    <div id="menu"></div>
+    <div id="search"></div>
+
+    <div class="back-image"></div>
+    <div class="payments container">
+        <div class="info-selection__payment-step">
+            <div class="steps">
+                <div class="step seat">
+                    <div class="step__wrapper">
+                        <label>صندلی</label>
+                        <span class="circle active"></span>
+                    </div>
+                    <span class="line active"></span>
+                </div>
+                <div class="step payment">
+                    <div class="step__wrapper">
+                        <label>پرداخت</label>
+                        <span class="circle active"></span>
+                    </div>
+                    <span class="line active"></span>
+                </div>
+                <div class="step ticket">
+                    <div class="step__wrapper">
+                        <label>بلیط</label>
+                        <span class="circle"></span>
+                    </div>
+                    <span class="line"></span>
+                </div>
+                <div class="step finish">
+                    <div class="step__wrapper">
+                        <label>پایان</label>
+                        <span class="circle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-ticket-selection">
+            <section class="info-ticket">
+                <div class="info-movie">
+                    <h2 class="info-movie__title"></h2>
+                    <div class="info-movie__time-score">
+                        <span class="info-movie__time"></span>
+                        <div class="info-movie__score">
+                            <span class="info-movie__score-number"></span>
+                            <svg>
+                                <use href="#icon-star"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="info-movie__image">
+                        <img src="" alt="" class="image-poster">
+                    </div>
+                </div>
+
+                <div class="info-cinema">
+                    <div class="info-ticket__cinema">
+                        <span class="cinema-name"></span>
+                        <a href="#" class="cinema-address"></a>
+                    </div>
+                </div>
+
+                <div class="info-reserve">
+                    <div class="info-reserve__wrapper">
+                        <div class="info-date">
+                            <div class="date">
+                                <span class="date__title">
+                                    <svg class="icon-calendar">
+                                        <use href="#icon-calendar"></use>
+                                    </svg>
+                                    <span>تاریخ</span>
+                                </span>
+                                <span class="date__info">2 اردیبهشت 1405</span>
+                            </div>
+                            <div class="time">
+                                <span class="time__title">
+                                    <svg class="icon-clock">
+                                        <use href="#icon-clock2"></use>
+                                    </svg>
+                                    <span>ساعت</span>
+                                </span>
+                                <span class="time__info">12:30</span>
+                            </div>
+                        </div>
+                        <div class="info-seats">
+                            <span class="info-seats__title">
+                                <svg class="icon-seat">
+                                    <use href="#icon-chair"></use>
+                                </svg>
+                                <span>صندلی‌های انتخاب شده</span>
+                            </span>
+                            <div class="info-seats__selected">
+                                <span>B2</span>
+                                <span>B3</span>
+                                <span>B4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="payment__wrapper">
+                <div class="payment__content">
+                    <!-- Payment Methods -->
+                    <div class="payment__form">
+                        <!-- Card Form -->
+                        <form class="payment__card-form">
+                            <div class="payment__field">
+                                <label class="payment__field-label">
+                                    شماره کارت
+                                </label>
+                                <div class="payment__input-wrapper">
+                                    <input class="payment__input" type="number">
+                                </div>
+                            </div>
+                            <div class="payment__row">
+                                <div class="payment__field">
+                                    <label class="payment__field-label">
+                                        ماه انقضا
+                                    </label>
+                                    <div class="payment__input-wrapper">
+                                        <input class="payment__input" type="number">
+                                    </div>
+                                </div>
+                                <div class="payment__field">
+                                    <label class="payment__field-label">
+                                        سال انقضا
+                                    </label>
+                                    <div class="payment__input-wrapper">
+                                        <input class="payment__input" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment__field">
+                                <label class="payment__field-label">
+                                    CVV2
+                                </label>
+                                <div class="payment__input-wrapper">
+                                    <input class="payment__input" type="password">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Order Summary -->
+                    <aside class="payment__summary">
+                        <h2 class="payment__summary-title">
+                            جزئیات سفارش
+                        </h2>
+                        <div class="payment__summary-section">
+                            <div class="payment__summary-item">
+                                <span>قیمت بلیط:</span>
+                                <span>$38.14</span>
+                            </div>
+                            <p class="payment__seats">
+                                <span>صندلی‌ها:</span>
+                                <span class="payment__seats-number">B6, B7, B8, B9</span>
+                            </p>
+                        </div>
+                        <div class="payment__total">
+                            <span class="payment__total-label">
+                                جمع کل:
+                            </span>
+                            <span class="payment__total-price">
+                                $90.11
+                            </span>
+                        </div>
+                        <button class="payment__submit-btn">
+                            پرداخت
+                        </button>
+                    </aside>
+
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/pages/payments.js"></script>
+    <script type="module" src="/src/app.js"></script>
+
 </body>
+
 </html>
