@@ -13,3 +13,12 @@ export const reservationService = async (infoReserve) => {
 
     return await response.json();
 }
+
+export const getReservationByIdService = async (id) => {
+    const response = await fetch(`${BASE_URL}/reservations/${id}`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    });
+    return await response.json();
+}
