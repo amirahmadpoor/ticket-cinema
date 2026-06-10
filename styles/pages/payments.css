@@ -9,14 +9,20 @@
     margin-top: -10rem;
 }
 
+.info-selection__payment-step {
+    display: flex;
+    justify-content: center;
+}
+
 .payment-ticket-selection {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12.6rem;
 }
 
 .payment-ticket-selection {
-    margin-top: 6rem;
+    margin-top: 10.4rem;
 }
 
 .payment__content {
@@ -78,7 +84,6 @@
     font-size: 1.3rem;
     min-height: 1.8rem;
 }
-
 
 
 .payment__summary {

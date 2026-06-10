@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/base/reset.css">
+    <link rel="stylesheet" href="/styles/base/palet-color.css">
+    <link rel="stylesheet" href="/styles/base/font.css">
+    <link rel="stylesheet" href="/styles/base/style-default.css">
+    <link rel="stylesheet" href="/styles/components/header.css">
+    <link rel="stylesheet" href="/styles/components/navScroll.css">
+    <link rel="stylesheet" href="/styles/components/step-reservation.css">
+    <link rel="stylesheet" href="/styles/pages/ticket.css">
+    <link rel="stylesheet" href="/styles/components/footer.css">
+    <link rel="shortcut icon" href="/assets/images/logo/Vector.svg" type="svg">
+    <script src="/src/utils/helpers/icons.js"></script>
+    <title>بلیط</title>
+</head>
+
+<body>
+
+    <div id="scroll"></div>
+    <div class="overlay"></div>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header id="header"></header>
+
+    <div id="menu"></div>
+    <div id="search"></div>
+
+    <div class="back-image"></div>
+    <section class="payment-success container">
+        <div class="payment-success__container">
+            <section class="ticket-section">
+                <div class="info-selection__ticket-step">
+                    <div class="steps">
+                        <div class="step seat">
+                            <div class="step__wrapper">
+                                <label>صندلی</label>
+                                <span class="circle active"></span>
+                            </div>
+                            <span class="line active"></span>
+                        </div>
+                        <div class="step payment">
+                            <div class="step__wrapper">
+                                <label>پرداخت</label>
+                                <span class="circle active"></span>
+                            </div>
+                            <span class="line active"></span>
+                        </div>
+                        <div class="step ticket">
+                            <div class="step__wrapper">
+                                <label>بلیط</label>
+                                <span class="circle active"></span>
+                            </div>
+                            <span class="line active"></span>
+                        </div>
+                        <div class="step finish">
+                            <div class="step__wrapper">
+                                <label>پایان</label>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket__container">
+                    <article class="ticket-card">
+                        <div class="ticket-card__poster">
+                            <img class="ticket-card__poster-image" src="/assets/images/cover/f1-cover.webp"
+                                alt="پوستر فیلم فرمول ۱" />
+                        </div>
+
+                        <div class="ticket-card__content">
+                            <h2 class="ticket-card__title">فیلم فرمول ۱ (2025)</h2>
+                            <p class="ticket-card__duration">۲ ساعت و ۳۵ دقیقه</p>
+
+                            <div class="ticket-card__location">
+                                <h3 class="ticket-card__cinema">سینما رگال گالری پلیس</h3>
+                                <p class="ticket-card__address">
+                                    خیابان هفتم شمال غربی ۷۰۱، واشنگتن، دی‌سی
+                                </p>
+                            </div>
+
+                            <div class="ticket-card__meta">
+                                <div class="ticket-card__meta-item">
+                                    <span class="ticket-card__meta-label">تاریخ</span>
+                                    <span class="ticket-card__meta-value">۸ جولای</span>
+                                </div>
+                                <div class="ticket-card__line"></div>
+                                <div class="ticket-card__meta-item">
+                                    <span class="ticket-card__meta-label">ساعت</span>
+                                    <span class="ticket-card__meta-value">۱۰:۳۰ صبح</span>
+                                </div>
+                                <div class="ticket-card__line"></div>
+                                <div class="ticket-card__meta-item">
+                                    <span class="ticket-card__meta-label">صندلی‌ها</span>
+                                    <span class="ticket-card__meta-value">B6، B7، B8، B9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <section class="success-details">
+                        <header class="success-details__header">
+                            <h1 class="success-details__title">پرداخت با موفقیت انجام شد!</h1>
+                            <p class="success-details__subtitle">
+                                بلیت شما برای فیلم فرمول ۱ با موفقیت خریداری شد.
+                            </p>
+                        </header>
+
+                        <div class="success-details__body">
+                            <section class="success-details__section success-details__section--order">
+                                <h2 class="success-details__section-title">جزئیات سفارش</h2>
+
+                                <ul class="success-details__list">
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">فیلم:</span>
+                                        <span class="success-details__value">فرمول ۱</span>
+                                    </li>
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">تاریخ:</span>
+                                        <span class="success-details__value">۸ جولای ۲۰۲۵</span>
+                                        <span class="success-details__label">ساعت:</span>
+                                        <span class="success-details__value">۱۰:۳۰ صبح</span>
+                                    </li>
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">صندلی‌ها:</span>
+                                        <span class="success-details__value">B6، B7، B8، B9</span>
+                                    </li>
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">مبلغ کل سفارش:</span>
+                                        <span class="success-details__value">۹۰.۱۱ دلار</span>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="success-details__section success-details__section--customer">
+                                <h2 class="success-details__section-title">مشخصات مشتری</h2>
+
+                                <ul class="success-details__list">
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">نام:</span>
+                                        <span class="success-details__value">بابی دو</span>
+                                    </li>
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">شماره تماس:</span>
+                                        <span class="success-details__value">۷۱۳ ۲۱۵ ۸۷۷۹</span>
+                                    </li>
+                                    <li class="success-details__list-item">
+                                        <span class="success-details__label">ایمیل:</span>
+                                        <span class="success-details__value">bobdydou@gmail.com</span>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="success-details__actions">
+                            <button class="success-details__button success-details__button--primary" type="button">
+                                دانلود بلیت
+                                <svg>
+                                    <use href="#icon-download"></use>
+                                </svg>
+                            </button>
+
+                            <button class="success-details__button success-details__button--secondary" type="button">
+                                اشتراک‌گذاری بلیت
+                                <svg>
+                                    <use href="#icon-share"></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <footer class="success-details__footer">
+                            <p class="success-details__note">
+                                از اینکه تیکت خود را از طریق Ticketor خریداری کردید سپاسگزاریم.
+                            </p>
+                            <p class="success-details__note">
+                                از اعتماد شما صمیمانه قدردانی می‌کنیم.
+                            </p>
+                        </footer>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/app.js"></script>
+</body>
+
+</html>
