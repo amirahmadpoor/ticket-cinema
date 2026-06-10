@@ -129,8 +129,11 @@
                                     شماره کارت
                                 </label>
                                 <div class="payment__input-wrapper">
-                                    <input class="payment__input" type="number">
-                                </div>
+                                    <input id="card-number" class="payment__input" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                                        autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx"
+                                        required>
+                                    </div>
+                                    <p class="message-validate"></p>
                             </div>
                             <div class="payment__row">
                                 <div class="payment__field">
@@ -138,16 +141,18 @@
                                         ماه انقضا
                                     </label>
                                     <div class="payment__input-wrapper">
-                                        <input class="payment__input" type="number">
+                                        <input id="expiry-month" class="payment__input" type="number">
                                     </div>
+                                    <p class="message-validate"></p>
                                 </div>
                                 <div class="payment__field">
                                     <label class="payment__field-label">
                                         سال انقضا
                                     </label>
                                     <div class="payment__input-wrapper">
-                                        <input class="payment__input" type="number">
+                                        <input id="expiry-year" class="payment__input" type="number">
                                     </div>
+                                    <p class="message-validate"></p>
                                 </div>
                             </div>
                             <div class="payment__field">
@@ -155,8 +160,9 @@
                                     CVV2
                                 </label>
                                 <div class="payment__input-wrapper">
-                                    <input class="payment__input" type="password">
+                                    <input id="card-cvv2" class="payment__input" type="password">
                                 </div>
+                                <p class="message-validate"></p>
                             </div>
                         </form>
                     </div>
@@ -166,10 +172,7 @@
                             جزئیات سفارش
                         </h2>
                         <div class="payment__summary-section">
-                            <div class="payment__summary-item">
-                                <span>قیمت بلیط:</span>
-                                <span>$38.14</span>
-                            </div>
+                            <div class="payment__summary-item"></div>
                             <p class="payment__seats">
                                 <span>صندلی‌ها:</span>
                                 <span class="payment__seats-number"></span>

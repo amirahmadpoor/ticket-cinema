@@ -1,4 +1,4 @@
 export const getShowTimeId = () => {
     let urlSearch = new URLSearchParams(location.search);
-    return urlSearch.get('id_showtime');
+    return urlSearch.get('id-showtime');
 }

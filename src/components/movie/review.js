@@ -1,7 +1,7 @@
 import { getReviewsController } from "../../controllers/components/review.controller.js";
 import { setReviewController } from "../../controllers/components/review.controller.js";
 import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
-import { handleToastBox } from "../layout/toast.js";
+import { handleToastBox } from "../../utils/helpers/show-toast.js";
 
 const btnSendComment = document.querySelector('.comment__btn--send');
 const inputComment = document.querySelector('#input-comment');

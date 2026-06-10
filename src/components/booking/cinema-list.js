@@ -20,7 +20,7 @@ function createTicketCard({ id, name, address, facilities }, showtimes) {
         <span class="cinema__type">3D</span>
         <div class="cinema__footer">
             <span class="cinema__options">${JSON.parse(facilities)}</span>
-            <a href="../pages/set-selection.html?id-movie=${movieId}&id-cinema=${id}&id_showtime=${item.id}" class="submit-time" data-id-cinema="${id}">
+            <a href="../pages/set-selection.html?id-movie=${movieId}&id-cinema=${id}&id-showtime=${item.id}" class="submit-time" data-id-cinema="${id}">
                 <span>ادامه</span>
                 <svg><use href="#arrow-left1"></use></svg>
             </a>

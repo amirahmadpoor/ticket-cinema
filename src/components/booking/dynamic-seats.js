@@ -3,6 +3,7 @@ import { getMovieIdFromUrl } from "../../utils/helpers/getIDMovie.js";
 import { reservationController } from "../../controllers/booking/reservation.controller.js";
 import { getShowTimeId } from "../../utils/helpers/get-showtimeId.js";
 import { getShowTimeIdController } from "../../controllers/booking/showtime.controller.js";
+import { handleToastBox } from "../../utils/helpers/show-toast.js";
 
 const seatsCinema = document.querySelector('.seats');
 
@@ -49,10 +50,13 @@ function selectedSeat(seats) {
     seatsCinema.addEventListener('click', (e) => {
 
         let chair = e.target.closest('.chair');
+
+        if (chair.classList.contains('reserved')) return;
+
         let chairId = Number(chair.dataset.id);
         let isSelect = seatsSelected.some(id => id === chairId);
         let reservation = seats.find(seat => seat.id === chairId);
-        let seatIndex = seatsSelected.findIndex(seat => seat.id === chairId);
+        let seatIndex = seatsSelected.findIndex(id => id === chairId);
 
         if (!isSelect) {
             seatsSelected.push(reservation.id);
@@ -93,8 +97,11 @@ export function handlerSeats(seat) {
 
     btnReserve.addEventListener('click', async () => {
         const response = await reservationController(getSeatsSelected());
-        if (response.success) {
-            location.href = `payment.html?id-movie=${movieId}&id-cinema=${cinemaId}&id-reservation=${response.data.id}`;
+
+        if (!response.success && !seatsSelected.length) {
+            handleToastBox('حداقل یک صندلی باید انتخاب شود');
+            return;
         }
+        location.href = `payment.html?id-movie=${movieId}&id-cinema=${cinemaId}&id-reservation=${response.data.id}`;
     })
 }

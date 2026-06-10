@@ -1,5 +1,5 @@
 import { newsletterController } from "../../controllers/components/newsletter.controller.js";
-import { handleToastBox } from "../layout/toast.js";
+import { handleToastBox } from "../../utils/helpers/show-toast.js";
 const form = document.querySelector('.cta__input-email');
 const emailUser = document.querySelector('.cta__email');
 const labelEmail = document.querySelector('.email__placeholder');
