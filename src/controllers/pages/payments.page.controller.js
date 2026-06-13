@@ -63,4 +63,8 @@ export const initPaymentsPage = async (reservationId) => {
         month: 'long',
         day: 'numeric'
     });
+
+    btnSubmitPayment.addEventListener('click', () => {
+        location.href = `ticket.html?id-movie=${1}&id-cinema=${2}&id-reservation=${reservationId}`;
+    })
 }

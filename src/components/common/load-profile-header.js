@@ -21,8 +21,8 @@ export const loadProfileHeader = async () => {
     try {
         const response = await getProfileDataUserController(getTokenUser());
             if (!response.success) {
-                toggleLoginRegister(login,register);
-                toggleProfile(profile);
+                // toggleLoginRegister(login,register);
+                // toggleProfile(profile);
                 console.log('Unauthorized');
             } else {
                 if (!profileName) return;
@@ -31,6 +31,6 @@ export const loadProfileHeader = async () => {
                 profileName.innerHTML = response.data.name;
             }
     } catch (err) {
-        console.warn(err);
+        console.warn('error:',err);
     }
 }

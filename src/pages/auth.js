@@ -93,7 +93,6 @@ async function handleRegister(e) {
             window.location.href = '/index.html';
         } else {
             console.log('auth field');
-
         }
     }
 }

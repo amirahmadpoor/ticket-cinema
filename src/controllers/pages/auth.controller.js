@@ -10,5 +10,7 @@ export const getDataUserController = async (userData) => {
 }
 
 export const getProfileDataUserController = async (token) => {
+    console.log(await getDataUser(token));
+    
     return await getDataUser(token);
 }
