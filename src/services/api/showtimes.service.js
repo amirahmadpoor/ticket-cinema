@@ -4,7 +4,7 @@ export const showTimesService = async () => {
     try {
         const response = await fetch(`${BASE_URL}/showtimes`);
         const data = await response.json();
-        return data;
+        return data.data.showtimes;
     } catch (error) {
         console.error('Error fetching showtimes:', error);
         throw error;

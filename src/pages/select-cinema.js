@@ -8,5 +8,5 @@ const idPage = getMovieIdFromUrl();
 
 getInfoMovieIdBookingController(idPage);
 handelFilterBox();
-handleAnimationLoadedRight()
 setScrollScreen();
+handleAnimationLoadedRight();

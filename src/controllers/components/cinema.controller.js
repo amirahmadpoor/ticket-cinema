@@ -1,23 +1,26 @@
-import { getAllCinemaService } from "../../services/api/cinema.service.js";
 import { initTicketCinema } from "../../components/booking/cinema-list.js";
 import { getCinemaIdService } from "../../services/api/cinema.service.js";
-// import { getCinema } from "../../components/booking/dynamic-seats.js";
+import { showTimesService } from "../../services/api/showtimes.service.js";
 
 export const getCinemasController = async () => {
     try {
-        const cinemas = await getAllCinemaService();
-        initTicketCinema(cinemas);
-    }
-    catch (err) {
+        const showtimes = await showTimesService();
+        console.log(showtimes);
+        initTicketCinema(showtimes);
+    } catch (err) {
         console.error(err);
     }
-}
+};
 
 export const filterCinemasController = async (inputPrice) => {
-    const cinemas = await getAllCinemaService();
-    const filteredCinemas = cinemas.filter(cinema => cinema.price <= inputPrice);
-    initTicketCinema(filteredCinemas);
-}
+    try {
+        const showtime = await showTimesService();
+        const filteredCinemas = showtime.filter(cinema => cinema.price <= inputPrice);
+        initTicketCinema(filteredCinemas);
+    } catch (err) {
+        console.error(err);
+    }
+};
 
 export const getCinemaIdController = async (id) => {
     return await getCinemaIdService(id);

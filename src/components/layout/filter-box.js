@@ -1,4 +1,6 @@
 import { filterCinemasController } from "../../controllers/components/cinema.controller.js";
+import { handleAnimationLoadedRight } from "../../animations/animation-loaded-right.js";
+
 
 const btnFilter = document.querySelector('.filter__option');
 const btnClose = document.querySelector('.btn-close');
@@ -37,15 +39,16 @@ export const handelFilterBox = () => {
     
     rangeInput.addEventListener('input', (e) => {
         const rawValue = parseFloat(e.target.value);
-
-        const mappedValue = mapRange(rawValue, 0, 100, 0, 7000000);
+        
+        const mappedValue = mapRange(rawValue, 0, 100, 0, 700000);
         price = mappedValue;
-        displayValue.textContent = `${Math.floor(mappedValue).toLocaleString()} ریال`;
+        displayValue.textContent = `${Math.floor(mappedValue).toLocaleString('fa-IR')} تومان`;
     });
 
     btnApply.addEventListener('click', async () => {
         closeFilterBox();
         await filterCinemasController(price);
+        handleAnimationLoadedRight();
     })
 
 }
