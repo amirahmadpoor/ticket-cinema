@@ -102,6 +102,8 @@ export function handlerSeats(seat) {
             handleToastBox('حداقل یک صندلی باید انتخاب شود');
             return;
         }
+        console.log(response);
+        
         location.href = `payment.html?id-movie=${movieId}&id-cinema=${cinemaId}&id-reservation=${response.data.id}`;
     })
 }

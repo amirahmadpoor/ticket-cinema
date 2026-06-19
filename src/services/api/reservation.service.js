@@ -22,3 +22,13 @@ export const getReservationByIdService = async (id) => {
     });
     return await response.json();
 }
+
+export const getReservationsByUserIdService = async () => {
+    const response = await fetch(`${BASE_URL}/reservations`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    });
+    const data = await response.json();
+    return data.data.reservations;
+}

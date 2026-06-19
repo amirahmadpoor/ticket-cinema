@@ -5,7 +5,6 @@ import { showTimesService } from "../../services/api/showtimes.service.js";
 export const getCinemasController = async () => {
     try {
         const showtimes = await showTimesService();
-        console.log(showtimes);
         initTicketCinema(showtimes);
     } catch (err) {
         console.error(err);
@@ -22,6 +21,6 @@ export const filterCinemasController = async (inputPrice) => {
     }
 };
 
-export const getCinemaIdController = async (id) => {
-    return await getCinemaIdService(id);
-}
+// export const getCinemaIdController = async (id) => {
+//     return await getCinemaIdService(id);
+// }

@@ -1,3 +1,5 @@
+import { convertMinutesToHoursMinutes } from "../../utils/helpers/convert-time.js";
+
 export function handleMovieCard(movies) {
     let path = location.pathname;
     const boxMovies = document.querySelector('.now-in-cinema__boxes');
@@ -5,12 +7,6 @@ export function handleMovieCard(movies) {
 
     function checkPath() {
         return path.includes('all-movies.html');
-    }
-
-    function convertMinutesToHoursMinutes(totalMinutes) {
-        const hours = Math.floor(totalMinutes / 60);
-        const minutes = totalMinutes % 60;
-        return `${hours}h ${minutes.toString().padStart(2, '0')}m`;
     }
 
 

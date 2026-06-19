@@ -1,12 +1,4 @@
-export function initReadInfo({
-    title,
-    poster_url: poster,
-    trailer_url: trailer,
-    imdb_rating: score,
-    duration,
-    description,
-    name: nameCinema,
-    address
+export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, imdb_rating: score, duration, description , name: nameCinema, address
 }) {
     const bgInfo = document.querySelector('.bg-poster-movie');
     const imagePoster = document.querySelector('.image-poster');
@@ -25,10 +17,10 @@ export function initReadInfo({
 
     bgInfo && (bgInfo.style.backgroundImage = `url(${poster})`);
     imagePoster && imagePoster.setAttribute('src', trailer);
-    movieTitle && (movieTitle.textContent = title);
-    movieDesc && (movieDesc.textContent = description);
-    movieTime && (movieTime.textContent = convertMinutesToHoursMinutes(duration));
-    movieScore && (movieScore.textContent = score);
-    cinemaName && (cinemaName.textContent = nameCinema);
-    cinemaAddress && (cinemaAddress.textContent = address);
+    movieTitle && (movieTitle.innerHTML = title);
+    movieDesc && (movieDesc.innerHTML = description);
+    movieTime && (movieTime.innerHTML = convertMinutesToHoursMinutes(duration));
+    movieScore && (movieScore.innerHTML = score);
+    cinemaName && (cinemaName.innerHTML = nameCinema);
+    cinemaAddress && (cinemaAddress.innerHTML = address);
 }

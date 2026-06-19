@@ -136,6 +136,7 @@
     justify-content: center;
     gap: 5px;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .success-details__button--primary {

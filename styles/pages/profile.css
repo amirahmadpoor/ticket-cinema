@@ -55,6 +55,13 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: 220ms;
+    padding: 0 1rem;
+}
+
+.sidebar__item:hover{
+    background-color: #272727;
+    border-radius: 4px;
 }
 
 .sidebar__item--active {

@@ -1,6 +1,5 @@
-import { getMovieIdFromUrl } from "../utils/helpers/getIDMovie.js";
-import { showSeatsController } from '../controllers/components/seats.controller.js';
-import { getInfoIdMovie } from "../utils/helpers/get-info-movie.js";
+    import { initSelectSeat } from "../controllers/pages/select-seat.page.controller.js";
 
-getInfoIdMovie(getMovieIdFromUrl());
-showSeatsController();
+    // window.addEventListener('DOMContentLoaded', () => {
+        initSelectSeat();
+    // })
