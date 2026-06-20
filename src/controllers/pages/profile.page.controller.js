@@ -1,6 +1,8 @@
 import { getProfileDataUserController } from "../../controllers/pages/auth.controller.js";
 import { getTokenUser } from "../../utils/get-token.js";
 import { getReservationsByUserIdController } from "../../controllers/booking/reservation.controller.js";
+import { getTicketInfoIdController } from "../../controllers/booking/ticket.controller.js";
+import { renderUserTickets } from "../../components/booking/ticket.js";
 
 export const initProfile = async () => {
     const userData = await getProfileDataUserController(getTokenUser());
@@ -31,11 +33,68 @@ export const initProfile = async () => {
         setSelected(item);
     }
 
-
-    sidebarMenu.addEventListener('click', e => {
+    // رویدادگردان برای کلیک روی دکمه‌های منو
+    sidebarMenu.addEventListener('click', async (e) => {
         const item = e.target.closest('.sidebar__item');
+        const link = e.target.closest('.sidebar__link');
+        
+        if (!link) return;
+
+        e.preventDefault();
         handlerSelected(item);
+
+        // بررسی کدام دکمه کلیک شده
+        const linkText = link.textContent.trim();
+        
+        if (linkText === 'بلیط‌های من') {
+            await showUserTickets();
+        } else {
+            // مخفی کردن بخش بلیط‌ها برای سایر منو آیتم‌ها
+            document.getElementById('tickets-section').style.display = 'none';
+            document.getElementById('dashboard-cards').style.display = 'flex';
+        }
     })
+
+    // تابع برای نمایش بلیط‌های کاربر
+    const showUserTickets = async () => {
+        try {
+            const reservations = await getReservationsByUserIdController();
+            
+            if (!reservations || reservations.length === 0) {
+                const ticketsContainer = document.getElementById('tickets-container');
+                ticketsContainer.innerHTML = '<p>هیچ بلیطی رزرو نشده</p>';
+                document.getElementById('tickets-section').style.display = 'block';
+                document.getElementById('dashboard-cards').style.display = 'none';
+                return;
+            }
+
+            // دریافت جزئیات هر بلیط
+            const ticketDetails = [];
+            for (let reservation of reservations) {
+                try {
+                    const ticketDetail = await getTicketInfoIdController(reservation.id);
+                    if (ticketDetail.data) {
+                        ticketDetails.push(ticketDetail.data);
+                    }
+                } catch (error) {
+                    console.error(`خطا در دریافت جزئیات بلیط ${reservation.id}:`, error);
+                }
+            }
+
+            // رندر کردن بلیط‌ها
+            const ticketsContainer = document.querySelector('.main');
+            ticketsContainer.innerHTML = renderUserTickets(ticketDetails);
+
+            // نمایش بخش بلیط‌ها
+            document.getElementById('tickets-section').style.display = 'block';
+            document.getElementById('dashboard-cards').style.display = 'none';
+
+        } catch (error) {
+            console.error('خطا در دریافت بلیط‌ها:', error);
+            const ticketsContainer = document.getElementById('tickets-container');
+            ticketsContainer.innerHTML = '<p>خطا در بارگذاری بلیط‌ها</p>';
+        }
+    }
 
     console.log(await getCountReservationTickets());
     userName.innerHTML = userData.data.name;

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/styles/base/style-default.css">
     <link rel="stylesheet" href="/styles/base/font.css">
     <link rel="stylesheet" href="/styles/base/palet-color.css">
+    <link rel="stylesheet" href="/styles/components/navScroll.css">
     <link rel="stylesheet" href="/styles/pages/profile.css">
+    <link rel="stylesheet" href="/styles/components//ticket-card.css">
     <link rel="stylesheet" href="/styles/components/header.css">
     <link rel="stylesheet" href="/styles/components/footer.css">
     <script src="../src/utils/helpers/icons.js"></script>
@@ -21,6 +23,7 @@
 
     <div id="menu"></div>
     <div id="search"></div>
+    <div id="scroll"></div>
 
     <div class="dashboard container">
         <!-- Sidebar -->
@@ -117,8 +120,14 @@
                 </div>
             </section>
 
+            <!-- Tickets Section -->
+            <section id="tickets-section" class="tickets-section" style="display: none;">
+                <h2 class="tickets-section__title">بلیط‌های من</h2>
+                <div id="tickets-container" class="tickets-container"></div>
+            </section>
+
             <!-- Sections list -->
-            <section class="cards">
+            <section id="dashboard-cards" class="cards">
 
                 <div class="cards__item">
                     <div class="cards__info">

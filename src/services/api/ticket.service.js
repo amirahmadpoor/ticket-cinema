@@ -10,6 +10,12 @@ export const getInfoTicketIdService = async (id) => {
     return await response.json();
 }
 
-// export const getInfoTickets = async () => {
-
-// }
+// سرویس برای دریافت جزئیات رزرو
+export const getReservationDetailsService = async (id) => {
+    const response = await fetch(`${BASE_URL}/reservations/${id}`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    });
+    return await response.json();
+}
