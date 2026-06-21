@@ -1,0 +1,148 @@
+.ticket-card {
+    display: flex;
+    background-color: var(--bg-black);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: 260ms;
+    direction: rtl;
+    border: 1px solid var(--color-borderBox);
+    color: var(--text-color);
+}
+
+.ticket-card:hover {
+    transform: translateY(-4px);
+}
+
+.ticket-card__poster {
+    width: 180px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ticket-card__poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ticket-card__content {
+    flex: 1;
+    padding: 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-card__title {
+    font-size: 1.9rem;
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+}
+
+.ticket-card__duration {
+    margin: 0 0 1.2rem;
+    font-size: 1.4rem;
+}
+
+.ticket-card__cinema {
+    margin: 0 0 0.4rem;
+}
+
+.ticket-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.ticket-card__meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-card__meta-label {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.ticket-card__meta-value {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.ticket-card__line {
+    width: 2px;
+    height: 4.0rem;
+    background-color: var(--color-borderBox);
+    align-self: center;
+}
+
+.ticket-card__price {
+    margin-top: auto;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--color-borderBox);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-card__price-label {
+    font-size: 1.4rem;
+}
+
+.ticket-card__price-value {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.ticket-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.5rem 1.2rem;
+    justify-content: center;
+}
+
+.ticket-card__btn {
+    padding: 0.9rem 1.4rem;
+    border-radius: 8px;
+    font-size: 1.35rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    border: none;
+    font-family: inherit;
+}
+
+.ticket-card__btn--download {
+    background: var(--color-yellow);
+    color: var(--color-black);
+}
+
+.ticket-card__btn--share {
+    background: transparent;
+    color: var(--color-yellow);
+    border: 1.5px solid var(--color-yellow);
+}
+
+.ticket-card__btn:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .ticket-card {
+        flex-direction: column;
+    }
+    .ticket-card__poster {
+        width: 100%;
+        height: 22.0rem;
+    }
+    .ticket-card__actions {
+        flex-direction: row;
+    }
+}

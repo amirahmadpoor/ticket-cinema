@@ -7,6 +7,7 @@ import { getReservationByIdController } from "../../controllers/booking/reservat
 import { initReadInfo } from "../../components/movie/movie-info.js";
 import { getReservationByIdService } from "../../services/api/reservation.service.js";
 import { getShowTimesIdService } from "../../services/api/showtimes.service.js";
+import { convertDateToPersian } from "../../utils/helpers/convert-time.js";
 
 export const initPaymentsPage = async (reservationId) => {
     const btnSubmitPayment = document.querySelector('.payment__submit-btn');
@@ -58,11 +59,7 @@ export const initPaymentsPage = async (reservationId) => {
     time.innerHTML = infoShowTime.show_time.slice(0, 5);
 
     const d = new Date(infoShowTime.show_date);
-    date.innerHTML = d.toLocaleDateString('fa-IR', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+    date.innerHTML = convertDateToPersian(infoShowTime.show_date);
 
     btnSubmitPayment.addEventListener('click', () => {
         location.href = `ticket.html?id-movie=${1}&id-cinema=${2}&id-reservation=${reservationId}`;

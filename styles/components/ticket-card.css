@@ -1,4 +1,5 @@
 .success-details__body {
+    max-width: 73.3rem;
     display: flex;
     justify-content: space-between;
 }

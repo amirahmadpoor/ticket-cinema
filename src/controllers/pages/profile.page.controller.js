@@ -2,7 +2,7 @@ import { getProfileDataUserController } from "../../controllers/pages/auth.contr
 import { getTokenUser } from "../../utils/get-token.js";
 import { getReservationsByUserIdController } from "../../controllers/booking/reservation.controller.js";
 import { getTicketInfoIdController } from "../../controllers/booking/ticket.controller.js";
-import { renderUserTickets } from "../../components/booking/ticket.js";
+import { renderUserTickets } from "../../components/booking/ticket-view.js";
 
 export const initProfile = async () => {
     const userData = await getProfileDataUserController(getTokenUser());
@@ -33,33 +33,24 @@ export const initProfile = async () => {
         setSelected(item);
     }
 
-    // رویدادگردان برای کلیک روی دکمه‌های منو
     sidebarMenu.addEventListener('click', async (e) => {
         const item = e.target.closest('.sidebar__item');
-        const link = e.target.closest('.sidebar__link');
-        
-        if (!link) return;
 
         e.preventDefault();
         handlerSelected(item);
 
-        // بررسی کدام دکمه کلیک شده
-        const linkText = link.textContent.trim();
-        
-        if (linkText === 'بلیط‌های من') {
+        if (e.target.closest('.my-ticket')) {
             await showUserTickets();
         } else {
-            // مخفی کردن بخش بلیط‌ها برای سایر منو آیتم‌ها
             document.getElementById('tickets-section').style.display = 'none';
             document.getElementById('dashboard-cards').style.display = 'flex';
         }
     })
 
-    // تابع برای نمایش بلیط‌های کاربر
     const showUserTickets = async () => {
         try {
             const reservations = await getReservationsByUserIdController();
-            
+
             if (!reservations || reservations.length === 0) {
                 const ticketsContainer = document.getElementById('tickets-container');
                 ticketsContainer.innerHTML = '<p>هیچ بلیطی رزرو نشده</p>';
@@ -68,7 +59,6 @@ export const initProfile = async () => {
                 return;
             }
 
-            // دریافت جزئیات هر بلیط
             const ticketDetails = [];
             for (let reservation of reservations) {
                 try {
@@ -81,13 +71,8 @@ export const initProfile = async () => {
                 }
             }
 
-            // رندر کردن بلیط‌ها
             const ticketsContainer = document.querySelector('.main');
             ticketsContainer.innerHTML = renderUserTickets(ticketDetails);
-
-            // نمایش بخش بلیط‌ها
-            document.getElementById('tickets-section').style.display = 'block';
-            document.getElementById('dashboard-cards').style.display = 'none';
 
         } catch (error) {
             console.error('خطا در دریافت بلیط‌ها:', error);
