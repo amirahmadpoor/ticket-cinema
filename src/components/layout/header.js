@@ -53,16 +53,22 @@ export function renderHeader() {
                     <div class="profile__options">
                         <ul class="list-options">
                             <li class="list-options__option">
-                            <svg><use href="#icon-user"></use></svg>
-                            <a href="../../pages/profile.html">پروفایل</a>
+                                <a href="../../pages/profile.html">
+                                    <svg><use href="#icon-user"></use></svg>
+                                    <span>پروفایل</span>
+                                </a>
                             </li>
                             <li class="list-options__option">
-                                <svg><use href="#icon-wallet"></use></svg>
-                                <span>کیف پول</span>
+                                <a href="#">
+                                    <svg><use href="#icon-wallet"></use></svg>
+                                    <span>کیف پول</span>
+                                </a>
                             </li>
-                            <li class="list-options__option logout">
-                                <svg><use href="#icon-logout"></use></svg>
-                                <span>خروج از حساب</span>
+                            <li class="list-options__option">
+                                <a href="#" class="logout">
+                                    <svg><use href="#icon-logout"></use></svg>
+                                    <span>خروج از حساب</span>
+                                </a>
                             </li>
                         </ul>
                     </div>

@@ -9,7 +9,6 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
-
 }
 
 @media(prefers-reduced-motion){

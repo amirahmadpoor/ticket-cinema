@@ -1,4 +1,5 @@
 import { convertDateToPersian, convertMinutesToHoursMinutes } from "../../utils/helpers/convert-time.js";
+import { handleAnimationLoadedRight } from "../../animations/animation-loaded-right.js";
 
 export const renderTicketCard = (data = null) => {
     if (!data) return '';
@@ -7,14 +8,14 @@ export const renderTicketCard = (data = null) => {
     const movieTitle = data.movie?.title || 'نام فیلم';
     const cinemaName = data.showtime?.cinema_name || 'نام سینما';
     const showDate = data.showtime?.date || 'تاریخ نامشخص';
-    const showTime = data.showtime?.time || 'ساعت نامشخص'; // فرض بر وجود فیلد time
+    const showTime = data.showtime?.time || 'ساعت نامشخص';
     const trailer = data.movie?.trailer_url;
     console.log(data.movie);
     
     const totalPrice = data.total_price ? data.total_price.toLocaleString('fa-IR') : '0';
 
     return `
-        <article class="ticket-card">
+        <article class="ticket-card hidden-elems-right">
             <div class="ticket-card__poster">
                 <img class="ticket-card__poster-image" 
                      src="${trailer}" 
@@ -66,7 +67,7 @@ export const renderTicketCard = (data = null) => {
             </div>
         </article>
     `;
-};
+}
 
 export const renderUserTickets = (tickets) => {
     if (!tickets || tickets.length === 0) {
@@ -77,6 +78,5 @@ export const renderUserTickets = (tickets) => {
     tickets.forEach(ticket => {
         ticketsHTML += renderTicketCard(ticket);
     });
-
     return ticketsHTML;
 };

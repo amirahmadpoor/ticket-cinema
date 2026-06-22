@@ -8,6 +8,7 @@
 .sidebar {
     max-width: 39.4rem;
     height: 100vh;
+    background-color: var(--color-black);
 }
 
 .sidebar__profile {

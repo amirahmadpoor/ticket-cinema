@@ -11,7 +11,6 @@ export const getMoviesController = async () => {
         const movies = await getAllMoviesService();
         const cinemas= await getAllCinemaService();
         handleMovieCard(movies);
-        handleAnimationLoadedRight();
         initStatistics(movies,cinemas);
     }
     catch (err) {

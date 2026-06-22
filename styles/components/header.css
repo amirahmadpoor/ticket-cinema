@@ -305,7 +305,7 @@
     border-radius: inherit;
 }
 
-.profile__wrapper{
+.profile__wrapper {
     position: absolute;
     width: 25rem;
     height: 0;
@@ -316,28 +316,27 @@
     transition: 260ms 120ms;
 }
 
-.profile__options{
+.profile__options {
     /* width: 100%; */
     background-color: var(--color-black);
     border-radius: 12px;
-    padding:  1.6rem;
+    padding: 1.6rem;
     overflow: hidden;
     z-index: -1;
 }
 
-.profile:hover .profile__wrapper{
+.profile:hover .profile__wrapper {
     height: auto;
     visibility: visible;
     opacity: 1;
 }
 
-.list-options{
+.list-options {
     display: flex;
     flex-direction: column;
-    /* gap: 2.4rem; */
 }
 
-.list-options__option{
+.list-options__option a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -346,11 +345,11 @@
     transition: 260ms;
 }
 
-.list-options__option:hover{
+.list-options__option:hover {
     background-color: var(--border-dark);
 }
 
-.logout{
+.logout {
     color: var(--color-logout);
 }
 
