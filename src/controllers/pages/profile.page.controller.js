@@ -3,8 +3,10 @@ import { getTokenUser } from "../../utils/get-token.js";
 import { getReservationsByUserIdController } from "../../controllers/booking/reservation.controller.js";
 import { getTicketInfoIdController } from "../../controllers/booking/ticket.controller.js";
 import { renderUserTickets } from "../../components/booking/ticket-view.js";
-import { handleAnimationLoadedRight } from "../../animations/animation-loaded-right.js";
+import { handleAnimationLoadedTop } from "../../animations/animation-loaded.js";
 import { MyAccount } from "../../components/MyAccount/MyAccount.js";
+import { MyWatchList } from "../../components/MyWatchList/MyWatchList.js";
+import { getWatchedMovieController } from "../../controllers/booking/reservation.controller.js";
 
 export const initProfile = async () => {
 
@@ -35,7 +37,6 @@ export const initProfile = async () => {
         setSelected(item);
     }
 
-    await renderMyAccount();
 
     async function renderMyAccount() {
         const countTicket = await getCountReservationTickets();
@@ -44,6 +45,7 @@ export const initProfile = async () => {
         const dashboardContainer = document.querySelector('.main');
         dashboardContainer.innerHTML = await MyAccount(countTicket, welcome);
     }
+    await renderMyAccount();
 
 
     const showUserTickets = async () => {
@@ -66,8 +68,6 @@ export const initProfile = async () => {
                     console.error(`خطا در دریافت جزئیات بلیط ${reservation.id}:`, error);
                 }
             }
-            console.log(reservations);
-
             dashboardContainer.innerHTML = renderUserTickets(ticketDetails);
 
         } catch (error) {
@@ -76,6 +76,7 @@ export const initProfile = async () => {
             ticketsContainer.innerHTML = '<p>خطا در بارگذاری بلیط‌ها</p>';
         }
     }
+
 
     const showMyAccount = async (countTicket, welcome) => {
         try {
@@ -88,6 +89,16 @@ export const initProfile = async () => {
         }
     }
 
+
+    const showUserWatchList = async () => {
+        try {
+            const reservations = await getWatchedMovieController();
+            dashboardContainer.innerHTML = reservations.map(MyWatchList);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     sidebarMenu.addEventListener('click', async (e) => {
         const item = e.target.closest('.sidebar__item');
 
@@ -96,10 +107,12 @@ export const initProfile = async () => {
 
         if (e.target.closest('.my-ticket')) {
             await showUserTickets();
-            handleAnimationLoadedRight();
         } else if (e.target.closest('.my-account')) {
             await renderMyAccount();
+        } else if (e.target.closest('.my-watchlist')) {
+            await showUserWatchList();
         }
+        handleAnimationLoadedTop();
     })
 
     console.log(await getCountReservationTickets());

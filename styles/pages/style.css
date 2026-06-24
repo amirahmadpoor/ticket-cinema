@@ -699,6 +699,11 @@
     .brand-trust__image {
         max-width: 10rem;
     }
+
+    .btn-modal{
+        left: 3rem;
+        bottom: 12rem;
+    }
 }
 
 @media screen and (max-width:426px) {

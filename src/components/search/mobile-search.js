@@ -1,8 +1,14 @@
-function showResult(searchResultMobile,result) {
+function showResult(searchResultMobile, result) {
     result.forEach(res => {
-        searchResultMobile.insertAdjacentHTML('beforeend',
-            `<a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
-        )
+        searchResultMobile.innerHTML =
+            `
+            <div class="result">
+                <a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class="search__result--show">
+                    <span>${res.title}</span>
+                    <img src=${res.image}>
+                </a>
+            </div>
+            `
     })
 }
 
@@ -23,7 +29,7 @@ export function initSearchMobile(movies) {
     }
 
     function handelSearchBox() {
-        addSearchBox()
+        addSearchBox();
     }
 
     function typingSearch(input) {
@@ -34,7 +40,7 @@ export function initSearchMobile(movies) {
 
 
     function getMovieTitle(movies) {
-        return movies.map(item => ({ id: item.id, title: item.title }))
+        return movies.map(item => ({ id: item.id, title: item.title, image: item.trailer_url }))
     }
 
     function includesStrategy(title, token) {
@@ -52,11 +58,14 @@ export function initSearchMobile(movies) {
         const titles = getMovieTitle(movies);
         const result = searching(titles, input);
         if (result.length) {
-            showResult(searchResultMobile,result);
+            showResult(searchResultMobile, result);
         }
     }
 
-    iconSearch.addEventListener('click', handelSearchBox);
+    iconSearch.addEventListener('click', (e) => {
+        e.preventDefault();
+        handelSearchBox();
+    });
     iconClose.addEventListener('click', addSearchBox);
 
     inputSearchMobile.addEventListener('input', () => {

@@ -1,5 +1,5 @@
 import { convertDateToPersian, convertMinutesToHoursMinutes } from "../../utils/helpers/convert-time.js";
-import { handleAnimationLoadedRight } from "../../animations/animation-loaded-right.js";
+import { handleAnimationLoadedTop } from "../../animations/animation-loaded.js";
 
 export const renderTicketCard = (data = null) => {
     if (!data) return '';
@@ -15,7 +15,7 @@ export const renderTicketCard = (data = null) => {
     const totalPrice = data.total_price ? data.total_price.toLocaleString('fa-IR') : '0';
 
     return `
-        <article class="ticket-card hidden-elems-right">
+        <article class="ticket-card hidden-elems-top">
             <div class="ticket-card__poster">
                 <img class="ticket-card__poster-image" 
                      src="${trailer}" 

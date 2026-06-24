@@ -1,10 +1,16 @@
-.all-movies{
+.all-movies {
     margin-top: 15rem;
 }
 
 .now-in-cinema__boxes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 22.5rem)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 22.5rem)) !important;
     justify-content: center;
     gap: 0.8rem;
+}
+
+@media screen and (max-width:768px) {
+    .now-in-cinema__boxes {
+        justify-content: center;
+    }
 }

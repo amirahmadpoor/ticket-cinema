@@ -1,6 +1,10 @@
 
 const BASE_URL = 'http://localhost:3000/api'
 
+const getAccessToken = () => {
+    return (`Bearer ${localStorage.getItem('accessToken')}`);
+}
+
 export const reservationService = async (infoReserve) => {
     const response = await fetch(`${BASE_URL}/reservations`, {
         method: 'POST',
@@ -31,4 +35,14 @@ export const getReservationsByUserIdService = async () => {
     });
     const data = await response.json();
     return data.data.reservations;
+}
+
+export const getWatchedMovieService = async () => {
+    const response = await fetch(`${BASE_URL}/reservations/watched-movies`, {
+        headers: {
+            'Authorization': getAccessToken()
+        }
+    });
+    const data = await response.json();
+    return data.data;
 }

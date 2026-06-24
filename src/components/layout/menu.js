@@ -11,7 +11,7 @@ function renderMenu() {
             </span>
         </a>
         <!--movie-->
-        <a href="#" class="menu-mobile__link">
+        <a href="/pages/all-movies.html" class="menu-mobile__link">
             <svg class="icons-menu-mobile">
                 <use href="#icon-movie"></use>
             </svg>
@@ -29,7 +29,7 @@ function renderMenu() {
             </span>
         </a>
         <!--search-->
-        <a href="#" class="menu-mobile__link icon-search-mobile">
+        <a href="" class="menu-mobile__link icon-search-mobile">
             <svg class="icons-menu-mobile icon-search">
                 <use href="#icon-search"></use>
             </svg>
@@ -38,7 +38,7 @@ function renderMenu() {
             </span>
         </a>
         <!--user-->
-        <a href="#" class="menu-mobile__link">
+        <a href="/pages/profile.html" class="menu-mobile__link">
             <svg class="icons-menu-mobile">
                 <use href="#icon-user"></use>
             </svg>

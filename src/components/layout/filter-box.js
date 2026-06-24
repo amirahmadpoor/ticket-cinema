@@ -1,5 +1,5 @@
 import { filterCinemasController } from "../../controllers/components/cinema.controller.js";
-import { handleAnimationLoadedRight } from "../../animations/animation-loaded-right.js";
+import { handleAnimationLoadedRight } from "../../animations/animation-loaded.js";
 
 
 const btnFilter = document.querySelector('.filter__option');

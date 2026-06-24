@@ -2,10 +2,10 @@ export function renderHeader() {
     return `
     <div class="header-top container">
         <div class="header-top__right">
-            <div class="header-top__logo">
+            <a href="/index.html" class="header-top__logo">
                 <img src="/assets/images/logo/Vector.svg" alt="" class="vector-logo">
                 <img src="/assets/images/logo/Group.svg" alt="" class="text-logo">
-            </div>
+            </a>
 
             <div class="header-top__links">
                 <a href="pages/all-movies.html" class="header-top__link">فیلم</a>

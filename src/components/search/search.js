@@ -1,8 +1,14 @@
 function showResult(searchResult, result) {
     result.forEach(res => {
-        searchResult.insertAdjacentHTML('beforeend',
-            `<a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class=search__result--show>${res.title}</a>`
-        )
+        searchResult.innerHTML =
+            `
+            <div class="result">
+                <a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class="search__result--show">
+                    <span>${res.title}</span>
+                    <img src=${res.image}>
+                </a>
+            </div>
+            `
     })
 }
 
@@ -21,12 +27,16 @@ export function initSearch(movies) {
         searchResult.innerHTML = '';
     }
 
-    function addSearchBox() {
-        searchBox.classList.toggle('show');
+    function openSearch() {
+        searchBox.classList.add('show');
+        overlay.classList.add('active');
     }
-    function addOverlay() {
-        overlay.classList.toggle('active');
+
+    function closeSearch() {
+        searchBox.classList.remove('show');
+        overlay.classList.remove('active');
     }
+
 
     function handelSearchBox() {
         addSearchBox()
@@ -40,7 +50,7 @@ export function initSearch(movies) {
     }
 
     function getMovieTitle(movies) {
-        return movies.map(item => ({ id: item.id, title: item.title }))
+        return movies.map(item => ({ id: item.id, title: item.title, image: item.trailer_url }));
     }
 
     function includesStrategy(title, token) {
@@ -62,12 +72,12 @@ export function initSearch(movies) {
         }
     }
 
-    iconSearch.addEventListener('click', handelSearchBox);
     inputSearch.addEventListener('input', () => {
         resetResult();
         const inputVal = inputSearch.value.toLowerCase().trim();
         typingSearch(inputVal);
     })
 
-    overlay.addEventListener('click', handelSearchBox);
+    iconSearch.addEventListener('click', openSearch);
+    overlay.addEventListener('click', closeSearch);
 }

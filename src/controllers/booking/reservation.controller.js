@@ -1,5 +1,7 @@
 import { reservationService } from "../../services/api/reservation.service.js";
 import { getReservationsByUserIdService } from "../../services/api/reservation.service.js";
+import { getWatchedMovieService } from "../../services/api/reservation.service.js";
+
 export const reservationController = async (infoReserve) => {
     return await reservationService(infoReserve);
 }
@@ -9,4 +11,8 @@ export const getReservationsByUserIdController = async () => {
     const userId = localStorage.getItem('userId');
     return response.filter(reserve => reserve.user_id == userId)
         .filter(reserve => reserve.payment_status === 'paid');
+}
+
+export const getWatchedMovieController = async () => {
+    return await getWatchedMovieService();
 }

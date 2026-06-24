@@ -1,7 +1,7 @@
 import { getReviewService } from "../../services/api/reviews.service.js";
 import { setReviewService } from "../../services/api/reviews.service.js";
 import { handelGetComment } from "../../components/movie/review.js";
-import { handleAnimationLoadedTop } from "../../animations/animation-loaded-top.js";
+import { handleAnimationLoadedTop } from "../../animations/animation-loaded.js";
 
 export const getReviewsController = async () => {
     try {
