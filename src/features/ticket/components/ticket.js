@@ -1,5 +1,6 @@
 import { getTicketInfoIdController } from "../controllers/ticket.controller.js";
 import { convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-time.js";
+import { convertDateToPersian } from "../../../utils/helpers/convert-time.js";
 
 export const initTicketPage = async (reservationId) => {
     const titleTicket = document.querySelector('.ticket-card__title');
@@ -18,20 +19,10 @@ export const initTicketPage = async (reservationId) => {
     const seats = document.querySelectorAll('.seats');
     const { data } = await getTicketInfoIdController(reservationId);
 
-    function toPersianDate(dateString) {
-        const date = new Date(dateString);
-
-        return new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).format(date);
-    }
-
 
     titleTicket.innerHTML = data.movie.title;
-    showDate.innerHTML = toPersianDate(data.showtime.date);
-    showDateCart.innerHTML = toPersianDate(data.showtime.date);
+    showDate.innerHTML = convertDateToPersian(data.showtime.date);
+    showDateCart.innerHTML = convertDateToPersian(data.showtime.date);
     durationMovie.innerHTML = convertMinutesToHoursMinutes(data.movie.duration);
     cinemaName.innerHTML = data.showtime.cinema_name;
     cinemaAddress.innerHTML = data.showtime.cinema_address;

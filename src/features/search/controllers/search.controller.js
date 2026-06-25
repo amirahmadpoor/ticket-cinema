@@ -1,6 +1,5 @@
 import { getAllMoviesService } from "../../movie/services/movie.service.js";
-import { initSearch } from "../../search/components/search.js";
-import { initSearchMobile } from "../../search/components/mobile-search.js";
+import { initSearch, initSearchMobile } from "../../search/components/search.js";
 
 export const getTitleMoviesController = async () => {
     try {

@@ -1,0 +1,30 @@
+.chair {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    transition: 260ms;
+    cursor: pointer;
+}
+
+.chair.active {
+    color: var(--color-yellow);
+}
+
+.icon-chair {
+    width: 2.0rem;
+    height: 1.6rem;
+}
+
+.available {
+    color: #fff;
+}
+
+.reserved {
+    color: var(--color-reserved);
+}
+
+.selected {
+    color: var(--color-yellow);
+}

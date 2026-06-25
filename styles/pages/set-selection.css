@@ -44,21 +44,6 @@
     row-gap: 1.6rem;
 }
 
-.chair {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    transition: 260ms;
-    cursor: pointer;
-}
-
-.chair.active {
-    color: var(--color-yellow);
-}
-
-
 .seats-count {
     margin-top: 3.2rem;
 }
@@ -69,10 +54,6 @@
     gap: 8px;
 }
 
-.icon-chair {
-    width: 2.0rem;
-    height: 1.6rem;
-}
 
 .seats-count {
     color: var(--positive);
@@ -97,18 +78,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.available {
-    color: #fff;
-}
-
-.reserved {
-    color: var(--color-reserved);
-}
-
-.selected {
-    color: var(--color-yellow);
 }
 
 .state-seats {

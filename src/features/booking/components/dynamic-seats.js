@@ -34,11 +34,11 @@ function checkReservation(seatsReserved) {
 }
 
 function generateSeat({ id }) {
-    return `<span class="seat">
-    <svg class="chair" data-id=${id}>
-    <use href="#icon-chair"></use>
-    </svg>
-    </span>`
+    return `
+    <span class="seat">
+        <svg class="chair" data-id=${id}><use href="#icon-chair"></use></svg>
+    </span>
+    `
 }
 
 function createSeats(seats) {

@@ -1,0 +1,27 @@
+.actor {
+    max-width: 22.8rem;
+    min-width: 15.8rem;
+    width: 100%;
+    max-height: 37.8rem;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.actor__image {
+    width: 100%;
+    max-height: 31.6rem;
+    height: 100%;
+}
+
+.actor__name {
+    font-size: 1.4rem;
+    color: var(--text-colorBox);
+    margin-top: 1.6rem;
+}
+
+.actor__role {
+    margin-top: 0.8rem;
+}

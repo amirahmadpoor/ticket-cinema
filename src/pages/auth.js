@@ -1,5 +1,4 @@
-import { postDataUserNewController } from "../controllers/pages/auth.controller.js";
-import { getDataUserController } from "../controllers/pages/auth.controller.js";
+import { postDataUserNewController, getDataUserController } from "../features/auth/controllers/auth.controller.js";
 
 const registerForm = document.querySelector('.register-form');
 const loginForm = document.querySelector('.login-form');

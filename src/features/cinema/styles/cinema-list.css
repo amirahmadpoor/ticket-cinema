@@ -1,0 +1,81 @@
+.cinema {
+    width: 100%;
+    height: 29.6rem;
+}
+
+.cinema__name-location {
+    width: 100%;
+    height: 11.4rem;
+    border-radius: 0.8rem 0.8rem 1.6rem 1.6rem;
+    border: 1px solid var(--color-borderBox);
+    padding: 2.4rem;
+    background-color: var(--bg-review-box);
+}
+
+.cinema__name-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.7;
+}
+
+.cinema__name {
+    font-size: 2.4rem;
+}
+
+.cinema__location {
+    margin-top: 8px;
+    text-decoration: underline;
+    color: var(--positive);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cinema__reservation {
+    width: 100%;
+    height: 18.2rem;
+    border-radius: 1.6rem 1.6rem 0.8rem 0.8rem;
+    border: 1px solid var(--color-borderBox);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--bg-review-box);
+}
+
+.cinema__type {
+    font-size: 1.8rem;
+}
+
+.cinema__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cinema__options {
+    color: var(--text-colorBox);
+}
+
+.submit-time {
+    width: 13.7rem;
+    height: 4.0rem;
+    border-radius: 4px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 160ms;
+}
+
+.submit-time span,
+.submit-time svg {
+    transition: 160ms;
+}

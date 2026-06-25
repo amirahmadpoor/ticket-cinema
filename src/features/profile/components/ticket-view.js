@@ -10,7 +10,6 @@ export const renderTicketCard = (data = null) => {
     const showDate = data.showtime?.date || 'تاریخ نامشخص';
     const showTime = data.showtime?.time || 'ساعت نامشخص';
     const trailer = data.movie?.trailer_url;
-    console.log(data.movie);
     
     const totalPrice = data.total_price ? data.total_price.toLocaleString('fa-IR') : '0';
 

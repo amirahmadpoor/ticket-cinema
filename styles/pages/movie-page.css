@@ -241,34 +241,6 @@ section:not(.hero__movie) {
     display: none;
 }
 
-.actor {
-    max-width: 22.8rem;
-    min-width: 15.8rem;
-    width: 100%;
-    max-height: 37.8rem;
-    height: 100%;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.actor__image {
-    width: 100%;
-    max-height: 31.6rem;
-    height: 100%;
-}
-
-.actor__name {
-    font-size: 1.4rem;
-    color: var(--text-colorBox);
-    margin-top: 1.6rem;
-}
-
-.actor__role {
-    margin-top: 0.8rem;
-}
-
 .reviews {
     display: flex;
     flex-direction: column;
@@ -442,76 +414,6 @@ section:not(.hero__movie) {
     position: relative;
 }
 
-.review-box {
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.4rem;
-    background-color: var(--bg-review-box);
-}
-
-.review-box__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4.8rem;
-}
-
-.review-box__score {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    max-width: 14.8rem;
-    width: 100%;
-}
-
-.review-box__score-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.8rem;
-    height: 4.8rem;
-    background-color: var(--positive);
-    color: var(--color-black);
-    border-radius: 8px;
-    font-size: 1.8rem;
-}
-
-.review-box__username {}
-
-.review-box__date {
-    font-size: 1.2rem;
-    color: var(--text-colorBox);
-}
-
-.review-box__main {
-    padding-bottom: 1.6rem;
-    border-bottom: 1px solid var(--border-section-header);
-    margin-top: 2.4rem;
-}
-
-.review-box__text {
-    font-size: 1.4rem;
-    line-height: 1.7;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.review__footer {
-    margin-top: 1.6rem;
-    display: flex;
-    align-items: center;
-}
-
-.review__full-text {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--color-sky);
-}
 
 .review__wrapper.no-review{
     display: flex;
