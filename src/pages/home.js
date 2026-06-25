@@ -1,10 +1,10 @@
-import { getMoviesController } from "../controllers/pages/home.page.controller.js";
-import { setMenuMobile } from "../components/layout/mobile-menu.js";
-import { setScrollScreen } from "../components/layout/nav-scroll.js";
-import { setOpenAnswerFAQ } from "../components/common/faq.js";
-import { submitNewsletter } from "../components/newsletter/newsletter.js";
+import { getHomeMoviesController } from "../features/movie/controllers/movie.controller.js";
+import { setMenuMobile } from "../shared/components/mobile-menu.js";
+import { setScrollScreen } from "../shared/components/nav-scroll.js";
+import { setOpenAnswerFAQ } from "../shared/components/faq.js";
+import { submitNewsletter } from "../features/newsletter/components/newsletter.js";
 
-document.addEventListener('DOMContentLoaded', getMoviesController);
+document.addEventListener('DOMContentLoaded', getHomeMoviesController);
 setMenuMobile();
 setScrollScreen();
 setOpenAnswerFAQ();

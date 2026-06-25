@@ -1,4 +1,4 @@
-import { createPayment } from "../controllers/booking/payments.controller.js";
+import { createPayment } from "../features/payment/controllers/payments.controller.js";
 import { getIdReservation } from "../utils/helpers/getIDReservation.js";
 
 export const paymentValidation = (totalPrice) => {

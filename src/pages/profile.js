@@ -1,4 +1,4 @@
-import { initProfile } from "../controllers/pages/profile.page.controller.js";
+import { initProfile } from "../features/profile/components/profile.page.controller.js";
 
 window.addEventListener('DOMContentLoaded', async() => {
     initProfile();

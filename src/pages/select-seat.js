@@ -1,4 +1,4 @@
-    import { initSelectSeat } from "../controllers/pages/select-seat.page.controller.js";
+    import { initSelectSeat } from "../features/booking/controllers/select-seat.controller.js";
 
     // window.addEventListener('DOMContentLoaded', () => {
         initSelectSeat();

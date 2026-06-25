@@ -1,0 +1,47 @@
+import { handleValidation } from "../../shared/components/validation-consulat.js";
+import { checkCookie } from "../../utils/cookie/checkCookie.js";
+import { deleteCookie } from "../../utils/cookie/deleteCookie.js";
+
+const btnModal = document.querySelector('.btn-modal');
+const modalBox = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay-modal');
+const btnSubmit = document.querySelector('.form-consultation__submit');
+const btnAgain = document.querySelector('.form-consultation__again');
+
+function openModal() {
+    modalBox.classList.toggle('open');
+}
+
+function activeOverlay() {
+    overlay.classList.toggle('active');
+}
+
+function submitForm() {
+    handleValidation();
+}
+
+function requestAgain() {
+    btnAgain.classList.remove('active');
+    btnSubmit.classList.remove('disable');
+    btnSubmit.disabled = false;
+    deleteCookie('consultation');
+}
+
+function isSetCookie() {
+    if (checkCookie('consultation')) {
+        btnAgain.classList.add('active');
+        btnSubmit.classList.add('disable');
+        btnSubmit.disabled = true;
+    }
+}
+
+export function handleModal() {
+    isSetCookie();
+    openModal();
+    activeOverlay();
+}
+
+btnModal.addEventListener('click', handleModal);
+btnSubmit.addEventListener('click', submitForm);
+btnAgain.addEventListener('click', requestAgain);
+overlay.addEventListener('click', handleModal);
