@@ -434,33 +434,6 @@
     bottom: 1.6rem;
 }
 
-.loading {
-    position: fixed;
-    inset: 0;
-    background-color: var(--color-black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.loading.hide {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.loader {
-    width: 50px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 8px solid var(--text-colorBox);
-    animation:
-        l20-1 0.8s infinite linear alternate,
-        l20-2 1.6s infinite linear;
-}
-
 .btn-modal {
     width: 7rem;
     height: 7rem;

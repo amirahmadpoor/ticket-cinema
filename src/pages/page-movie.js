@@ -5,13 +5,15 @@ import { getMovieIdController } from "../features/movie/controllers/movie.contro
 import { getReviewsController } from "../features/review/controllers/review.controller.js";
 import { setSelectTab } from "../features/review/components/tabs-page-movie.js";
 import { initBtnTicket } from "../features/movie/components/ticket-button.js";
-import { setScrollScreen } from "../shared/components/nav-scroll.js";
+import { hideLoading } from "../shared/components/loading.js";
+window.addEventListener('DOMContentLoaded', async () => {
 
-const idPage = getMovieIdFromUrl();
-setMenuMobile();
-setFavorites();
-getMovieIdController(idPage);
-getReviewsController();
-setSelectTab();
-initBtnTicket(idPage);
-setScrollScreen();
+    const idPage = getMovieIdFromUrl();
+    setMenuMobile();
+    setFavorites();
+    await getMovieIdController(idPage);
+    await getReviewsController();
+    setSelectTab();
+    initBtnTicket(idPage);
+    hideLoading();
+})

@@ -1,6 +1,4 @@
-const loading = document.querySelector('.loading');
-
-function hideLoading() {
+export function hideLoading() {
+    const loading = document.querySelector('.loading');
     loading.classList.add('hide');
 }
-document.addEventListener('DOMContentLoad', hideLoading)

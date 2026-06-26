@@ -1,3 +1,5 @@
+import { convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-time.js";
+
 export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, imdb_rating: score, duration, description , name: nameCinema, address
 }) {
     const bgInfo = document.querySelector('.bg-poster-movie');
@@ -8,12 +10,6 @@ export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, 
     const movieScore = document.querySelector('.info-movie__score-number');
     const cinemaName = document.querySelector('.cinema-name');
     const cinemaAddress = document.querySelector('.cinema-address');
-
-    function convertMinutesToHoursMinutes(totalMinutes) {
-        const hours = Math.floor(totalMinutes / 60);
-        const minutes = totalMinutes % 60;
-        return `${hours}h ${minutes.toString().padStart(2, '0')}m`;
-    }
 
     bgInfo && (bgInfo.style.backgroundImage = `url(${poster})`);
     imagePoster && imagePoster.setAttribute('src', trailer);

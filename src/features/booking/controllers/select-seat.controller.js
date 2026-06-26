@@ -21,5 +21,5 @@ export const getInfoMovieCinemaController = async () => {
 
 export const initSelectSeat = async () => {
     await getInfoMovieCinemaController();
-    showSeatsController();
+    await showSeatsController();
 }

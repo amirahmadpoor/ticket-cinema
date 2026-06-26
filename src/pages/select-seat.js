@@ -1,5 +1,5 @@
-    import { initSelectSeat } from "../features/booking/controllers/select-seat.controller.js";
+import { initSelectSeat } from "../features/booking/controllers/select-seat.controller.js";
+import { hideLoading } from "../shared/components/loading.js";
 
-    // window.addEventListener('DOMContentLoaded', () => {
-        initSelectSeat();
-    // })
+await initSelectSeat();
+hideLoading();

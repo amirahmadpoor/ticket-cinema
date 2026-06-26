@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/base/style-default.css">
     <link rel="stylesheet" href="/styles/animations/animation-loaded-elem.css">
     <link rel="stylesheet" href="/src/shared/styles/header.css">
+    <link rel="stylesheet" href="/src/features/search/styles/result.css">
     <link rel="stylesheet" href="/src/shared/styles/navScroll.css">
     <link rel="stylesheet" href="/styles/pages/movie-page.css">
     <link rel="stylesheet" href="/src/features/movie/styles/actor-card.css">
@@ -25,7 +26,9 @@
 <body>
     <div id="scroll"></div>
     <div class="overlay"></div>
-
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
 
     <header id="header"></header>
 
@@ -151,7 +154,7 @@
         <div class="tabs">
             <div class="review__wrapper">
                 <span class="not-review">نظری ثبت نشده</span>
-                
+
                 <div class="reviews__show-more">
                     <div class="btn-show-more">
                         <svg class="icon-more-comment">

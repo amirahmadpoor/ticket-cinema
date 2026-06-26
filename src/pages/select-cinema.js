@@ -1,12 +1,14 @@
 import { getMovieIdFromUrl } from "../utils/helpers/getIDMovie.js";
 import { getInfoMovieIdBookingController } from "../features/cinema/controllers/cinema.controller.js";
 import { handelFilterBox } from "../features/cinema/components/filter-box.js";
-import { setScrollScreen } from "../shared/components/nav-scroll.js";
 import { handleAnimationLoadedRight } from "../animations/animation-loaded.js";
+import { hideLoading } from "../shared/components/loading.js";
 
-const idPage = getMovieIdFromUrl();
+window.addEventListener('DOMContentLoaded', async () => {
+    const idPage = getMovieIdFromUrl();
 
-getInfoMovieIdBookingController(idPage);
-handelFilterBox();
-setScrollScreen();
-handleAnimationLoadedRight();
+    await getInfoMovieIdBookingController(idPage);
+    handelFilterBox();
+    hideLoading();
+    handleAnimationLoadedRight();
+})

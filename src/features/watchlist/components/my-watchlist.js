@@ -2,7 +2,7 @@ import { convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-tim
 
 export const MyWatchList = ({ id, title, poster_url, duration, description, imdb_rating }) => {
     return (`
-        <a a href="/pages/movie-page.html?id-movie=${id}" class="movie-card hidden-elems-top">
+        <a href="/pages/movie-page.html?id-movie=${id}" class="movie-card hidden-elems-top">
         <div class="movie-card__poster">
             <img src=${poster_url} alt=${title}
                 class="movie-card__poster-img">

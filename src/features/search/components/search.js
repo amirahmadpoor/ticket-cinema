@@ -5,7 +5,7 @@ function showResult(searchResultMobile, result) {
             <div class="result">
                 <a href="${window.location.pathname.includes("/pages/") ? "movie-page.html" : "pages/movie-page.html"}?id-movie=${res.id}" class="search__result--show">
                     <span>${res.title}</span>
-                    <img src=${res.image}>
+                    <img src=${res.image} class="result__image">
                 </a>
             </div>
             `
