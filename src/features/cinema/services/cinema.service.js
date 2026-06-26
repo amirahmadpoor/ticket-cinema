@@ -1,7 +1,9 @@
 import { createCinemaModel } from "../../../models/cinema.model.js";
 import { showTimesService } from "../../booking/services/showtimes.service.js";
 
-const BASE_URL = 'http://localhost:3000/api';
+import { BASE_URL } from "../../../config/api.js";
+
+;
 
 export const getAllCinemaService = async () => {
     const response = await fetch(`${BASE_URL}/cinemas`);

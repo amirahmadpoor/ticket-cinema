@@ -7,7 +7,6 @@ function createTicketCard(showTimes) {
     const time = showTimes.show_time.slice(0, 5);
 
     const persianTime = time.replace(/[0-9]/g, d => String.fromCharCode(d.charCodeAt(0) + 1728));
-
     return (
         `<div class="cinema hidden-elems-right" data-id-cinema="${showTimes.id}">
         <div class="cinema__name-location">
@@ -40,12 +39,14 @@ function notTicketCard() {
 }
 
 export function initTicketCinema(showTimes) {
+
     if (!showTimes.length) {
         cinemaWrapperTicket.innerHTML = notTicketCard();
     } else {
         const movieShowTimes = showTimes.filter(
             showtime => showtime.movie_id === Number(movieId)
         );
+        console.log(showTimes);
 
         cinemaWrapperTicket.innerHTML = movieShowTimes.map(cinema => createTicketCard(cinema)).join('');
     }

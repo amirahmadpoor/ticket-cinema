@@ -6,6 +6,8 @@ export const showUserWatchList = async () => {
 
     try {
         const reservations = await getWatchedMovieController();
+        console.log(reservations);
+        
         dashboardContainer.innerHTML = reservations.map(MyWatchList).join('');
     } catch (err) {
         console.error(err);

@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:3000/api';
+import { BASE_URL } from "../../../config/api.js";
+
+;
 
 export const createPaymentsService = async (infoPayment) => {
     const response = await fetch(`${BASE_URL}/payments`, {

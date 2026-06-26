@@ -50,10 +50,10 @@ export function handleMovieCard(movies) {
             if (checkPath()) {
                 insertBoxMovie(movie);
             } else {
-                if (Number(movie.rating) < 4) {
+                if (Number(movie.rating) < 4.6) {
                     insertBoxMovie(movie);
                 }
-                else if (Number(movie.rating) >= 4) {
+                else if (Number(movie.rating) >= 4.5) {
                     insertBoxMovieTop(movie);
                 }
             }

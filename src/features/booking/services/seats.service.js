@@ -1,7 +1,9 @@
 import { createSeatModel } from "../../../models/seats.model.js";
 import { getTokenUser } from "../../../utils/get-token.js";
 
-const BASE_URL = 'http://localhost:3000/api';
+import { BASE_URL } from "../../../config/api.js";
+
+;
 
 export const getSeatsService = async () => {
     const response = await fetch(`${BASE_URL}/seats`, {

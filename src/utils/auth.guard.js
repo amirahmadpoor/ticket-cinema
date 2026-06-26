@@ -1,5 +1,6 @@
 export async function checkAuth() {
-    const BASE_URL = 'http://localhost:3000/api/auth';
+    import { BASE_URL } from "../../../config/api.js";
+ = 'http://localhost:3000/api/auth';
     const token = localStorage.getItem('accessToken');
 
 

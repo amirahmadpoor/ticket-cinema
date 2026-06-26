@@ -1,6 +1,8 @@
 import { createReviewModel } from "../../../models/reviews.model.js";
 
-const BASE_URL = 'http://localhost:3000/api';
+import { BASE_URL } from "../../../config/api.js";
+
+;
 const token = localStorage.getItem('accessToken');
 
 export const getReviewService = async () => {

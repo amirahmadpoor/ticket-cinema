@@ -1,5 +1,7 @@
 
-const BASE_URL = 'http://localhost:3000/api'
+import { BASE_URL } from "../../../config/api.js";
+
+
 
 const getAccessToken = () => {
     return (`Bearer ${localStorage.getItem('accessToken')}`);

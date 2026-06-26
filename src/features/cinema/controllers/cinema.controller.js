@@ -7,7 +7,7 @@ import { handleAnimationLoadedRight } from "../../../animations/animation-loaded
 
 export const getCinemasController = async () => {
     try {
-        const showtimes = await showTimesService();
+        const showtimes = await showTimesService();        
         initTicketCinema(showtimes);
     } catch (err) {
         console.error(err);

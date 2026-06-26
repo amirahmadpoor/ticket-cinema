@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:3000/api';
+import { BASE_URL } from "../../../config/api.js";
+
+;
 
 export const setNewsletterService = async (newUser) => {
     const response = await fetch(`${BASE_URL}/newsletter/subscribe`, {

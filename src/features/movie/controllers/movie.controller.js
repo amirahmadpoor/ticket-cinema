@@ -48,7 +48,8 @@ export const getMovieIdController = async (id) => {
         }
         userName.innerHTML = response.data.name;
     }
-
+    console.log(movie);
+    
     initMovieDescription(movie);
     initMovieHero(movie);
     initActorsSection(movie);

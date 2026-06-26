@@ -8,6 +8,7 @@ body {
     font-family: 'vazir';
     font-size: 1.6rem;
     position: relative;
+    /* height: 100vh; */
 }
 
 svg {

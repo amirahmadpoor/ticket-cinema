@@ -1,9 +1,8 @@
 import { createAuthModel } from "../../../models/auth.model.js";
-
-const BASE_URL = 'http://localhost:3000/api/auth';
+import { BASE_URL } from "../../../config/api.js";
 
 export const dataUserNewService = async (userData) => {
-    const response = await fetch(`${BASE_URL}/register`, {
+    const response = await fetch(`${BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -14,7 +13,7 @@ export const dataUserNewService = async (userData) => {
 }
 
 export const dataUserService = async (userData) => {
-    const response = await fetch(`${BASE_URL}/login`, {
+    const response = await fetch(`${BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,7 +24,7 @@ export const dataUserService = async (userData) => {
 }
 
 export const getDataUser = async (token) => {
-    const response = await fetch(`${BASE_URL}/profile`, {
+    const response = await fetch(`${BASE_URL}/auth/profile`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
