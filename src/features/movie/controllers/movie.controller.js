@@ -2,7 +2,6 @@ import { getAllMoviesService } from "../services/movie.service.js";
 import { handleMovieCard } from "../components/movie-card.js";
 import { getAllCinemaService } from "../../cinema/services/cinema.service.js";
 import { initStatistics } from "../../../shared/components/statistics.js";
-import { handleAnimationLoadedRight } from "../../../animations/animation-loaded.js";
 import { getMovieIdService } from "../services/movie.service.js";
 import { initMovieDescription } from "../components/movie-description.js";
 import { initMovieHero } from "../components/movie-hero.js";
@@ -27,7 +26,6 @@ export const getHomeMoviesController = async () => {
         const movies = await getAllMoviesService();
         const cinemas = await getAllCinemaService();
         handleMovieCard(movies);
-        handleAnimationLoadedRight();
         initStatistics(movies, cinemas);
     }
     catch (err) {

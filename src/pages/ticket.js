@@ -5,4 +5,7 @@ import { hideLoading } from "../shared/components/loading.js";
 window.addEventListener('DOMContentLoaded', async () => {
     await initTicketPage(getIdReservation());
     hideLoading();
+    setTimeout(() => {
+        location.pathname = 'index.html';
+    }, 2000);
 })

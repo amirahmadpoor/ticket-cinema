@@ -1,4 +1,5 @@
 import { postDataUserNewController, getDataUserController } from "../features/auth/controllers/auth.controller.js";
+import { hideLoading } from "../shared/components/loading.js";
 
 const registerForm = document.querySelector('.register-form');
 const loginForm = document.querySelector('.login-form');
@@ -117,7 +118,7 @@ function setEmptyInputs() {
     inputs.forEach(input => input.value = '');
 }
 
-
+window.addEventListener('DOMContentLoaded', hideLoading);
 registerForm.addEventListener('submit', handleRegister);
 loginForm.addEventListener('submit', handleLogin);
 btnLoginFormRegister.addEventListener('click', showForms);
