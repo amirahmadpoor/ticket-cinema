@@ -1,26 +1,38 @@
 import { createCinemaModel } from "../../../models/cinema.model.js";
 import { showTimesService } from "../../booking/services/showtimes.service.js";
-
 import { BASE_URL } from "../../../config/api.js";
+import { handleApiError } from "../../../utils/error-handler.js";
 
-;
 
 export const getAllCinemaService = async () => {
-    const response = await fetch(`${BASE_URL}/cinemas`);
-    const data = await response.json();
-    return data.data.cinemas.map(createCinemaModel);
+    try {
+        const response = await fetch(`${BASE_URL}/cinemas`);
+        const hasError = await handleApiError(response);
+        if (hasError) return;
+        const data = await response.json();
+        return data.data.cinemas.map(createCinemaModel);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 export const getCinemaIdService = async (id) => {
-    const response = await fetch(`${BASE_URL}/cinemas/${id}`);
-    const data = await response.json();
-    return data.data;
+    try {
+        const response = await fetch(`${BASE_URL}/cinemas/${id}`);
+        const hasError = await handleApiError(response);
+        if (hasError) return;
+        const data = await response.json();
+        return data.data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 export const filterCinemasController = async (inputPrice) => {
     try {
         const showtime = await showTimesService();
-        console.log(showtime);
+        const hasError = await handleApiError(response);
+        if (hasError) return;
         return showtime.filter(cinema => cinema.price <= inputPrice);
     } catch (err) {
         console.error(err);
