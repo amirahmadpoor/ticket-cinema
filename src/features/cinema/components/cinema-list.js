@@ -1,6 +1,5 @@
 import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
 const cinemaWrapperTicket = document.querySelector('.cinemas');
-const movieId = getMovieIdFromUrl();
 
 function createTicketCard(showTimes) {
 
@@ -24,7 +23,7 @@ function createTicketCard(showTimes) {
             <span> سانس: ${persianTime}</span>
             <div class="cinema__footer">
                 <span class="cinema__options">${JSON.parse(showTimes.cinema_facilities)}</span>
-                <a href="../pages/set-selection.html?id-movie=${movieId}&id-cinema=${showTimes.cinema_id}&id-showtime=${showTimes.id}" class="submit-time" data-id-cinema="${showTimes.id}">
+                <a href="../pages/set-selection.html?id-movie=${getMovieIdFromUrl()}&id-cinema=${showTimes.cinema_id}&id-showtime=${showTimes.id}" class="submit-time" data-id-cinema="${showTimes.id}">
                     <span>ادامه</span>
                     <svg><use href="#arrow-left1"></use></svg>
                 </a>
@@ -39,15 +38,9 @@ function notTicketCard() {
 }
 
 export function initTicketCinema(showTimes) {
-
     if (!showTimes.length) {
         cinemaWrapperTicket.innerHTML = notTicketCard();
     } else {
-        const movieShowTimes = showTimes.filter(
-            showtime => showtime.movie_id === Number(movieId)
-        );
-        console.log(showTimes);
-
-        cinemaWrapperTicket.innerHTML = movieShowTimes.map(cinema => createTicketCard(cinema)).join('');
+        cinemaWrapperTicket.innerHTML = showTimes.map(cinema => createTicketCard(cinema)).join('');
     }
 }

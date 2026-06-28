@@ -34,7 +34,7 @@ export const getDataUser = async (token) => {
             'Authorization': `Bearer ${token}`
         }
     });
-    const hasError = await handleApiError(response);
-    if (hasError) return;
+    // const hasError = await handleApiError(response);
+    // if (hasError) return;
     return await response.json();
 }

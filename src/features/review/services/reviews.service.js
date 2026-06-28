@@ -7,6 +7,7 @@ export const getReviewService = async () => {
     try {
         const response = await fetch(`${BASE_URL}/reviews`);
         const hasError = await handleApiError(response);
+        if (hasError) return;
         const data = await response.json();
         return data.data.reviews.map(createReviewModel);
     } catch (err) {
@@ -25,6 +26,7 @@ export const setReviewService = async (review) => {
             },
             body: JSON.stringify(review)
         })
+        const hasError = await handleApiError(response);
         if (hasError) return;
         return await response.json();
     } catch (err) {

@@ -4,11 +4,25 @@ import { showTimesService } from "../../booking/services/showtimes.service.js";
 import { getMovieIdService } from "../../movie/services/movie.service.js";
 import { initReadInfo } from "../../movie/components/movie-info.js";
 import { handleAnimationLoadedRight } from "../../../animations/animation-loaded.js";
+import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
+
+const isAvailableShowTime = (showTime) => {
+    return new Date(showTime.show_date) > new Date();
+};
+
+const movieShowTimes = (showTimes) => {
+    return showTimes.filter(showtime => showtime.movie_id === Number(getMovieIdFromUrl()));
+}
 
 export const getCinemasController = async () => {
+
     try {
-        const showtimes = await showTimesService();        
-        initTicketCinema(showtimes);
+        let showTimes = await showTimesService();
+        showTimes = showTimes.filter(showTime => {
+            return isAvailableShowTime(showTime);
+        })
+
+        initTicketCinema(movieShowTimes(showTimes));
     } catch (err) {
         console.error(err);
     }
@@ -16,9 +30,12 @@ export const getCinemasController = async () => {
 
 export const filterCinemasController = async (inputPrice) => {
     try {
-        const showtime = await showTimesService();
-        const filteredCinemas = showtime.filter(cinema => cinema.price <= inputPrice);
-        initTicketCinema(filteredCinemas);
+        const showTimes = await showTimesService();
+        const filteredCinemas = showTimes.filter(showTime => {
+            return showTime.price <= inputPrice && isAvailableShowTime(showTime);
+        });
+
+        initTicketCinema(movieShowTimes(filteredCinemas));
     } catch (err) {
         console.error(err);
     }
@@ -32,7 +49,7 @@ export const getInfoMovieIdBookingController = async (id) => {
         await initReadInfo(movie);
         await getCinemasController();
         handleAnimationLoadedRight();
-    }catch(err){
+    } catch (err) {
         console.error(err);
     }
 }

@@ -64,6 +64,8 @@ async function handleSetComment() {
     }
 
     const response = await setReviewController(review);
+    console.log(response);
+    
     if (!response.success) {
         handleToastBox('شما قبلا نظر خود را ثبت کرده اید');
         return;

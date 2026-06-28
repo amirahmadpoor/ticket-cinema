@@ -109,7 +109,7 @@ async function handleLogin(e) {
         if (!response.ok) {
             console.log('auth field');
         }
-        window.history.back();
+        window.location.href = '/index.html';
         setAccessToken(await response.data.token, await response.data.user.id);
     }
 }
