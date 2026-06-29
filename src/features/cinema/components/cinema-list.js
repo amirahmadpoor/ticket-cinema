@@ -2,7 +2,6 @@ import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
 const cinemaWrapperTicket = document.querySelector('.cinemas');
 
 function createTicketCard(showTimes) {
-
     const time = showTimes.show_time.slice(0, 5);
 
     const persianTime = time.replace(/[0-9]/g, d => String.fromCharCode(d.charCodeAt(0) + 1728));

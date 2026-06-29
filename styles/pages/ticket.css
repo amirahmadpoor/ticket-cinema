@@ -11,6 +11,22 @@
 
 .ticket-section{
     margin-top: -10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-out{
+    max-width: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    margin-top: 8rem;
 }
 
 .info-selection__ticket-step{
@@ -23,7 +39,7 @@
     align-items: start;
     justify-content: center;
     gap: 13.0rem;
-    margin-top: 10.4rem;
+    margin-top: 2.4rem;
 }
 
 .ticket-card {
