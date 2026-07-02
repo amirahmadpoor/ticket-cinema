@@ -1,10 +1,15 @@
 import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
+import { convertDateToPersian } from "../../../utils/helpers/convert-time.js";
+
 const cinemaWrapperTicket = document.querySelector('.cinemas');
 
 function createTicketCard(showTimes) {
+    console.log(showTimes);
+
     const time = showTimes.show_time.slice(0, 5);
 
     const persianTime = time.replace(/[0-9]/g, d => String.fromCharCode(d.charCodeAt(0) + 1728));
+    const persianDate = convertDateToPersian(showTimes.show_date)
     return (
         `<div class="cinema hidden-elems-right" data-id-cinema="${showTimes.id}">
         <div class="cinema__name-location">
@@ -19,7 +24,10 @@ function createTicketCard(showTimes) {
         </div >
         <form class="cinema__reservation">
             <span class="cinema__type">3D</span>
-            <span> سانس: ${persianTime}</span>
+            <span>
+            پخش: ${persianDate} 
+            ساعت ${persianTime}
+            </span>
             <div class="cinema__footer">
                 <span class="cinema__options">${JSON.parse(showTimes.cinema_facilities)}</span>
                 <a href="../pages/set-selection.html?id-movie=${getMovieIdFromUrl()}&id-cinema=${showTimes.cinema_id}&id-showtime=${showTimes.id}" class="submit-time" data-id-cinema="${showTimes.id}">
@@ -37,6 +45,7 @@ function notTicketCard() {
 }
 
 export function initTicketCinema(showTimes) {
+
     if (!showTimes.length) {
         cinemaWrapperTicket.innerHTML = notTicketCard();
     } else {

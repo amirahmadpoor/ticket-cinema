@@ -41,6 +41,24 @@ export const filterCinemasController = async (inputPrice) => {
     }
 };
 
+// export const handleFilterCity = async () => {
+//     try {
+//         const checkboxInput = document.querySelectorAll('.checkbox__input');
+//         const showTimes = await showTimesService();
+//         checkboxInput.forEach(item => {
+//             item.addEventListener('change', e => {
+//                 const filter = showTimes.filter(show => show.cinema_city === e.target.value)
+//                 // console.log(filter);
+//                 initTicketCinema(movieShowTimes(filter));
+
+//             })
+//         })
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
+// handleFilterCity()
+
 
 export const getInfoMovieIdBookingController = async (id) => {
     try {
