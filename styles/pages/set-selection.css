@@ -56,7 +56,7 @@
 
 
 .seats-count {
-    color: var(--positive);
+    color: var(--color-success);
 }
 
 .stage__seats-guide {
@@ -93,7 +93,7 @@
 .state-seats__counter-ticket {
     height: 4.8rem;
     margin-top: 2.4rem;
-    border: 1px solid var(--color-disable);
+    border: 1px solid #454555;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -129,14 +129,14 @@
 }
 
 .state-seats__add-cart {
-    background-color: var(--color-yellow);
-    color: #000;
+    background-color: var(--color-primary);
+    color:var(--bg-black);
     margin-bottom: 8px;
 }
 
 .state-seats__btn-cancel {
-    border: 1px solid var(--color-yellow);
-    color: var(--color-yellow);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     cursor: pointer;
 }
 

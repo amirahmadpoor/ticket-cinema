@@ -18,7 +18,7 @@
 
 .actor__name {
     font-size: 1.4rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     margin-top: 1.6rem;
 }
 

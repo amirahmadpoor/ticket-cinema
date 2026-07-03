@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    background-color: #000;
+    background-color:var(--bg-black);
 }
 
 *,

@@ -51,7 +51,7 @@
 
 .movie-time_texts {
     font-size: 1.6rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .info-cinema {
@@ -72,7 +72,7 @@
 }
 
 .cinema-address {
-    color: var(--positive);
+    color: var(--color-success);
     font-size: 1.2rem;
 }
 

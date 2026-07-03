@@ -8,7 +8,7 @@
 .sidebar {
     max-width: 39.4rem;
     height: 100vh;
-    background-color: var(--color-black);
+    background-color: var(--bg-black);
 }
 
 .sidebar__profile {
@@ -34,7 +34,7 @@
 }
 
 .sidebar__email {
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     font-size: 1.2rem;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .sidebar__item--active {
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }
 
 .sidebar__link,
@@ -90,10 +90,10 @@
 
 .cards__item {
     width: 100%;
-    background-color: var(--bg-review-box);
+    background-color: var(--bg-card);
     padding: 2.4rem;
     border-radius: 8px;
-    border: 1px solid var(--color-borderBox);
+    border: 1px solid var(--border-primary);
     display: flex;
     justify-content: space-between;
 }
@@ -111,15 +111,15 @@
 }
 
 .cards__title svg {
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }
 
 .cards__desc {
     font-size: 1.2rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .cards__action {
     font-size: 1.2rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }

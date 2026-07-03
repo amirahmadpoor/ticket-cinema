@@ -1,0 +1,31 @@
+:root {
+    /* --border-dark: #262626; */
+    /* --bg-input: #565669; در تمام فایل ها دستی اصلاح شود */
+}
+
+:root {
+    --text-primary: #fff;
+    --text-secondary: #BCBCC6;
+
+    --color-primary: #FCFC65;
+    --color-success: #3DB1B1;
+    --color-warning: #FCFC65;
+    --color-danger: #E57171;
+
+    --bg-black: #000;
+    --bg-body: #010108;
+    --bg-card: #141418;
+    --bg-faq: #1A1A1F;
+    --bg-input: #565669;
+    --bg-overlay: --bg-black;
+
+    --border-primary: #25252C;
+    --border-secondary: #565669;
+
+    --btn-filter-bg: #353541;
+
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --overlay-opacity: .8;
+}

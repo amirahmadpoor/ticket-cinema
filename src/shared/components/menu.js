@@ -2,7 +2,7 @@ export function renderMenu() {
     return `
         <div class="menu-mobile">
         <!--home-->
-        <a href="index.html" class="menu-mobile__link active">
+        <a href="/index.html" class="menu-mobile__link active">
             <svg class="icons-menu-mobile">
                 <use href="#icon-home"></use>
             </svg>

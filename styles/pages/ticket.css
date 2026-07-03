@@ -22,8 +22,8 @@
     align-items: center;
     justify-content: center;
     align-self: center;
-    background-color: var(--color-yellow);
-    color: var(--color-black);
+    background-color: var(--color-primary);
+    color: var(--bg-black);
     border-radius: 999px;
     padding: 0.5rem 1rem;
     margin-top: 8rem;
@@ -45,7 +45,7 @@
 .ticket-card {
     max-width: 32.9rem;
     height: 43rem;
-    background-color: var(--bg-review-box);
+    background-color: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -76,12 +76,12 @@
 
 .ticket-card__duration {
     font-size: 1.4rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     margin-bottom: 1.6rem;
 }
 
 .ticket-card__address {
-    color: var(--positive);
+    color: var(--color-success);
 }
 
 .ticket-card__meta {
@@ -97,13 +97,13 @@
 }
 
 .ticket-card__meta-label{
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .ticket-card__line{
     width: 1px;
     height: 75%;
-    background-color: var(--text-colorBox);
+    background-color: var(--text-secondary);
 }
 
 .success-details {
@@ -114,17 +114,17 @@
 
 .success-details__title {
     font-size: 2.4rem;
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }
 
 .success-details__subtitle {
     font-size: 1.4rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .success-details__footer{
     font-size: 1.4rem;
-    color: var(--positive);
+    color: var(--color-success);
 }
 
 @media screen and (max-width:768px) {

@@ -9,7 +9,7 @@
 }
 
 .chair.active {
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }
 
 .icon-chair {
@@ -22,9 +22,9 @@
 }
 
 .reserved {
-    color: var(--color-reserved);
+    color: #3A3A04;
 }
 
 .selected {
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }

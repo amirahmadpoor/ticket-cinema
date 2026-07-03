@@ -62,7 +62,7 @@
 
 .movie-time_texts {
     font-size: 1.6rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .info-movie__desc{
@@ -83,7 +83,7 @@
 .info-movie__desc-btn-more {
     display: inline-block;
     margin-top: 1.6rem;
-    color: var(--positive);
+    color: var(--color-success);
 }
 
 .btn-add-list {
@@ -93,14 +93,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--color-yellow);
-    color: var(--color-yellow);
-    background-color: var(--color-black);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--bg-black);
     margin-top: 4.8rem;
 }
 
 .btn-add-list svg {
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }
 
 .filter {
@@ -130,7 +130,7 @@
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    background-color: var(--bg-btn-filter);
+    background-color: var(--btn-filter-bg);
 }
 
 .filter-box {
@@ -141,8 +141,8 @@
     width: min(92vw, 38rem);
     max-height: min(86vh, 50rem);
     border-radius: 12px;
-    background-color: var(--color-black);
-    border: 1px solid var(--color-borderBox);
+    background-color: var(--bg-black);
+    border: 1px solid var(--border-primary);
     box-shadow:
         0 24px 60px rgba(0, 0, 0, 0.65),
         0 8px 20px rgba(0, 0, 0, 0.45);
@@ -198,7 +198,7 @@
 }
 .filter-box__filtering {
     background: #0f0f0f;
-    border: 1px solid var(--color-borderBox);
+    border: 1px solid var(--border-primary);
     border-radius: 10px;
     padding: 1rem;
     display: flex;
@@ -245,16 +245,16 @@
     width: 1.7rem;
     height: 1.7rem;
     border-radius: 50%;
-    background: var(--color-yellow);
-    border: 2px solid var(--color-black);
+    background: var(--color-primary);
+    border: 2px solid var(--bg-black);
 }
 
 .filter-box__filter-range::-moz-range-thumb {
     width: 17px;
     height: 17px;
     border-radius: 50%;
-    background: var(--color-yellow);
-    border: 2px solid var(--color-black);
+    background: var(--color-primary);
+    border: 2px solid var(--bg-black);
 }
 
 .filter-box__filter {
@@ -298,14 +298,14 @@
 .check-style {
     width: 2.0rem;
     height: 2.0rem;
-    border: 1px solid var(--color-yellow);
+    border: 1px solid var(--color-primary);
     border-radius: 4px;
     cursor: pointer;
     display: flex;
 }
 
 .checkbox>input[type="checkbox"]:checked+.check-style {
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
 }
 
 .filter-box__footer {
@@ -328,16 +328,16 @@
 }
 
 .btn-apply {
-    background: var(--color-yellow);
-    color: #000;
+    background: var(--color-primary);
+    color:var(--bg-black);
     font-weight: 600;
-    border: 1px solid var(--color-yellow);
+    border: 1px solid var(--color-primary);
 }
 
 .btn-cancel {
     background: transparent;
-    color: var(--color-yellow);
-    border: 1px solid var(--color-yellow);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .cinemas {
@@ -355,7 +355,7 @@
     justify-content: center;
     font-size: 2.4rem;
     height: 29.6rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 @media screen and (max-width:768px) {

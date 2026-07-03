@@ -57,7 +57,7 @@
 .payment__input-wrapper {
     height: 4.0rem;
     overflow: hidden;
-    border: 1px solid var(--color-borderBox);
+    border: 1px solid var(--border-primary);
     border-radius: 4px;
     background-color: var(--bg-input);
     display: flex;
@@ -100,7 +100,7 @@
 }
 
 .payment__summary-section {
-    border-bottom: 1px solid var(--color-borderBox);
+    border-bottom: 1px solid var(--border-primary);
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -115,7 +115,7 @@
 }
 
 .payment__total-label {
-    color: var(--positive);
+    color: var(--color-success);
 }
 
 .payment__total {
@@ -129,7 +129,7 @@
     outline: none;
     width: 100%;
     height: 4.8rem;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
     font-family: inherit;
     border-radius: 4px;
     margin-top: 4.8rem;

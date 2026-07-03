@@ -32,7 +32,7 @@
 
 .date__info,
 .time__info {
-    border: 1px solid var(--color-borderBox);
+    border: 1px solid var(--border-primary);
     border-radius: 4px;
     display: flex;
     align-items: center;

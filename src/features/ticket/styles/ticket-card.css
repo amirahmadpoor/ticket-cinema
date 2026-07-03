@@ -35,13 +35,13 @@
 .success-details__button--primary {
     border: none;
     outline: none;
-    background-color: var(--color-yellow);
-    color: var(--color-black);
+    background-color: var(--color-primary);
+    color: var(--bg-black);
 }
 
 .success-details__button--secondary {
-    border: 1px solid var(--color-yellow);
+    border: 1px solid var(--color-primary);
     outline: none;
     background-color: transparent;
-    color: var(--color-yellow);
+    color: var(--color-primary);
 }

@@ -5,13 +5,13 @@ export function initMovieScore({ rating }) {
     function checkScore() {
         scoreValue.innerHTML = rating;
         if (rating >= 4.5) {
-            scoreValue.style.backgroundColor = 'var(--positive)';
+            scoreValue.style.backgroundColor = 'var(--color-success)';
             scoreFav.innerHTML = 'عالی';
         } else if (rating >= 3) {
-            scoreValue.style.backgroundColor = 'var(--average)';
+            scoreValue.style.backgroundColor = 'var(--color-warning)';
             scoreFav.innerHTML = 'خوب';
         } else {
-            scoreValue.style.backgroundColor = 'var(--negative)';
+            scoreValue.style.backgroundColor = 'var(--color-danger)';
             scoreFav.innerHTML = 'ضعیف';
         }
     }

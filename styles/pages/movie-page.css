@@ -24,7 +24,7 @@ section:not(.hero__movie) {
 
 .hero__movie-title {
     font-size: 3.2rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
     margin: 19.2rem 0 2rem;
     position: relative;
     padding-right: 1.4rem;
@@ -39,7 +39,7 @@ section:not(.hero__movie) {
     width: 4px;
     height: 70%;
     border-radius: 999px;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
 }
 
 .hero__movie-media {
@@ -98,12 +98,12 @@ section:not(.hero__movie) {
 
 .summery__title {
     font-size: 2.8rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .summery__text {
     line-height: 1.5;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     margin-top: 2.0rem;
 }
 
@@ -134,13 +134,13 @@ section:not(.hero__movie) {
 
 .director__title,
 .writers__title {
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .director__name,
 .writers__name {
     font-size: 1.4rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .getTicketBtn-addFavBtn {
@@ -160,7 +160,7 @@ section:not(.hero__movie) {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -185,12 +185,12 @@ section:not(.hero__movie) {
     width: 1rem;
     height: 1rem;
     border-radius: 100%;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
     z-index: -1;
 }
 
 .add-favorites.active {
-    color: #000;
+    color:var(--bg-black);
 }
 
 .add-favorites.active>.circle {
@@ -198,17 +198,17 @@ section:not(.hero__movie) {
 }
 
 .add-favorites.active>svg {
-    color: var(--color-black);
+    color: var(--bg-black);
 }
 
 .get-ticket {
-    background-color: var(--color-yellow);
-    color: var(--color-black);
+    background-color: var(--color-primary);
+    color: var(--bg-black);
 }
 
 .add-favorites {
-    color: var(--color-yellow);
-    border: 1px solid var(--color-yellow);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .cast {
@@ -220,7 +220,7 @@ section:not(.hero__movie) {
 
 .cast__title {
     font-size: 2.8rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .cast__all {
@@ -248,12 +248,12 @@ section:not(.hero__movie) {
 
 .reviews__header {
     height: 6.1rem;
-    border-bottom: 2px solid var(--border-section-header);
+    border-bottom: 2px solid var(--border-secondary);
 }
 
 .reviews__title {
     font-size: 2.8rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .reviews__all {
@@ -283,13 +283,13 @@ section:not(.hero__movie) {
     width: 100%;
     height: 11.2rem;
     border-radius: 8px;
-    background-color: var(--color-yellow);
-    color: var(--color-black);
+    background-color: var(--color-primary);
+    color: var(--bg-black);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3.2rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .reviews__scores-label {
@@ -299,12 +299,12 @@ section:not(.hero__movie) {
 }
 
 .reviews__scores-title {
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .reviews__scores-favorable {
     font-size: 1.8rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
     margin-top: 1.6rem;
 }
 
@@ -335,32 +335,32 @@ section:not(.hero__movie) {
     width: 100%;
     height: 1rem;
     border-radius: 999px;
-    background-color: var(--border-section-header);
+    background-color: var(--border-secondary);
     overflow: hidden;
 }
 
 .reviews__progress-label {
     font-size: 1.2rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
 }
 
 .reviews__progress-positive {
     width: 50%;
     height: 100%;
-    background-color: var(--positive);
+    background-color: var(--color-success);
 }
 
 .reviews__progress-average {
     width: 30%;
     height: 100%;
-    background-color: var(--average);
+    background-color: var(--color-warning);
 
 }
 
 .reviews__progress-negative {
     width: 10%;
     height: 100%;
-    background-color: var(--negative);
+    background-color: var(--color-danger);
 }
 
 .reviews-tabs {
@@ -370,13 +370,13 @@ section:not(.hero__movie) {
 .reviews-tabs__header {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid var(--border-section-header);
+    border-bottom: 2px solid var(--border-secondary);
     gap: 4.7rem;
     height: 4.0rem;
 }
 
 .name-tab {
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     position: relative;
     height: 100%;
     display: flex;
@@ -391,7 +391,7 @@ section:not(.hero__movie) {
     position: absolute;
     bottom: -0.1rem;
     width: 0;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
     height: 2px;
     transition: 180ms;
 }
@@ -423,7 +423,7 @@ section:not(.hero__movie) {
 
 .not-review{
     font-size: 2.4rem;
-    color: var(--text-colorBox);
+    color: var(--text-secondary);
     display: none;
 }
 
@@ -470,13 +470,13 @@ section:not(.hero__movie) {
 }
 
 .comment {
-    border-top: 1px solid var(--border-section-header);
+    border-top: 1px solid var(--border-secondary);
     padding-top: 2.4em;
 }
 
 .comment__title {
     font-size: 2.4rem;
-    font-weight: var(--fontW6);
+    font-weight: var(--font-weight-semibold);
 }
 
 .comment__input {
@@ -495,7 +495,7 @@ section:not(.hero__movie) {
 .user__profile {
     width: 5.8rem;
     height: 5.8rem;
-    border: 1px solid var(--border-section-header);
+    border: 1px solid var(--border-secondary);
     border-radius: 100%;
 }
 
@@ -506,10 +506,10 @@ section:not(.hero__movie) {
     max-width: 19rem;
     width: 100%;
     height: 5.6rem;
-    background-color: var(--color-yellow);
+    background-color: var(--color-primary);
     border-radius: 4px;
     margin-top: 2.4rem;
-    color: var(--color-black);
+    color: var(--bg-black);
     font-family: inherit;
     font-size: 1.6rem;
     border: none;
@@ -521,7 +521,7 @@ section:not(.hero__movie) {
     width: 60%;
     height: 29rem;
     margin-top: 1.2rem;
-    background-color: var(--bg-review-box);
+    background-color: var(--bg-card);
     outline: none;
     border: none;
     color: var(--text-color);
