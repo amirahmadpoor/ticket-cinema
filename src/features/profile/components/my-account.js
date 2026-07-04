@@ -80,7 +80,6 @@ export const MyAccount = async (countTicket, welcomeUser) => {
                     </div>
                     <a href="#" class="cards__action">کیف پول خود را شارژ کنید</a>
                 </div>
-
             </section>
     `);
 }

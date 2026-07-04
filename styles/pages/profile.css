@@ -1,14 +1,36 @@
+.header-dashboard {
+    width: 100%;
+    height: 7rem;
+    border-bottom: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.icon-menu {
+    width: 3rem;
+    height: 3rem;
+}
+
 .dashboard {
     display: flex;
-    gap: 4.2rem;
     line-height: 1.7;
-    margin-top: 14.2rem;
+    margin-top: 5rem;
 }
 
 .sidebar {
+    position: sticky;
+    top: 5rem;
     max-width: 39.4rem;
-    height: 100vh;
+    width: 100%;
+    height: 60rem;
     background-color: var(--bg-black);
+    z-index: 999;
+    transition: 260ms;
+}
+
+.sidebar.open {
+    right: 0;
 }
 
 .sidebar__profile {
@@ -60,7 +82,7 @@
     padding: 0 1rem;
 }
 
-.sidebar__item:hover{
+.sidebar__item:hover {
     background-color: #272727;
     border-radius: 4px;
 }
@@ -75,9 +97,9 @@
 }
 
 .main {
+    max-width: 96.2rem;
     width: 100%;
 }
-
 
 
 .cards {
@@ -122,4 +144,26 @@
 .cards__action {
     font-size: 1.2rem;
     color: var(--text-secondary);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-black);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 97;
+}
+
+.overlay.active {
+    opacity: var(--overlay-opacity);
+    visibility: visible;
+}
+
+@media screen and (max-width:768px) {
+    .sidebar {
+        position: fixed;
+        right: -39.4rem;
+        height: 100%;
+    }
 }

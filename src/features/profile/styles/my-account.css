@@ -1,7 +1,3 @@
-.welcome {}
-
-.welcome__title {}
-
 .welcome__subtitle {
     font-size: 1.4rem;
 }
@@ -67,4 +63,25 @@
 .stats__label {
     font-size: 1.2rem;
     color: var(--text-secondary);
+}
+
+@media screen and (max-width:1141px) {
+    .stats__card {
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .stats__number {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .stats__number {
+        font-size: 1.8rem;
+    }
+
+    .stats__label {
+        font-size: 1rem;
+    }
 }

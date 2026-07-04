@@ -42,6 +42,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     background-color: var(--bg-card);
+    line-height: 1.7;
 }
 
 .cinema__type {
@@ -52,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.6rem;
 }
 
 .cinema__options {
@@ -78,4 +80,11 @@
 .submit-time span,
 .submit-time svg {
     transition: 160ms;
+}
+
+@media screen and (max-width:428px) {
+    .cinema__footer {
+        flex-direction: column;
+        align-items: start;
+    }
 }

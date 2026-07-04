@@ -1,6 +1,6 @@
 import { convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-time.js";
 
-export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, imdb_rating: score, duration, description , name: nameCinema, address
+export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, imdb_rating: score, duration, description, name: nameCinema, address
 }) {
     const bgInfo = document.querySelector('.bg-poster-movie');
     const imagePoster = document.querySelector('.image-poster');
@@ -11,7 +11,7 @@ export function initReadInfo({ title, poster_url: poster, trailer_url: trailer, 
     const cinemaName = document.querySelector('.cinema-name');
     const cinemaAddress = document.querySelector('.cinema-address');
 
-    bgInfo && (bgInfo.style.backgroundImage = `url(${poster})`);
+    bgInfo && (bgInfo.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${poster})`);
     imagePoster && imagePoster.setAttribute('src', trailer);
     movieTitle && (movieTitle.innerHTML = title);
     movieDesc && (movieDesc.innerHTML = description);

@@ -1,6 +1,6 @@
 import { getProfileDataUserController } from "../../auth/controllers/auth.controller.js";
 import { getTokenUser } from "../../../utils/get-token.js";
-import { getReservationsByUserIdController,getWatchedMovieController } from "../../booking/controllers/reservation.controller.js";
+import { getReservationsByUserIdController, getWatchedMovieController } from "../../booking/controllers/reservation.controller.js";
 import { getTicketInfoIdController } from "../../ticket/controllers/ticket.controller.js";
 import { handleAnimationLoadedTop } from "../../../animations/animation-loaded.js";
 import { MyAccount } from "./my-account.js";
@@ -17,6 +17,9 @@ export const initProfile = async () => {
     const userName = document.querySelector('.sidebar__name');
     const userEmail = document.querySelector('.sidebar__email');
     const dashboardContainer = document.querySelector('.main');
+    const sidebar = document.querySelector('.sidebar');
+    const iconMenu = document.querySelector('.icon-menu');
+    const overlay = document.querySelector('.overlay');
 
     function setSelected(item) {
         item.classList.add('sidebar__item--active');
@@ -26,6 +29,16 @@ export const initProfile = async () => {
         document.querySelectorAll('.sidebar__item').forEach(item => item.classList.remove('sidebar__item--active'));
     }
 
+    function openSideBar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+    }
+
+    function closeSideBar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+    }
+
     function handlerSelected(item) {
         resetSelected();
         setSelected(item);
@@ -33,6 +46,9 @@ export const initProfile = async () => {
 
 
     await renderMyAccount();
+
+    userName.innerHTML = userData.data.name;
+    userEmail.innerHTML = userData.data.email;
 
     sidebarMenu.addEventListener('click', async (e) => {
         const item = e.target.closest('.sidebar__item');
@@ -50,6 +66,7 @@ export const initProfile = async () => {
         handleAnimationLoadedTop();
     })
 
-    userName.innerHTML = userData.data.name;
-    userEmail.innerHTML = userData.data.email;
+    iconMenu.addEventListener('click', openSideBar);
+    overlay.addEventListener('click', closeSideBar);
+
 }

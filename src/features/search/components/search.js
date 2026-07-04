@@ -132,15 +132,22 @@ export function initSearchMobile(movies) {
         }
     }
 
-    iconSearch.addEventListener('click', (e) => {
-        e.preventDefault();
-        handelSearchBox();
-    });
-    iconClose.addEventListener('click', addSearchBox);
+    if (iconSearch) {
+        iconSearch.addEventListener('click', (e) => {
+            e.preventDefault();
+            handelSearchBox();
+        });
+    }
 
-    inputSearchMobile.addEventListener('input', () => {
-        resetResult();
-        const inputVal = inputSearchMobile.value.toLowerCase().trim();
-        typingSearch(inputVal);
-    })
+    if (iconClose) {
+        iconClose.addEventListener('click', addSearchBox);
+    }
+
+    if (inputSearchMobile) {
+        inputSearchMobile.addEventListener('input', () => {
+            resetResult();
+            const inputVal = inputSearchMobile.value.toLowerCase().trim();
+            typingSearch(inputVal);
+        })
+    }
 }

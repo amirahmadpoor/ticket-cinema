@@ -1,6 +1,6 @@
 .info-movie {
     width: 100%;
-    height: 52.0rem;
+    min-height: 52.0rem;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     overflow: hidden;
@@ -65,7 +65,7 @@
     color: var(--text-secondary);
 }
 
-.info-movie__desc{
+.info-movie__desc {
     font-size: 1.4rem;
 }
 
@@ -196,6 +196,7 @@
 .filter-box__filter::-webkit-scrollbar-track {
     background: #111;
 }
+
 .filter-box__filtering {
     background: #0f0f0f;
     border: 1px solid var(--border-primary);
@@ -205,7 +206,7 @@
     flex-direction: column;
 }
 
-.filter-box__price{
+.filter-box__price {
     gap: 0.8rem;
 }
 
@@ -329,7 +330,7 @@
 
 .btn-apply {
     background: var(--color-primary);
-    color:var(--bg-black);
+    color: var(--bg-black);
     font-weight: 600;
     border: 1px solid var(--color-primary);
 }
@@ -349,7 +350,7 @@
     margin-top: 4.2rem;
 }
 
-.text-not-ticket{
+.text-not-ticket {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -359,11 +360,10 @@
 }
 
 @media screen and (max-width:768px) {
-
-    .filter__days,
-    .before-day,
-    .after-day {
-        display: none;
+    .info-movie__texts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .select-location_cinema {
