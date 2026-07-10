@@ -1,6 +1,12 @@
 import { getSeatsService } from "../services/seats.service.js";
 import { handlerSeats } from "../components/dynamic-seats.js";
-export const showSeatsController = async () => {
-    const seat = await getSeatsService();
-    handlerSeats(seat); 
+import { getCinemaIdFromUrl } from "../../../utils/helpers/getIDCinema.js";
+
+const showSeatsController = async () => {
+    const seat = await getSeatsService(getCinemaIdFromUrl());
+    handlerSeats(seat);
+}
+
+export {
+    showSeatsController
 }

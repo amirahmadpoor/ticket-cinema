@@ -2,72 +2,51 @@ import { initTicketCinema } from "../../cinema/components/cinema-list.js";
 import { getCinemaIdService } from "../services/cinema.service.js";
 import { showTimesService } from "../../booking/services/showtimes.service.js";
 import { getMovieIdService } from "../../movie/services/movie.service.js";
-import { initReadInfo } from "../../movie/components/movie-info.js";
+import initReadInfo from "../../movie/components/movie-info.js";
 import { handleAnimationLoadedRight } from "../../../animations/animation-loaded.js";
 import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
+import { isAvailableShowTime, filterMovieShowTimes } from "../../../utils/helpers/cinema.helper.js";
 
-const isAvailableShowTime = (showTime) => {
-    return new Date(showTime.show_date) > new Date();
-};
-
-const movieShowTimes = (showTimes) => {
-    return showTimes.filter(showtime => showtime.movie_id === Number(getMovieIdFromUrl()));
-}
-
-export const getCinemasController = async () => {
-
-    try {
-        let showTimes = await showTimesService();
-        showTimes = showTimes.filter(showTime => {
-            return isAvailableShowTime(showTime);
-        })
-
-        initTicketCinema(movieShowTimes(showTimes));
-    } catch (err) {
-        console.error(err);
-    }
-};
-
-export const filterCinemasController = async (inputPrice) => {
+const loadCinemaTicketsController = async () => {
     try {
         const showTimes = await showTimesService();
-        const filteredCinemas = showTimes.filter(showTime => {
-            return showTime.price <= inputPrice && isAvailableShowTime(showTime);
-        });
-
-        initTicketCinema(movieShowTimes(filteredCinemas));
+        const availableShowTimes = isAvailableShowTime(showTimes);
+        const movieCinemas = filterMovieShowTimes(availableShowTimes);
+        initTicketCinema(movieCinemas);
     } catch (err) {
         console.error(err);
     }
 };
 
-// export const handleFilterCity = async () => {
-//     try {
-//         const checkboxInput = document.querySelectorAll('.checkbox__input');
-//         const showTimes = await showTimesService();
-//         checkboxInput.forEach(item => {
-//             item.addEventListener('change', e => {
-//                 const filter = showTimes.filter(show => show.cinema_city === e.target.value)
-//                 // console.log(filter);
-//                 initTicketCinema(movieShowTimes(filter));
+const filterCinemasController = async (price) => {
+    try {
+        const showTimes = await showTimesService();
 
-//             })
-//         })
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
-// handleFilterCity()
+        const filteredShowTimes = showTimes.filter(showTime =>
+            showTime.price <= price
+        );
+
+        const availableShowTimes = isAvailableShowTime(filteredShowTimes);
+        initTicketCinema(filterMovieShowTimes(availableShowTimes));
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 
-export const getInfoMovieIdBookingController = async (id) => {
+const initBookingPageController = async (id) => {
     try {
         const movie = await getMovieIdService(id);
-
         await initReadInfo(movie);
-        await getCinemasController();
+        await loadCinemaTicketsController();
         handleAnimationLoadedRight();
     } catch (err) {
         console.error(err);
     }
+}
+
+export {
+    loadCinemaTicketsController,
+    filterCinemasController,
+    initBookingPageController
 }

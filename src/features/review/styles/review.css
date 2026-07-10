@@ -42,7 +42,7 @@
 
 .review-box__main {
     padding-bottom: 1.6rem;
-    border-bottom: 1px solid var(--border-secondary);
+    border-bottom: 1px solid var(--text-secondary);
     margin-top: 2.4rem;
 }
 

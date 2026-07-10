@@ -1,8 +1,7 @@
 import { BASE_URL } from "../../../config/api.js";
 import { handleApiError } from "../../../utils/error-handler.js";
 
-
-export const showTimesService = async () => {
+const showTimesService = async () => {
     try {
         const response = await fetch(`${BASE_URL}/showtimes`);
         const hasError = await handleApiError(response);
@@ -15,7 +14,7 @@ export const showTimesService = async () => {
     }
 }
 
-export const getShowTimesIdService = async (id) => {
+const getShowTimesIdService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/showtimes/${id}`);
         const hasError = await handleApiError(response);
@@ -26,4 +25,9 @@ export const getShowTimesIdService = async (id) => {
         console.error('Error fetching showtime by ID:', error);
         throw error;
     }
+}
+
+export {
+    showTimesService,
+    getShowTimesIdService
 }

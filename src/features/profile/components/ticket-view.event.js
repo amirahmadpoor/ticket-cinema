@@ -1,33 +1,29 @@
-import { getReservationsByUserIdController } from "../../booking/controllers/reservation.controller.js";
+import { getUserTicketsController } from "../../booking/controllers/reservation.controller.js";
 import { getTicketInfoIdController } from "../../ticket/controllers/ticket.controller.js";
 import { renderUserTickets } from "./ticket-view.js";
 
-export const showUserTickets = async () => {
+const showUserTickets = async () => {
+    const ticketDetails = [];
     const dashboardContainer = document.querySelector('.main');
     try {
-        const reservations = await getReservationsByUserIdController();
+        const reservations = await getUserTicketsController();
 
-        if (!reservations || reservations.length === 0) {
-            ticketsContainer.innerHTML = '<p>هیچ بلیطی رزرو نشده</p>';
-            return;
-        }
-
-        const ticketDetails = [];
         for (let reservation of reservations) {
             try {
                 const ticketDetail = await getTicketInfoIdController(reservation.id);
-                if (ticketDetail.data) {
-                    ticketDetails.push(ticketDetail.data);
-                }
+                ticketDetail && ticketDetail.data && ticketDetails.push(ticketDetail.data);
             } catch (error) {
                 console.error(`خطا در دریافت جزئیات بلیط ${reservation.id}:`, error);
             }
         }
-        dashboardContainer.innerHTML = renderUserTickets(ticketDetails);
+        ticketDetails.length > 0
+            ? dashboardContainer.innerHTML = renderUserTickets(ticketDetails)
+            : dashboardContainer.innerHTML = '<p style="display:flex; justify-content:center; align-items:center; height:100%;">هیچ بلیطی برای نمایش وجود ندارد</p>';
 
     } catch (error) {
         console.error('خطا در دریافت بلیط‌ها:', error);
-        const ticketsContainer = document.getElementById('tickets-container');
-        ticketsContainer.innerHTML = '<p>خطا در بارگذاری بلیط‌ها</p>';
+        dashboardContainer.innerHTML = '<p style="display:flex; justify-content:center; align-items:center; height:100%;">خطا در بارگذاری بلیط‌ها</p>';
     }
 }
+
+export default showUserTickets;

@@ -1,55 +1,47 @@
 import { convertDateToPersian, convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-time.js";
 import { handleAnimationLoadedTop } from "../../../animations/animation-loaded.js";
 
-export const renderTicketCard = (data = null) => {
+const renderTicketCard = (data) => {
     if (!data) return '';
 
-    const seatsText = data.seats ? data.seats.join(' ، ') : 'نامشخص';
-    const movieTitle = data.movie?.title || 'نام فیلم';
-    const cinemaName = data.showtime?.cinema_name || 'نام سینما';
-    const showDate = data.showtime?.date || 'تاریخ نامشخص';
-    const showTime = data.showtime?.time || 'ساعت نامشخص';
-    const trailer = data.movie?.trailer_url;
-    
-    const totalPrice = data.total_price ? data.total_price.toLocaleString('fa-IR') : '0';
-
-    return `
+    return (`
         <article class="ticket-card hidden-elems-top">
             <div class="ticket-card__poster">
                 <img class="ticket-card__poster-image" 
-                     src="${trailer}" 
-                     alt="${movieTitle}" 
-                     onerror="this.src='/assets/images/cover/default-poster.webp';">
+                     src="${data.trailer}" 
+                     alt="${data.movie_title}">
             </div>
 
             <div class="ticket-card__content">
-                <h2 class="ticket-card__title">${data.movie.title}</h2>
-                <p class="ticket-card__duration">${data.movie?.duration ? convertMinutesToHoursMinutes(data.movie.duration) : ''}</p>
+                <h2 class="ticket-card__title">${data.movie_title}</h2>
+                <p class="ticket-card__duration">${data?.movie_duration ? convertMinutesToHoursMinutes(data.movie_duration) : ''}</p>
 
                 <div class="ticket-card__location">
-                    <h3 class="ticket-card__cinema">${cinemaName}</h3>
+                    <h3 class="ticket-card__cinema">${data.cinema_name || 'نام سینما'}</h3>
                 </div>
 
                 <div class="ticket-card__meta">
                     <div class="ticket-card__meta-item">
                         <span class="ticket-card__meta-label">تاریخ</span>
-                        <span class="ticket-card__meta-value">${convertDateToPersian(showDate)}</span>
+                        <span class="ticket-card__meta-value">${convertDateToPersian(data.show_date || 'نامشخص')}</span>
                     </div>
                     <div class="ticket-card__line"></div>
                     <div class="ticket-card__meta-item">
                         <span class="ticket-card__meta-label">ساعت</span>
-                        <span class="ticket-card__meta-value show-time">${showTime.slice(0, 5).toLocaleString('fa-IR')}</span>
+                        <span class="ticket-card__meta-value show-time">${data.show_time.slice(0, 5).toLocaleString('fa-IR') || 'نامشخص'}</span>
                     </div>
                     <div class="ticket-card__line"></div>
                     <div class="ticket-card__meta-item">
                         <span class="ticket-card__meta-label">صندلی‌ها</span>
-                        <span class="ticket-card__meta-value seats">${seatsText}</span>
+                        <span class="ticket-card__meta-value seats">${data.seats ? data.seats.map(seat => seat.row_label + seat.seat_number).join(' ، ') : 'نامشخص'
+        }</span>
                     </div>
                 </div>
 
                 <div class="ticket-card__price">
                     <span class="ticket-card__price-label">مبلغ کل:</span>
-                    <span class="ticket-card__price-value">${totalPrice} تومان</span>
+                    <span class="ticket-card__price-value">${data.total_price ? data.total_price.toLocaleString('fa-IR') : '0'
+        } تومان</span>
                 </div>
             </div>
 
@@ -65,17 +57,23 @@ export const renderTicketCard = (data = null) => {
                 </button>
             </div>
         </article>
-    `;
+    `);
 }
 
-export const renderUserTickets = (tickets) => {
+const renderUserTickets = (tickets) => {
     if (!tickets || tickets.length === 0) {
         return `<p>هیچ بلیطی رزرو نشده</p>`;
     }
 
-    let ticketsHTML = '';
-    tickets.forEach(ticket => {
-        ticketsHTML += renderTicketCard(ticket);
-    });
-    return ticketsHTML;
+    // let ticketsHTML = '';
+    return tickets.map(renderTicketCard).join('');
+    // tickets.forEach(ticket => {
+    //     ticketsHTML += renderTicketCard(ticket);
+    // });
+    // return ticketsHTML;
 };
+
+export {
+    renderTicketCard,
+    renderUserTickets
+}

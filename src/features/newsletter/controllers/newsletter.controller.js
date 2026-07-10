@@ -1,9 +1,13 @@
-import { setNewsletterService } from "../services/newsletter.service.js";
+import setNewsletterService from "../services/newsletter.service.js";
+import { handleToastBox } from "../../../utils/helpers/show-toast.js";
 
-export const newsletterController = async (newUser) => {
+const newsletterController = async (newUser) => {
     try {
         return await setNewsletterService(newUser);
     } catch (err) {
-        console.log(err);
+        handleToastBox('عضویت ناموفق بود.');
+        console.error(err);
     }
 }
+
+export default newsletterController;

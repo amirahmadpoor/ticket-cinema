@@ -1,4 +1,4 @@
-import { initProfile } from "../features/profile/components/profile.js";
+import initProfile from "../features/profile/components/profile.js";
 import { hideLoading } from "../shared/components/loading.js";
 
 window.addEventListener('DOMContentLoaded', async () => {

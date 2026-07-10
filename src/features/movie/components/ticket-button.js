@@ -1,6 +1,6 @@
 import { getTokenUser } from "../../../utils/get-token.js"
 
-export function initBtnTicket(id) {
+function initBtnTicket(id) {
     const getTicketBtn = document.querySelector('.get-ticket');
     getTicketBtn.addEventListener('click', () => {
 
@@ -12,3 +12,5 @@ export function initBtnTicket(id) {
         }
     })
 }
+
+export default initBtnTicket;

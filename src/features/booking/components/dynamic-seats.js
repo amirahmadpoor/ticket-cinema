@@ -4,32 +4,24 @@ import { reservationController } from "../../booking/controllers/reservation.con
 import { getShowTimeId } from "../../../utils/helpers/get-showtimeId.js";
 import { getShowTimeIdController } from "../../booking/controllers/showtime.controller.js";
 import { handleToastBox } from "../../../utils/helpers/show-toast.js";
+import { getAllReservationByIdController } from "../controllers/reservation.controller.js";
+import { reservationSeatsByReservationIdController } from "../controllers/reservation-seats.controller.js";
 
 const seatsCinema = document.querySelector('.seats');
-
 const amount = document.querySelector('.amount');
 const countSeatsCounter = document.querySelector('.count-seats__counter');
 const totalPrice = document.querySelector('.total-price');
 const btnReserve = document.querySelector('.state-seats__add-cart');
-
-let seatsSelected = [];
-
 const cinemaId = getCinemaIdFromUrl();
 const movieId = getMovieIdFromUrl();
-const showtimeId = getShowTimeId();
-const showtime = await getShowTimeIdController(Number(showtimeId));
+const showtime = await getShowTimeIdController(Number(getShowTimeId()));
+let seatsSelected = [];
 
 
-function checkReservation(seatsReserved) {
-    const reserved = seatsReserved.filter(seat => seat.status === 'reserved');
-
+function checkReservation({ id, status }) {
     document.querySelectorAll('.chair')
         .forEach(chair => {
-            reserved.forEach(seat => {
-                if (seat.id === Number(chair.dataset.id)) {
-                    chair.classList.add('reserved');
-                }
-            })
+            id === Number(chair.dataset.id) && chair.classList.add('reserved');
         })
 }
 
@@ -82,28 +74,49 @@ function total(count) {
 }
 
 function getSeatsSelected() {
-    let infoReserve = {
+    return {
         user_id: localStorage.getItem('userId'),
-        showtime_id: Number(showtimeId),
+        showtime_id: Number(getShowTimeId()),
         seat_ids: seatsSelected,
     }
-    return infoReserve;
 }
 
-export function handlerSeats(seat) {
+async function handleReservedSeats() {
+    const response = await reservationSeatsByReservationIdController(Number(getShowTimeId()));
+    response.forEach(res => {
+        res.status === 'reserved' && checkReservation(res);
+    })
+}
+
+function handleStyleSeat(seat) {
+    const maxSeatNumber = Math.max(...seat.map(seat => seat.seat_number));
+    seatsCinema.style.gridTemplateColumns = `repeat(${maxSeatNumber}, 1fr)`;
+    seatsCinema.style.gridTemplateRows = `repeat(${maxSeatNumber}, 1fr)`;
+}
+
+async function handlerSeats(seat) {
     createSeats(seat);
-    checkReservation(seat);
+    handleStyleSeat(seat);
+    await handleReservedSeats();
     selectedSeat(seat);
 
     btnReserve.addEventListener('click', async () => {
-        const response = await reservationController(getSeatsSelected());
-
-        if (!response.success && !seatsSelected.length) {
+        if (!seatsSelected.length) {
             handleToastBox('حداقل یک صندلی باید انتخاب شود');
             return;
         }
+
+        const response = await reservationController(getSeatsSelected());
         console.log(response);
-        
+
+        if (!response.success) {
+            handleToastBox('خطا در رزرو');
+            return;
+        }
         location.href = `payment.html?id-movie=${movieId}&id-cinema=${cinemaId}&id-reservation=${response.data.id}`;
     })
+}
+
+export {
+    handlerSeats
 }

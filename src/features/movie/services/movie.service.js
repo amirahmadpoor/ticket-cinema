@@ -2,7 +2,7 @@ import { createMovieModel } from "../../../models/movie.model.js";
 import { BASE_URL } from "../../../config/api.js";
 import { handleApiError } from "../../../utils/error-handler.js";
 
-export const getAllMoviesService = async () => {
+const getAllMoviesService = async () => {
     try {
         const response = await fetch(`${BASE_URL}/movies`);
 
@@ -10,13 +10,13 @@ export const getAllMoviesService = async () => {
         if (hasError) return;
 
         const data = await response.json();
-        return data.data.movies.map(createMovieModel);
+        return data.data.movies;
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 }
 
-export const getMovieIdService = async (id) => {
+const getMovieIdService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/movies/${id}`);
 
@@ -29,4 +29,9 @@ export const getMovieIdService = async (id) => {
         console.error(err);
 
     }
+}
+
+export {
+    getAllMoviesService,
+    getMovieIdService
 }

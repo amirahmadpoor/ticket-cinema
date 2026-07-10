@@ -1,7 +1,7 @@
-import { reservationSeatsService } from "../services/reservationSeat.service.js";
+import { reservationSeatsService, reservationSeatsByReservationIdService } from "../services/reservationSeat.service.js";
 import { getReservationByIdService } from "../services/reservation.service.js";
 
-export const reservationSeatsController = async (id) => {
+const reservationSeatsController = async (id) => {
     try {
         return await reservationSeatsService(id);
     } catch (error) {
@@ -11,11 +11,16 @@ export const reservationSeatsController = async (id) => {
 };
 
 
-export const getReservationByIdController = async (id) => {
+const reservationSeatsByReservationIdController = async (showtimeId) => {
     try {
-        return await getReservationByIdService(id)
+        return await reservationSeatsByReservationIdService(showtimeId);
     } catch (error) {
         console.error(error);
-        throw new Error('Failed to fetch reservation details');
+        throw new Error('Failed to fetch reservation seats');
     }
+}
+
+export {
+    reservationSeatsController,
+    reservationSeatsByReservationIdController
 }

@@ -1,7 +1,7 @@
 import { BASE_URL } from "../../../config/api.js";
 import { handleApiError } from "../../../utils/error-handler.js";
 
-export const getInfoTicketIdService = async (id) => {
+const getInfoTicketIdService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/reservations/${id}/ticket`, {
             headers: {
@@ -18,7 +18,7 @@ export const getInfoTicketIdService = async (id) => {
 }
 
 // سرویس برای دریافت جزئیات رزرو
-export const getReservationDetailsService = async (id) => {
+const getReservationDetailsService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/reservations/${id}`, {
             headers: {
@@ -31,4 +31,9 @@ export const getReservationDetailsService = async (id) => {
     } catch (err) {
         console.error(err);
     }
+}
+
+export {
+    getInfoTicketIdService,
+    getReservationDetailsService
 }

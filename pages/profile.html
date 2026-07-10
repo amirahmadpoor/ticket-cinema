@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/base/reset.css">
+    <link rel="stylesheet" href="/styles/base/variables.css">
     <link rel="stylesheet" href="/styles/base/style-default.css">
     <link rel="stylesheet" href="/styles/base/font.css">
-    <link rel="stylesheet" href="/styles/base/variables.css">
     <link rel="stylesheet" href="/styles/animations/animation-loaded-elem.css">
     <link rel="stylesheet" href="/src/shared/styles/navScroll.css">
     <link rel="stylesheet" href="/src/shared/styles/header.css">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/src/features/profile/styles/my-account.css">
     <link rel="stylesheet" href="/src/features/profile/styles/ticket-view.css">
     <link rel="stylesheet" href="/src/features/profile/styles/ticket-view.css">
-    <link rel="stylesheet" href="/src/features/watchlist/styles/my-watchlist.css">
+    <link rel="stylesheet" href="/src/features/profile/styles/my-watchlist.css">
     <link rel="stylesheet" href="/src/shared/styles/footer.css">
     <script src="../src/utils/helpers/icons.js"></script>
     <link rel="shortcut icon" href="/assets/images/logo/Vector.svg" type="svg">
@@ -29,12 +29,10 @@
     <div class="loading">
         <div class="loader"></div>
     </div>
+    <header id="header"></header>
 
-    <header class="header-dashboard">
-        <svg class="icon-menu">
-            <use href="#icon-menu"></use>
-        </svg>
-    </header>
+    <div id="menu"></div>
+    <div id="search"></div>
 
     <div class="dashboard container">
         <!-- Sidebar -->
@@ -90,12 +88,18 @@
         </aside>
 
         <!-- Main -->
-        <main class="main"></main>
+        <main class="main">
+
+
+
+        </main>
     </div>
 
 
+    <div id="footer"></div>
     <script src="/src/pages/profile.js" type="module"></script>
     <script src="/src/app.js" type="module"></script>
+
 </body>
 
 </html>

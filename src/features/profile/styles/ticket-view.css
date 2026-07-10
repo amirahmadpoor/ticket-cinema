@@ -7,7 +7,7 @@
     transition: 260ms;
     direction: rtl;
     border: 1px solid var(--border-primary);
-    color: var(--text-color);
+    color: var(--text-primary);
 }
 
 .ticket-card:hover {

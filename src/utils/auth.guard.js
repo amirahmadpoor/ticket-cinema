@@ -1,6 +1,5 @@
+import { BASE_URL } from "../../../config/api.js";
 export async function checkAuth() {
-    import { BASE_URL } from "../../../config/api.js";
- = 'http://localhost:3000/api/auth';
     const token = localStorage.getItem('accessToken');
 
 

@@ -1,6 +1,6 @@
 import { convertMinutesToHoursMinutes } from "../../../utils/helpers/convert-time.js";
 
-export const MyWatchList = ({ id, title, poster_url, duration, description, imdb_rating }) => {
+const MyWatchList = ({ id, title, poster_url, duration, description, imdb_rating }) => {
     return (`
         <a href="/pages/movie-page.html?id-movie=${id}" class="movie-card hidden-elems-top">
         <div class="movie-card__poster">
@@ -26,3 +26,5 @@ export const MyWatchList = ({ id, title, poster_url, duration, description, imdb
         </a>
     `);
 }
+
+export default MyWatchList;

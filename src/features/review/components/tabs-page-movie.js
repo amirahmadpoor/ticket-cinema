@@ -1,12 +1,12 @@
-export function setSelectTab() {
+function setSelectTab() {
     const tabs = document.querySelector('.reviews-tabs__header');
     const tabsName = document.querySelectorAll('.name-tab');
 
-    function activeTab(e){
+    function activeTab(e) {
         e.target.classList.add('active');
     }
 
-    function resetTabs(){
+    function resetTabs() {
         tabsName.forEach(t => {
             t.classList.remove('active');
         })
@@ -19,4 +19,8 @@ export function setSelectTab() {
         })
     }
     handelActiveTab()
+}
+
+export {
+    setSelectTab
 }

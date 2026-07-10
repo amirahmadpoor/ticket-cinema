@@ -1,4 +1,4 @@
-export function initMovieDescription({ description, writers, directors }) {
+function initMovieDescription({ description, writers, directors }) {
 
     const summeryText = document.querySelector('.summery__text');
     const directorName = document.querySelector('.director__name');
@@ -7,6 +7,6 @@ export function initMovieDescription({ description, writers, directors }) {
     summeryText.innerHTML = description;
     writersName.innerHTML = writers.map(writer => writer.name).join(' - ');
     directorName.innerHTML = directors.map(director => director.name).join('');
-    console.log(directors[0]);
-    
 }
+
+export default initMovieDescription;

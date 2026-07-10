@@ -1,4 +1,4 @@
-import { postDataUserNewController, getDataUserController } from "../features/auth/controllers/auth.controller.js";
+import { registerUserController, LoginUserController } from "../features/auth/controllers/auth.controller.js";
 import { hideLoading } from "../shared/components/loading.js";
 
 const registerForm = document.querySelector('.register-form');
@@ -80,7 +80,7 @@ async function handleRegister(e) {
     e.preventDefault();
     if (validationInputUserNew()) {
 
-        const response = await postDataUserNewController(getInputUserNew());
+        const response = await registerUserController(getInputUserNew());
 
         console.log(response);
 
@@ -101,7 +101,7 @@ async function handleLogin(e) {
     e.preventDefault();
     if (validationInputUser()) {
 
-        const response = await getDataUserController(getInputUser());
+        const response = await LoginUserController(getInputUser());
 
         if (response.success) {
             setEmptyInputs();

@@ -12,7 +12,7 @@ function showResult(searchResultMobile, result) {
     })
 }
 
-export function initSearch(movies) {
+function initSearch(movies) {
     const iconSearch = document.querySelector('.icon-search');
     const searchBox = document.querySelector('.search__box');
     const overlay = document.querySelector('.overlay');
@@ -83,7 +83,7 @@ export function initSearch(movies) {
 }
 
 
-export function initSearchMobile(movies) {
+function initSearchMobile(movies) {
     const iconSearch = document.querySelector('.icon-search-mobile');
     const inputSearchMobile = document.querySelector('.search-mobile__text-input');
     const searchResultMobile = document.querySelector('.search-mobile__result');
@@ -132,22 +132,20 @@ export function initSearchMobile(movies) {
         }
     }
 
-    if (iconSearch) {
-        iconSearch.addEventListener('click', (e) => {
-            e.preventDefault();
-            handelSearchBox();
-        });
-    }
+    iconSearch.addEventListener('click', (e) => {
+        e.preventDefault();
+        handelSearchBox();
+    });
+    iconClose.addEventListener('click', addSearchBox);
 
-    if (iconClose) {
-        iconClose.addEventListener('click', addSearchBox);
-    }
+    inputSearchMobile.addEventListener('input', () => {
+        resetResult();
+        const inputVal = inputSearchMobile.value.toLowerCase().trim();
+        typingSearch(inputVal);
+    })
+}
 
-    if (inputSearchMobile) {
-        inputSearchMobile.addEventListener('input', () => {
-            resetResult();
-            const inputVal = inputSearchMobile.value.toLowerCase().trim();
-            typingSearch(inputVal);
-        })
-    }
+export {
+    initSearch,
+    initSearchMobile
 }

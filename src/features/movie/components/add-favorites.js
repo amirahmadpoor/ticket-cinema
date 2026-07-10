@@ -1,4 +1,4 @@
-export function setFavorites() {
+function setFavorites() {
     const btnAdd = document.querySelector('.add-favorites');
     if (!btnAdd) return;
 
@@ -12,3 +12,5 @@ export function setFavorites() {
 
     btnAdd.addEventListener('click', __add);
 }
+
+export default setFavorites;

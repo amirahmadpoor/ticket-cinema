@@ -1,16 +1,51 @@
-import { reservationService, getReservationsByUserIdService, getWatchedMovieService } from "../services/reservation.service.js";
+import { reservationService, getTicketByIdService, getWatchedMovieService, getReservationByIdService } from "../services/reservation.service.js";
+import { getAllReservationsByIdService } from "../services/reservation.service.js";
 
-export const reservationController = async (infoReserve) => {
-    return await reservationService(infoReserve);
+const reservationController = async (infoReserve) => {
+    try {
+        return await reservationService(infoReserve);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-export const getReservationsByUserIdController = async () => {
-    const response = await getReservationsByUserIdService();
-    const userId = localStorage.getItem('userId');
-    return response.filter(reserve => reserve.user_id == userId)
-        .filter(reserve => reserve.payment_status === 'paid');
+const getUserTicketsController = async () => {
+    try {
+        return await getAllReservationsByIdService();
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-export const getWatchedMovieController = async () => {
-    return await getWatchedMovieService();
+const getWatchedMovieController = async () => {
+    try {
+        return await getWatchedMovieService();
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+
+const getReservationByIdController = async (id) => {
+    try {
+        return await getReservationByIdService(id)
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const getAllReservationByIdController = async () => {
+    try {
+        return await getAllReservationsByIdService();
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+export {
+    reservationController,
+    getUserTicketsController,
+    getWatchedMovieController,
+    getReservationByIdController,
+    getAllReservationByIdController,
 }

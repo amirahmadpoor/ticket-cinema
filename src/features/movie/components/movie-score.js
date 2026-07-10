@@ -1,4 +1,4 @@
-export function initMovieScore({ rating }) {
+function initMovieScore({ rating }) {
     const scoreValue = document.querySelector('.reviews__scores-value');
     const scoreFav = document.querySelector('.reviews__scores-favorable');
 
@@ -17,3 +17,5 @@ export function initMovieScore({ rating }) {
     }
     checkScore();
 }
+
+export default initMovieScore;

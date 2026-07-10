@@ -1,4 +1,4 @@
-export function initMovieHero({ title, poster_url, trailer_url }) {
+function initMovieHero({ title, poster_url, trailer_url }) {
 
     const heroMovieTitle = document.querySelector('.hero__movie-title');
     const heroMovieImage = document.querySelector('.hero__movie-image');
@@ -9,3 +9,4 @@ export function initMovieHero({ title, poster_url, trailer_url }) {
     heroMovieVideo.setAttribute('poster', poster_url);
 }
 
+export default initMovieHero;

@@ -1,4 +1,4 @@
-import { getReviewsController,setReviewController } from "../controllers/review.controller.js";
+import { getReviewsController, setReviewController } from "../controllers/review.controller.js";
 import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
 import { handleToastBox } from "../../../utils/helpers/show-toast.js";
 
@@ -10,7 +10,7 @@ const movieId = getMovieIdFromUrl();
 
 
 function generateReview({ rating, user_name, comment }) {
-    reviewWrapper.insertAdjacentHTML('beforeend',
+    return (
         `<div class="review-box hidden-elems-top">
             <div class="review-box__header">
                 <div class="review-box__score">
@@ -37,9 +37,6 @@ function generateReview({ rating, user_name, comment }) {
         </div>`)
 }
 
-function resetReview() {
-    reviewWrapper.innerHTML = '';
-}
 
 function getCommentUser() {
     const commentValue = inputComment.value.trim();
@@ -47,12 +44,11 @@ function getCommentUser() {
     if (commentValue.length === 0)
         return null;
 
-    let newComment = {
+    return {
         movie_id: Number(movieId),
         rating: 5,
         comment: commentValue
     }
-    return newComment;
 }
 
 async function handleSetComment() {
@@ -65,32 +61,33 @@ async function handleSetComment() {
 
     const response = await setReviewController(review);
     console.log(response);
-    
+
     if (!response.success) {
         handleToastBox('شما قبلا نظر خود را ثبت کرده اید');
         return;
     }
-    resetReview();
-    getReviewsController();
+    getReviewsController(movieId);
 }
 
-export async function handelGetComment(reviews) {
-    let reviewsAll = await reviews;
-    let review = reviewsAll.filter(review => review.movie_id == movieId);
-    resetReview();
-    if (!review.length) {
+async function handelGetComment(reviews) {
+    const reviewsAll = await reviews;
+
+    if (!reviewsAll.length) {
         reviewWrapper.classList.add('no-review');
         notReviewMessage.classList.add('show');
         return;
     }
     reviewWrapper.classList.remove('no-review');
     notReviewMessage.classList.remove('show');
-    review.forEach(review => {
-        generateReview(review);
-    });
+
+    reviewWrapper.innerHTML = reviewsAll.map(review => generateReview(review)).join('');
 }
 
 btnSendComment.addEventListener('click', () => {
     handleSetComment();
     inputComment.value = '';
 })
+
+export {
+    handelGetComment
+}

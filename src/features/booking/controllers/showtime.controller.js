@@ -1,5 +1,9 @@
 import { getShowTimesIdService } from "../services/showtimes.service.js"
 
-export const getShowTimeIdController = async (id) => {
+const getShowTimeIdController = async (id) => {
     return await getShowTimesIdService(id);
+}
+
+export {
+    getShowTimeIdController
 }

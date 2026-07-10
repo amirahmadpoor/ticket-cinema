@@ -1,4 +1,4 @@
-export const MyAccount = async (countTicket, welcomeUser) => {
+const MyAccount = async (countTicket, welcomeUser) => {
     return (`
             <section class="welcome">
                 <h1 class="welcome__title">خوش اومدی ${welcomeUser}</h1>
@@ -80,6 +80,9 @@ export const MyAccount = async (countTicket, welcomeUser) => {
                     </div>
                     <a href="#" class="cards__action">کیف پول خود را شارژ کنید</a>
                 </div>
+
             </section>
     `);
 }
+
+export default MyAccount;

@@ -1,4 +1,4 @@
-import { newsletterController } from "../controllers/newsletter.controller.js";
+import newsletterController from "../controllers/newsletter.controller.js";
 import { handleToastBox } from "../../../utils/helpers/show-toast.js";
 const form = document.querySelector('.cta__input-email');
 const emailUser = document.querySelector('.cta__email');
@@ -31,10 +31,10 @@ function validationInput() {
     message.innerHTML = '';
     if (!emailVal) {
         message.innerHTML = 'ایمیل خود را وارد کنید';
+        return;
     } else if (!validationEmail(emailVal)) {
         message.innerHTML = 'ایمیل نامعتبر است';
-    } else {
-        return true;
+        return;
     }
 }
 
@@ -50,12 +50,16 @@ async function handleNewsletter() {
         await newsletterController(getEmailUser());
         resetInput();
         handleToastBox('درخواست شما ثبت شد');
+    }else{
+        handleToastBox('عضویت انجام نشد');
     }
 }
 
-export function submitNewsletter() {
+function submitNewsletter() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         handleNewsletter();
     })
 }
+
+export default submitNewsletter;

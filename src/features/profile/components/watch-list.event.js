@@ -1,15 +1,21 @@
 import { getWatchedMovieController } from "../../booking/controllers/reservation.controller.js";
-import { MyWatchList } from "../../watchlist/components/my-watchlist.js";
+import MyWatchList from "./my-watchlist.js";
 
-export const showUserWatchList = async () => {
+const showUserWatchList = async () => {
     const dashboardContainer = document.querySelector('.main');
 
     try {
         const reservations = await getWatchedMovieController();
-        console.log(reservations);
-        
-        dashboardContainer.innerHTML = reservations.map(MyWatchList).join('');
+        reservations.length > 0
+            ?
+            dashboardContainer.innerHTML = reservations.map(MyWatchList).join('')
+            :
+            dashboardContainer.innerHTML = '<span style="display:flex; justify-content:center; align-items:center; height:100%;">لیست تماشای شما خالی است</span>'
     } catch (err) {
         console.error(err);
     }
+}
+
+export {
+    showUserWatchList
 }

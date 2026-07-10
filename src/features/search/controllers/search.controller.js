@@ -1,7 +1,7 @@
 import { getAllMoviesService } from "../../movie/services/movie.service.js";
 import { initSearch, initSearchMobile } from "../../search/components/search.js";
 
-export const getTitleMoviesController = async () => {
+const getTitleMoviesController = async () => {
     try {
         const movies = await getAllMoviesService();
         initSearch(movies);
@@ -11,7 +11,7 @@ export const getTitleMoviesController = async () => {
     }
 }
 
-export const getTitleMoviesMobileController = async () => {
+const getTitleMoviesMobileController = async () => {
     try {
         const movies = await getAllMoviesService();
         initSearchMobile(movies);
@@ -19,4 +19,9 @@ export const getTitleMoviesMobileController = async () => {
     catch (err) {
         console.error(err);
     }
+}
+
+export {
+    getTitleMoviesController,
+    getTitleMoviesMobileController
 }

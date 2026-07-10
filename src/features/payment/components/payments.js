@@ -2,13 +2,15 @@ import { getMovieIdService } from "../../movie/services/movie.service.js";
 import { getCinemaIdService } from "../../cinema/services/cinema.service.js";
 import { getMovieIdFromUrl } from "../../../utils/helpers/getIDMovie.js";
 import { getCinemaIdFromUrl } from "../../../utils/helpers/getIDCinema.js";
-import { reservationSeatsController,getReservationByIdController } from "../../booking/controllers/reservation-seats.controller.js";
-import { initReadInfo } from "../../movie/components/movie-info.js";
+import { reservationSeatsController } from "../../booking/controllers/reservation-seats.controller.js";
+import { getReservationByIdController } from "../../booking/controllers/reservation.controller.js";
+import initReadInfo from "../../movie/components/movie-info.js";
 import { getReservationByIdService } from "../../booking/services/reservation.service.js";
 import { getShowTimesIdService } from "../../booking/services/showtimes.service.js";
 import { convertDateToPersian } from "../../../utils/helpers/convert-time.js";
+import { handleToastBox } from "../../../utils/helpers/show-toast.js";
 
-export const initPaymentsPage = async (reservationId) => {
+const initPaymentsPage = async (reservationId) => {
     const btnSubmitPayment = document.querySelector('.payment__submit-btn');
     const seatsNumber = document.querySelector('.payment__seats-number');
     const totalPrice = document.querySelector('.payment__total-price');
@@ -34,20 +36,20 @@ export const initPaymentsPage = async (reservationId) => {
         ...infoCinema
     });
 
-    if (!reservationDetails.success) {
-        console.error('Failed to fetch reservation details');
+    const requests = [
+        reservationDetails,
+        reservationSeats,
+        showtimeId
+    ];
+
+    if (requests.some(req => !req.success)) {
+        handleToastBox('خطا در دریافت اطلاعات');
+        console.error('Failed to fetch data');
         return;
     }
+    
     totalPrice.innerHTML = `${reservationDetails.data.total_price.toLocaleString('fa-IR')} تومان`;
-    if (!reservationSeats.success) {
-        console.error('Failed to fetch reservation seats');
-        return;
-    }
     seatsNumber.innerHTML = reservationSeats.data.map(seat => `<span>${seat.row_label}${seat.seat_number.toLocaleString('fa-IR')}</span>`).join(', ');
-    if (!showtimeId.success) {
-        console.error('Failed to fetch showtime');
-        return;
-    }
     paymentSummary.innerHTML = `
     <span>قیمت بلیط:</span>
     <span>${infoShowTime.price.toLocaleString('fa-IR')} تومان</span>`;
@@ -61,3 +63,5 @@ export const initPaymentsPage = async (reservationId) => {
         location.href = `ticket.html?id-movie=${1}&id-cinema=${2}&id-reservation=${reservationId}`;
     })
 }
+
+export default initPaymentsPage;

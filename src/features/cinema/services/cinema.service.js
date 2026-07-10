@@ -4,7 +4,7 @@ import { BASE_URL } from "../../../config/api.js";
 import { handleApiError } from "../../../utils/error-handler.js";
 
 
-export const getAllCinemaService = async () => {
+const getAllCinemaService = async () => {
     try {
         const response = await fetch(`${BASE_URL}/cinemas`);
         const hasError = await handleApiError(response);
@@ -16,7 +16,7 @@ export const getAllCinemaService = async () => {
     }
 }
 
-export const getCinemaIdService = async (id) => {
+const getCinemaIdService = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/cinemas/${id}`);
         const hasError = await handleApiError(response);
@@ -28,7 +28,7 @@ export const getCinemaIdService = async (id) => {
     }
 }
 
-export const filterCinemasController = async (inputPrice) => {
+const filterCinemasController = async (inputPrice) => {
     try {
         const showtime = await showTimesService();
         const hasError = await handleApiError(response);
@@ -37,4 +37,10 @@ export const filterCinemasController = async (inputPrice) => {
     } catch (err) {
         console.error(err);
     }
-};
+}
+
+export {
+    getAllCinemaService,
+    getCinemaIdService,
+    filterCinemasController
+}

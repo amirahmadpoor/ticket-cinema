@@ -3,19 +3,17 @@ import { BASE_URL } from "../../../config/api.js";
 import { handleApiError } from "../../../utils/error-handler.js";
 
 
-export const getReviewService = async () => {
+const getReviewService = async (movieId) => {
     try {
-        const response = await fetch(`${BASE_URL}/reviews`);
-        const hasError = await handleApiError(response);
-        if (hasError) return;
+        const response = await fetch(`${BASE_URL}/reviews/movie/${movieId}`);
         const data = await response.json();
-        return data.data.reviews.map(createReviewModel);
+        return data.data.reviews;
     } catch (err) {
         console.error(err);
     }
 }
 
-export const setReviewService = async (review) => {
+const setReviewService = async (review) => {
     const token = localStorage.getItem('accessToken');
     try {
         const response = await fetch(`${BASE_URL}/reviews`, {
@@ -26,10 +24,13 @@ export const setReviewService = async (review) => {
             },
             body: JSON.stringify(review)
         })
-        const hasError = await handleApiError(response);
-        if (hasError) return;
         return await response.json();
     } catch (err) {
         console.error(err);
     }
+}
+
+export {
+    getReviewService,
+    setReviewService
 }

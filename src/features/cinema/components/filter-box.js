@@ -1,6 +1,6 @@
 import { filterCinemasController } from "../../cinema/controllers/cinema.controller.js";
 import { handleAnimationLoadedRight } from "../../../animations/animation-loaded.js";
-// import { handleFilterCity } from "../../cinema/controllers/cinema.controller.js";
+
 
 const btnFilter = document.querySelector('.filter__option');
 const btnClose = document.querySelector('.btn-close');
@@ -30,23 +30,13 @@ const openFilter = () => {
     filtersWrapper.classList.toggle('show');
 }
 
-// const handleFilterCity = () => {
-//     const checkboxInput = document.querySelectorAll('.checkbox__input');
-//     checkboxInput.forEach(item => {
-//         item.addEventListener('change', e => {
-//             console.log(e.target.value);
-
-//         })
-//     })
-// }
-
-export const handelFilterBox = () => {
+const handelFilterBox = () => {
     btnFilter.addEventListener('click', openFilterBox);
     btnClose.addEventListener('click', closeFilterBox);
     overlay.addEventListener('click', closeFilterBox)
     filterTitle.addEventListener('click', openFilter);
     let price = 0;
-    // let city
+
     rangeInput.addEventListener('input', (e) => {
         const rawValue = parseFloat(e.target.value);
 
@@ -55,16 +45,14 @@ export const handelFilterBox = () => {
         displayValue.textContent = `${Math.floor(mappedValue).toLocaleString('fa-IR')} تومان`;
     });
 
-    // item.addEventListener('change', e => {
-
-    // })
-
-
     btnApply.addEventListener('click', async () => {
         closeFilterBox();
         await filterCinemasController(price);
-        // await handleFilterCity()
         handleAnimationLoadedRight();
     })
 
+}
+
+export {
+    handelFilterBox
 }

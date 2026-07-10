@@ -1,14 +1,19 @@
-import { dataUserNewService } from "../services/auth.service.js";
-import { dataUserService } from "../services/auth.service.js";
-import { getDataUser } from "../services/auth.service.js";
-export const postDataUserNewController = async (userData) => {
-    return await dataUserNewService(userData);
+import { registerUserService, LoginUserService, getDataUserService } from "../services/auth.service.js";
+
+const registerUserController = async (userData) => {
+    return await registerUserService(userData);
 }
 
-export const getDataUserController = async (userData) => {
-    return await dataUserService(userData);
+const LoginUserController = async (userData) => {
+    return await LoginUserService(userData);
 }
 
-export const getProfileDataUserController = async (token) => {
-    return await getDataUser(token);
+const getProfileDataUserController = async (token) => {
+    return await getDataUserService(token);
+}
+
+export {
+    registerUserController,
+    LoginUserController,
+    getProfileDataUserController
 }

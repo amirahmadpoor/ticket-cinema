@@ -1,9 +1,11 @@
-import { createPaymentsService } from "../services/payments.service.js";
+import createPaymentsService from "../services/payments.service.js";
 
-export const createPayment = async (infoPayment) => {
+const createPayment = async (infoPayment) => {
     try {
         return await createPaymentsService(infoPayment);
     } catch (error) {
         throw new Error('Error creating payment');
     }
 }
+
+export default createPayment;

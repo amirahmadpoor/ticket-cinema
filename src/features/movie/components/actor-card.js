@@ -4,9 +4,8 @@ function createActorCard({ photo_url, name }) {
     <span class="actor__name">${name}</span>
     </a>`
 }
-// <span class="actor__role">${role}</span>
 
-export function initActorsSection({ actors }) {
+function initActorsSection({ actors }) {
 
     const actorsWrapper = document.querySelector('.actors');
     if (!actorsWrapper) return;
@@ -15,3 +14,7 @@ export function initActorsSection({ actors }) {
         actorsWrapper.insertAdjacentHTML('beforeend', createActorCard(actor))
     })
 }
+
+export {
+    initActorsSection
+};
